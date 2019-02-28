@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    /* background: rgb(228, 199, 199); */
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    
+}
+
+.leftdemo {
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    width: 80px;
+    color: rgb(206, 206, 221);
+    background-color: #fff;
+    position: fixed;
+    left: 20px;
+    top: 0;
+    opacity: 0;
+}
+
+.leftdemo li {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 12px;
+}
+/* #black {
+    background-color: #000;
+}
+#red {
+    background-color: #666;
+}
+#pink {
+    background-color: rgb(212, 51, 191);
+}
+#blue {
+    background-color: #007;
+}
+#green {
+    background-color: green;
+}
+#yellow {
+     background-color: yellow;
+} */
+
+/* .leftdemo li:hover {
+    opacity: 0.6;
+    width: 1200px;
+    transition: width .3s;  
+}
+
+.leftdemo:hover {
+    left: 0;
+    width: 80px;
+    height: 100%;
+    font-size: 60px;
+    background-color: rgb(68, 61, 58);
+    opacity: 0.6;
+    transition: width .5s;
+    text-decoration: underline;
+    padding-top: 110px;
+} */
+
+
+.con {
+    width: 960px;
+    margin: 110px auto 12px auto;
+}
+
+.items {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 12px;
+}
+
+.code {
+    position: absolute;
+    background-color: rgba(10, 10, 10, .5);
+    margin-left: 260px;
+    padding: 70px;
+    opacity: 0;
+    z-index: -1;
+}
+
+.code1 {
+    position: absolute;
+    background-color: rgba(10, 10, 10, .5);
+    margin-left: 260px;
+    padding: 60px;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+
+.items li {
+    float: right;
+    text-align: center;
+    line-height: 60px;
+    animation: lit 1s;
+    /* box-shadow: 0 2px 0px rgb(185, 23, 23); */
+}
+
+@keyframes lit {
+    0%{
+        transform: rotate(30deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.items span {
+    float: left;
+    display: block;
+    width: 160px;
+    height: 60px;
+    background-color: rgb(220, 231, 231);
+    text-align: center;
+    line-height: 60px;
+    color: rgb(160, 106, 160);
+}
+
+.items a {
+    display: block;
+    width: 160px;
+    height: 60px;
+    background-color: rgb(233, 218, 218);
+    transition: color .3s, background-color .3s, font-size .3s;  
+}
+.items a:hover{
+    /* background-color: #fff; */
+    /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+    /* text-decoration: underline;
+    color: rgb(14, 1, 1);
+    font-weight: 700;
+    font-size: 30px; */
+    
+    color: rgb(12, 11, 11);
+    border-bottom: 1px solid #000;
+}
+.footer {
+    position: relative;
+    height: 30px;
+    margin-top: 100px;
+    text-align: center;
+    color: aliceblue;
+    border: 1px solid #000;
+    width: 120px;
+}
+
+
+.footer p {
+    font-size: 12px;
+    color: rgba(194, 122, 122, 0.7);
+}
+
+.user a {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #000;
+    animation: ril 3s;
+    animation-iteration-count: infinite;
+    
+}
+
+.user a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: ril 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.user a img:hover {
+    opacity: 0.6;
+    box-shadow: 3px 3px 30px #666;
+}
+
+.userl a {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #000;
+    animation: rill 3s;
+    animation-iteration-count: infinite;
+}
+
+
+.userl a img {
+    border: 1px solid rgb(221, 11, 116);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: rill 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rill {
+    0%{
+        transform: rotate(0deg);
+        bottom: 150px;
+    }
+    50%{
+        bottom: 600px;
+    }
+    100%{
+        transform: rotate(360deg);
+        bottom: 150px;
+    }
+}
+
+@keyframes ril{
+    0%{
+        transform: rotate(0deg);
+        bottom: 50px;
+    }
+    50%{
+        bottom: 100px;
+    }
+    100%{
+        transform: rotate(360deg);
+        bottom: 50px;
+    }
+}
+
+.footer a {
+    font-size: 12px;
+    color: rgb(32, 33, 34);
+    animation: wfize 60s;
+    
+}
+@keyframes wfize {
+    0%{
+        font-size: 20px;
+    }
+    100%{
+        font-size: 12px;
+    }
+}
+
+.footer p:hover {
+    color: #f40;
+    text-decoration: underline;
+    transition: color 1s;
+    cursor: pointer;
+}

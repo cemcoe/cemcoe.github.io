@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;   
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+body {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+.user {
+    width: 100%;
+    height: 100px;
+    /* border: 1px solid #000; */
+    
+}
+
+.user .user-photo {
+    margin: -43px auto;
+    width: 80px;
+    height: 80px;
+    border: 3px solid rgb(3, 3, 3);
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.user-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+
+.user .user-info {
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid #000; */
+    text-align: center;
+    margin-top: 50px;
+   
+
+}
+
+.user-info .user-name {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 12px;
+}
+.user-info .user-word {
+    color: #d4aeae;
+    font-size: 12px;
+}
+
+
+/* 重点来咯欧 */
+.user .user-con {
+    margin-top: 20px;
+    width: 100%;
+    height: 620px;
+    /* border: 1px solid #000; */
+   
+}
+
+.user-con ul {
+    /* margin-top: 12px; */
+}
+.user-con li {
+    
+    width: 96%;
+    /* border: 1px solid #000; */
+    margin: 0 auto;
+
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 12px;
+    text-align: center;
+    /* vertical-align: middle; */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    /* text-shadow: 0 1px 3px rgb(247, 8, 8); */
+
+}
+.user-con li appName {
+    opacity: .5;
+}
+.user-con li:hover {
+    opacity: .8;
+}
+.user-con li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.qzone {
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    
+}
+.weibo {
+    background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+    
+}
+.facebook {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    
+    
+}
+.facebook a {
+    color: rgb(235, 225, 225);
+}
+
+.github {
+    background-color: #000;
+}
+.github a {
+    color: rgb(12, 248, 52);
+}
+/* .user-con ul li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('img/candy.png');
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.user-con ul li::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%);
+} */
+
+
+
+

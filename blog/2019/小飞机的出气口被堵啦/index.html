@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小飞机的出气口被堵啦</title>
+</head>
+
+<style>
+    code {
+        display: block;
+        background-color: rgb(7, 7, 7);
+        color: #f40;
+        padding: 6px;
+        margin: 12px auto;
+    }
+</style>
+
+
+<body>
+    <h1>小飞机的出气口被堵啦</h1>
+    <p>被Chrome堵啦2333</p>
+    <p>所以应该先开飞机，再开Chrome</p>
+    <p>找出是哪个程序占用了1080端口</p>
+    <code>netstat -aon|findstr "1080"</code>
+    <img src="imgs/find1080.png" alt="find1080">
+
+
+    <section>
+        <h2>说明</h2>
+        <p>最近呢，在家喜欢上了一些台湾的综艺，真的是还开心，
+            无奈，虚拟专用网不是很稳定，加上电脑上的小飞机也不是很稳定，
+            于是就想自己配一瓶酸酸乳，不带添加剂很健康的那种，
+            还好我懂一些Linux，并且最重要的是我会摇瓶子。所以接下来就是一个实验报告。
+            实验时间：19-2-10
+        </p>
+    </section>
+
+
+    <section>
+        <h2>物品准备</h2>
+        <ul>
+            <li>5-10美元，最多无上限（我用的是WeChat $10）</li>
+            <li>联网电脑一台</li>
+            <li>Xshell5软件一个（图标像蜗牛壳，下文就亲切的称之为蜗牛壳）</li>
+            <li>最好配备科学上网环境（非必须）</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>实验步骤</h2>
+        <section>
+            <h3>购买VPS服务器（实验预处理部分）</h3>
+            <p>首选vultr，按小时计费，能够随时开通和删除服务器，新服务器即是新ip。
+                官方网站-->
+                <a href="https://www.vultr.com/">SSD VPS Servers, Cloud Servers and Cloud Hosting by Vultr - Vultr.com</a></p>
+            <p>注册并邮件激活账号，充值后即可购买服务器。
+                充值方式可以是支付宝或paypal或WetChat。
+                使用<a href="https://www.paypal.com">paypal</a>
+                有银行卡（包括信用卡）即可。
+                （paypal是国际知名的第三方支付服务商，注册一下账号，绑定银行卡即可购买国外商品）。
+                推荐WeChat或支付宝，因为可以节省实验时间。
+            </p>
+            <p>选择服务器，这里就是考验财力的地方啦，一般而言 $10完全够一个人用，可根据自己的要求选择。
+                <img src="imgs/chooseserver.png" alt="选择服务器"">
+                点击如图所示的+号开始选择服务器
+                对前三个
+                Server Location（服务器地址）：US（就我而言，综艺节目在US不会有版权问题）
+                Server Type（服务器系统）：CentOS6（尽量不要选Win）
+                Server Size（服务器大小）：40GB（小一点也没有关系）
+                分别进行选择后，没有特殊要求就可以Deploy Now了。
+            </p>
+            <img src="
+                    imgs/buyserver.png" alt="buyserver">
+                <p>购买成功后即可点击如图按钮查看服务器相关参数（ip，密码）</p>
+
+        </section>
+
+        <section>
+            <h3>部署服务器</h3>
+            <p>安装Xshell5 即蜗牛软件，安装完成后
+                在 文件-->新建 对话框填写主机（即购买的VPS服务器的ip地址）。
+                确定后输入登陆的用户名 root 确定后填写服务器密码。
+                静置一段时间当输出[root@vultr ~]# 时表明，服务器连接成功。
+                之后就可以复制粘贴代码部署了。
+
+            </p>
+            <code>
+                yum -y install wget
+            </code>
+            <code>
+                wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+            </code>
+
+            <p>以上步骤完成后根据提示进行操作设置端口，密码等，基本上就可以使用了。</p>
+
+            <p>如果之后想修改账号信息，直接输入快捷管理命令，进入管理界面</p>
+            <code>bash ssr.sh</code>
+            <img src="imgs/managessr.png" alt="managessr">
+
+        </section>
+
+        <section>
+            <h3>加速</h3>
+            <p>首先更换内核</p>
+            <code>yum -y install wget</code>
+
+            <code>wget --no-check-certificate https://blog.asuhu.com/sh/ruisu.sh && bash ruisu.sh</code>
+            <p>第二步，一键安装锐速</p>
+
+
+            <code>wget -N --no-check-certificate
+                https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh && bash
+                serverspeeder-all.sh</code>
+
+
+        </section>
+
+        <section>
+            <p>Hello World!!!</p>
+        </section>
+
+
+
+</body>
+
+</html>

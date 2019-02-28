@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Packet Capture抓包</title>
+    <style>
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Packet Capture抓包</h1>
+
+    <p>下载了一个app，妖狐app
+        想下载app里的视频，
+        1，本以为会有缓存，急忙忙到文件管理系统查找，结果null，
+        no-cache，</p>
+
+    <p>2，本来想通过分享按钮拿到视频的链接，然后放到浏览器里去缓存，
+        结果发现分享的链接并不是视频文件的url，而是app的下载地址，em，不知是开发者故意，
+        还是没有能力做出来。</p>
+
+    <p>
+        3，于是试了抓包，数据源立马找到，请求方式为GET，视频格式竟然为mp4，不是m3u8，
+        真是美滋滋呀，
+        就是urlid部分不知是如何拼接的。
+        不能交智商税
+    </p>
+
+
+    <p>Packet Capture
+        设置锁屏密码，不然要存储凭证密码
+        最近遇到了两个应用SSL证书绑定加密，这群人太精拉
+
+        发现了一个网站url没有加密的直接d209.mp4，这样基本拿到的一部分资源，这要写个爬虫，
+        网站估计就被扒了，措施有绊ip。</p>
+
+
+    <a href="https://blog.netspi.com/four-ways-bypass-android-ssl-verification-certificate-pinning/">
+        four-ways-bypass-android-ssl-verification-certificate-pinning
+    </a>
+</body>
+
+</html>

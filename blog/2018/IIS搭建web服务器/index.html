@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IIS搭建web服务器</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <h1>IIS搭建web服务器</h1>
+    <h2>前言</h2>
+    <p>暑假在家里没网很难受，而如何在各终端间（安卓手机和win7电脑）传文件成了一个令人头疼的事，
+        特别是被一栋限速在50-120k之间时，它奶奶的，玩不过移动呀。</p>
+    <p>镇魔办呢
+        想办法呗，
+        现在的状况，解决方案有蓝牙传输（笔记本E42，没有蓝牙功能），ISS（以前玩过，但没有深究），软件（以前有个叫闪传的挺不错，后来，嗯，嗯。。）
+        那就ISS搞起来
+    </p>
+
+    <h2>首先什么是IIS</h2>
+    <ul>
+        <li>Internet Information Services</li>
+        <li>互联网信息服务</li>
+        <li>Web服务器、FTP服务器、NNTP服务器和SMTP服务器，分别用于网页浏览、文件传输、新闻服务和邮件发送</li>
+        <li>安全性受到诟病</li>
+    </ul>
+
+    <h2>如何用开启服务</h2>
+    <ul>
+        <li>WIN+E打开文件管理器</li>
+        <li>单击“打开控制面板”选择“程序”，进入“程序”显示页面后，找到“程序和功能”一栏，点击“打开或关闭Windows功能”</li>
+        <li>进入到“打开或关闭Windows功能”页面后，找到”Internet信息服务“一栏，可以看到其前面的勾未勾上。
+                点击”Internet信息服务“前面的”+“将其自目录全部展开，分别将FTP、服务器、web管理工具、万维网服务目录下的所有选项进行勾选
+        </li>
+        <li>最后点击”确定“即可</li>
+    </ul>
+
+    <h2>如何用</h2>
+    <ul>
+        <li>Win+R输入"cmd",开启命令行</li>
+        <li>输入"ipconfig"查询本机IP192.168.43.112</li>
+        <li>回到"控制面板"，单击“系统和安全”，单击下方“管理工具”，双击“Internet信息服务（IIS）管理器”</li>
+        <li>展开左侧找到“网站”，右键“添加网站”，输入王战名称，物理路径单击确定即可</li>
+        <li>在同一WiFi内，在手机浏览器输入第一步查到的IP，即可访问电脑文件</li>
+    </ul>
+
+    <h2>一些要点</h2>
+    <ul>
+        <li>文件的权限打开</li>
+        <li>mime类型</li>
+        <li>有pdf
+                有flac格式的音乐，毫无意外的，会返回404
+                添加到里面</li>
+        <li>aoa的mv可以播放啦
+                美滋滋。<img src="img/xiaojiejie.png" alt="aoa小姐姐"></li>
+    </ul>  
+    <img src="img/403.png" alt="403">
+    <img src="img/404.png" alt="404">
+    <img src="img/addMIME.png" alt="addMIME">
+    <img src="img/bingo.png" alt="bingo">
+    <img src="img/MIME.png" alt="MIME">
+    <img src="img/view.png" alt="view">
+     
+</body>
+</html>

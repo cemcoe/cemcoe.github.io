@@ -1,0 +1,78 @@
+﻿接触前端也有一段时间了，回头看
+总得来说前端无非就是HTML CSS JS这三儿货
+
+其中HTML主要负责文档的结构部分，类似于碳骨架之于有机物的作用
+C骨架
+
+由以上碳骨架基本上可以确定有机物的结构了
+
+而CSS在文档则担当修饰强化的作用，经过CSS美化过的有机物大概就可以变成这样
+球棍模型
+
+为了遵循结构样式和行为相分离的原则，一般将内容放在HTML中，仅仅在CSS中保留少量的内容信息，以免在CSS失效时不影响内容的呈现。
+
+在前端三剑客中，JS承担着用户交互的职责（CSS可完成少量简单的交互任务）是现代网页不可或缺的玩意儿。
+把它bind（绑定）到有机化学上是这样的
+
+首先找到C原子，而后对其进行诸如取代，加成，消去等操作，对应化学反应
+
+在JS术语中有getElementById,getElementsByTag,getElementsByClass,相对应的getAttribute,setAttribute
+
+var top_ele = document.getElementsById('top');
+top_ele.getAttribute('卤代烃');
+top_ele.setAttribute('卤代烃', 'Br');
+
+大意为找到上方的C元素（有点不大准确），试着读取卤代烃元素，把卤代烃元素改变为Br
+
+试着增添一个C元素节点
+
+var new_c = document.createElement('new_c');
+var right_c = document.getElementsById('right');
+right_c.appendChild(new_c);
+
+var 卤素 = document.createTextNode('Cl', 'Br', 'H');
+new_c.appendChild(卤素)
+
+大意为在原先碳骨架最右端的C原子上添一个碳原子，并将取代基定位Cl Br H
+
+经过上面的一番折腾，这个有机物变成了这个模样。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

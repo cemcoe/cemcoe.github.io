@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgb(245, 242, 242);
+  font-size: 14px;
+  color: rgb(196, 196, 196);
+}
+.date {
+  color: rgba(75, 67, 67, .3);
+}
+img {
+  width: 100%;
+}
+article {
+  line-height: 23px;
+  color: #0e0d0d;
+  margin: 0 6px;
+}
+article a {
+  text-decoration: none;
+  color: #f40;
+  border-radius: 6px;
+  padding: 3px;
+}
+
+article p {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  line-height: 22px;
+}
+
+
+h1 {
+  margin: 12px;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+}
+h2 {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: rgb(18, 18, 22);
+  text-shadow: 1px 1px 1px rgb(241, 7, 7);
+  text-decoration: underline;
+  /* background-color: rgb(194, 185, 185);
+  padding: 3px 3px 3px 6px; */
+}
+
+ul {
+  padding-left: 16px;
+}
+
+.del {
+  text-decoration: line-through;
+}
+
+.music {
+  position: fixed;
+  top: 50%;
+  opacity: 0.7;
+
+}
+
+.quote {
+  width: 90%;
+  background-color: #6E6E6E;
+  margin: 12px auto;
+  color: #FFFF00;
+  text-shadow: 5px 5px 5px #000;
+  padding: 12px;
+  border-radius: 12px;
+  -moz-box-shadow:2px 2px 5px #333333; 
+  -webkit-box-shadow:2px 2px 5px #333333; 
+  box-shadow:2px 2px 5px #333333;
+}
+
+audio {
+  opacity: 0.5;
+  margin: 8px 8px;
+}
+
+
+.f {
+  position: fixed;
+  z-index: 2;
+  width: 80%; 
+  height: 36px;
+  line-height: 36px;
+  top: 66%;
+ 
+}
+
+.try p {
+  text-shadow: -2px 2px 2px #f40;
+  font-weight: 100;
+}
+
+.go_up {
+  width: 50px;
+  height: 50px;
+  background-color: #D8D8D8;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  -moz-box-shadow:2px 2px 5px #333333; 
+  -webkit-box-shadow:2px 2px 5px #333333; 
+  box-shadow:2px 2px 5px #333333;
+}
+
+
+ footer {
+  height: 36px;
+  line-height: 36px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  background-color: #FFBF00;
+  
+}
+
+/*流光效果*/
+footer p {
+  background-image: 
+        -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+        -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+        -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+        -webkit-background-size: 200% 100%; 
+        -webkit-animation: masked-animation 4s linear infinite;
+    }
+
+@keyframes masked-animation {
+      0% {
+          background-position: 0  0;
+      }
+      100% {
+          background-position: -100%  0;
+      }
+  }
+

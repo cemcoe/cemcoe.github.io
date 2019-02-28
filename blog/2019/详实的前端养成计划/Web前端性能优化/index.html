@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web前端性能优化</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #444;
+            font-size: 62.5%;
+            font: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei", "Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 12px;
+        }
+
+        section {
+            padding-left: 2px;
+            padding-bottom: 12px;
+
+            border-bottom: 1px solid #444;
+        }
+
+
+
+        li::before {
+            display: inline-block;
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: #000;
+            margin-right: 4px;
+        }
+
+        p {
+            padding: 4px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Web前端性能优化</h1>
+
+    <section>
+        <h2>一些准则</h2>
+        <ul>
+            <li>标签名全部小写</li>
+            <li>属性加引号</li>
+            <li>样式行为不要夹杂在标签中</li>
+            <li>增加代码可读性—注释</li>
+            <li>提高重用性—公共组件和私有组件的维护</li>
+            <li>冗余和精简的矛盾—选择集中还是选择分散</li>
+            <li>结构，样式和行为相分离-->不要把HTML,CSS,JS写到一个文件里</li>
+        </ul>
+    </section>
+
+
+
+    <section>
+        <h2>前端性能优化点</h2>
+        <ul>
+            <li>构建层面</li>
+            <li>浏览器渲染层面</li>
+            <li>服务器层面</li>
+            <li>网络层面</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>图片性能优化</h2>
+        <p>图片主要格式：
+            a. png8 2^8=256色 支持透明8bit定义一个颜色
+            b. png24 2^24色 不支持透明
+            c. png32 2^24色 支持透明
+        </p>
+        <p>应用场景：
+            jpg有损压缩，不支持透明，小；
+            png支持透明，兼容性好；
+            webp压缩程度更好，在ios webview有兼容问题；
+            svg矢量图，代码内核，相对较小，适用于简单图形https://www.w3.org/Graphics/SVG/
+
+
+        </p>
+        <p>压缩方案：
+
+            - png转webp；
+            - Image inline 将图片内嵌到html中小于8kb时；
+            - 雪碧图 减少HTTP请求数量；
+            - 使用iconfont解决icon问题；
+            - https://tinypng.com/
+
+
+        </p>
+    </section>
+
+
+    <section>
+        <h2>回流和重绘</h2>
+        <p>回流（reflow）
+            - 当render tree中一部分因为元素的布局，隐藏改变而需要重建
+            - 页面布局和几何属性改变触发</p>
+        <p>重绘
+            当render tree中一些元素需要更新属性，而属性仅仅影响外观，风格，
+            而不影响布局。
+
+            回流-》重绘（反之，不成立）</p>
+        <p>触发页面布局属性
+            - 盒子模型width height
+            - 定位浮动top bottom
+            - 文字结构text-align
+
+            仅仅触发重绘
+            - color
+            - border-style
+
+            缩小回流和重绘的范围（图层）
+
+            translate 替代 top
+            opcity 替代
+        </p>
+    </section>
+
+    <section>
+        <h2>浏览器存储</h2>
+        <p>- cookie--> 大小4kb，过期时间expire，httponly
+            HTTP无状态，维护客户端状态，辨别用户
+            - LocalStorage大小5mb，仅仅在客户端使用
+            - sessionstorage会话级别浏览器存储，用于表单信息维护
+            - indexDB为应用创建离线版
+            - pwa Progressive Web Apps
+            - Service Workers lighthouse插件检查pwa
+            chrome://serviceworker-internals/
+            chrome://inspect/#service-workers/</p>
+    </section>
+
+    <section>
+        <h2>缓存</h2>
+        <p>cache-control last-modified etag</p>
+    </section>
+</body>
+
+</html>

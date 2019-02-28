@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .user-img-bgc {
+        border: 1px solid #000;
+        width: 300px;
+        height: 300px;
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        border-radius: 50%;
+        margin: 120px auto;
+        animation: demo 2.4s;
+        /* 播放次数 */
+        animation-iteration-count: infinite;
+        /*是否反着播放默认normal*/
+        animation-direction: alternate;
+        /* cubic-bezier(<number>, <number>, <number>, <number>)：
+特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内 */
+        animation-timing-function: ease;
+
+    }
+
+    @keyframes demo {
+        0% {
+            padding: 0;
+        }
+
+        100% {
+            padding: 60px;
+
+        }
+    }
+
+    .user-img-bgc img {
+        width: 100px;
+        height: 100px;
+        margin: 100px;
+        border-radius: 50%;
+
+    }
+</style>
+
+<body>
+    <div class="user-img-bgc">
+        <img src="user.jpg" alt="">
+    </div>
+</body>
+
+</html>

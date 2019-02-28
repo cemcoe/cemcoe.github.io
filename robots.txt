@@ -1,0 +1,6 @@
+User-agent: baiduspider
+Disallow: /
+
+User-agent: *
+Disallow: /demo/
+Disallow: /admin/

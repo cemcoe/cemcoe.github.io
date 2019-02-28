@@ -1,0 +1,67 @@
+body {
+    height: 12000px;
+}
+
+
+h1, h2 {
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(10, 10, 10); 
+}
+
+h2::before, h2::after {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: rgb(76, 6, 240);
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgb(165, 154, 154);
+    vertical-align: middle;
+}
+h2::before {
+    margin-right: 6px; 
+}
+h2::after {
+    margin-left: 6px;
+}
+
+
+
+
+article {
+    /* border: 1px solid #000; */
+    padding: 4px;
+}
+
+time {
+    /* border: 1px solid #000; */
+    display: block;
+    font-size: 12px;
+    padding-right: 12px;
+    text-align: right;
+    color: rgba(10, 10, 10, .5);
+    margin-bottom: 30px;
+}
+p {
+    margin: 6px;
+}
+
+.demos {
+    /* background-color: #000;
+    color: rgb(52, 235, 16); */
+    border: 1px solid rgb(247, 4, 4);
+}
+.demos-name {
+    color: rgb(113, 9, 250);
+    outline:#ffae00 dotted thick;/*轮廓*/
+}
