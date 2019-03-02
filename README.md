@@ -12,4 +12,5 @@
 - static 静态文件，表情包
 
 # 一些约定
-- max-width: 600px;
+- $max-width = 600px;
+
