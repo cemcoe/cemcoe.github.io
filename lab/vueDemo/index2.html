@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click = showMe($event)>click me!!!</button>
+        <a v-on:click=showMe href="https://chemcode.tk">嗲我带你走</a>
+        <a v-on:click.prevent=showMe href="https://chemcode.tk">嗲我啦啦啦</a>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                showMe: function(e) {
+                    console.log(e)
+                    alert('show soooo')
+                }
+            }
+        })
+    </script>    
+</body>
+</html>

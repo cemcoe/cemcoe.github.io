@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-on:keyup.enter.space='keyup'>
+        <input type="text" v-on:keyup.shift='shift'>
+        <button v-on:click.shift='shift'>shift</button>
+        <button v-on:click.meta='shift'>win</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                keyup: function () {
+                    alert('you press enter');
+
+                },
+                shift: function () {
+                    alert('shift');
+                }
+
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

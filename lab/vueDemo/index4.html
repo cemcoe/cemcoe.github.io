@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input v-on:keyup = 'changeName' type="text">
+        output: {{ name }}
+
+        <input v-on:keyup.enter.space = 'name = $event.target.value' type="text">
+        output: {{ name }}
+
+        <form v-on:submit.prevent action="">
+            <input type="submit">
+        </form>
+
+
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: 'hello',
+            },
+            methods: {
+                changeName: function (event) {
+                    this.name = event.target.value;
+
+                  }
+            }
+            
+        })
+
+        
+    </script>
+</body>
+</html>
