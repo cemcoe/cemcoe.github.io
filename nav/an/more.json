@@ -1,0 +1,27 @@
+{
+    "search": {
+        "Google": {
+            "url": "https://google.com",
+            "name": "Google",
+            "descrption": "a google search engine"
+        }
+    },
+    "sitesNav": {
+        "ilxdh": {
+            "url": "http://ilxdh.com/",
+            "name": "龙轩导航",
+            "descrption": "一个导航网站" 
+        },
+        "xsldh": {
+            "url": "http://hao.xsldh.com/",
+            "name": "小森林导航",
+            "descrption": "一个导航网站"
+        },
+        "erxu": {
+            "url": "https://erxu.wang/index.php/Index/dh.html",
+            "name": "二蓿导航",
+            "descrption": "一个导航网站"
+        }
+    }
+    
+}
