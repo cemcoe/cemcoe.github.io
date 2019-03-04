@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>my list</title>
 </head>
 <style>
@@ -49,20 +50,57 @@
         </ul>
     </section>
 
-    <section id="fm">
-        <h2>电影file</h2>
+    <section id="film">
+        <h2>电影film</h2>
         <ul>
-            <li class="niu">大人物(本以为是个喜剧片，结果片子好沉重)</li>
-            <li>飞驰人生 ^2019^ *****</li>
-            <li>互联网之子*****</li>
-            <li>纽约之王（很早的一部片）*****</li>
-            <li>硅谷</li>
-            <li>我是谁：没有绝对安全的系统*****</li>
-            <li>网络迷踪</li>
-            <li>疯狂外星人 ^2019^ ++++</li>
+            <li v-for="(film, index) in films">{{index}} {{ film.name }} {{ film.goal }}</li>
         </ul>
 
     </section>
+
+    <script>
+        new Vue({
+            el: '#film',
+            data: {
+                films: [
+                    {
+                        name: '大人物(本以为是个喜剧片，结果片子好沉重)',
+                        goal: 6
+                    },
+                    {
+                        name: '飞驰人生 ^2019^ *****',
+                        goal: 6
+                    },
+                    {
+                        name: '互联网之子*****',
+                        goal: 6
+                    },
+                    {
+                        name: '纽约之王（很早的一部片）*****',
+                        goal: 6
+                    },
+                    {
+                        name: '硅谷',
+                        goal: 6
+                    },
+                    {
+                        name: '我是谁：没有绝对安全的系统*****',
+                        goal: 6
+                    },
+                    {
+                        name: '网络迷踪',
+                        goal: 6
+                    },
+                    {
+                        name: '疯狂外星人 ^2019^ ++++',
+                        goal: 6
+                    },
+                    
+                    
+                ]
+            }
+        })
+    </script>
 
     <section>
         <h2>动漫</h2>
