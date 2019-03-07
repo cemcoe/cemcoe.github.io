@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>这是一个JS总结</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body onkeyup="whichButton(event)"
+onmousedown="showCoords(event)"
+>
+    <header>
+        <section class="article-nav">
+            <button>菜单</button>
+            <!-- header这里应该有一个菜单 -->
+            <ul class="article-list">
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+            </ul>
+
+        </section>
+
+        <style>
+            .article-list {
+                position: absolute;
+                top: -600px;
+                background-color: #000;
+
+            }
+
+            .article-list a {
+                color: #fff;
+            }
+        </style>
+        <script>
+            var articleNav = document.getElementsByClassName("article-nav")[0];
+            console.log(articleNav);
+            var articleButton = articleNav.getElementsByTagName("button")[0];
+            console.log(articleButton);
+            var articleList = articleNav.getElementsByClassName("article-list")[0];
+            console.log(articleList);
+
+            
+
+            articleButton.onclick = function () {
+                console.log("articleButton 被点击");
+                articleButton.innerHTML = "我被点击了，我去帮你把p-list叫来";
+                console.log(articleButton.firstChild.nodeValue);
+                articleList.style.top = "30px";
+
+                
+            }
+
+            /*向外输出文档信息*/
+            function pInfo()  {
+                var pTitle = document.title;
+                console.log("这篇文档的title是：" + pTitle);
+                var pReferrer = document.referrer;
+                console.log("这篇文档的referrer,本地直接打开无显示是" + pReferrer);
+                var pDomain = document.domain;
+                console.log("域名：" +  pDomain);
+
+            }
+            pInfo();
+            /*向外输出文档信息*/
+
+            /*按键码*/
+            function whichButton (event) {
+                console.log("按键获得键码");
+                console.log(event.keyCode);
+            }
+
+            /*让我们看看坐标*/
+            function showCoords (event) {
+                x = event.clientX;
+                y = event.clientY;
+                console.log("X坐标： " + x + "Y坐标：" + y);
+            }
+
+
+
+
+
+
+        </script>
+
+
+    </header>
+    <article>
+        这是文章的主体
+
+    </article>
+    <footer>
+        <a href="#">明显，这里是footer快快乐乐摇瓶子！！！</a>
+
+    </footer>
+
+
+
+
+
+</body>
+
+</html>
