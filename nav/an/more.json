@@ -10,6 +10,18 @@
             "name": "爱搜资源",
             "descrption": "一个百度网盘搜索工具，于2019-3-5闭站",
             "status": "0"
+        },
+        
+        "tianyancha": {
+            "url": "https://www.tianyancha.com/",
+            "name": "天眼查",
+            "descrption": "企业查询"
+        },
+        
+        "qichacha": {
+            "url": "https://www.qichacha.com/",
+            "name": "企查查",
+            "descrption": "企业查询"
         }
     },
     "sitesNav": {
