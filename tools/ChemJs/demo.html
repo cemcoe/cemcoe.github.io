@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DEMO</title>
+</head>
+
+<body>
+
+    <div id="demo">
+
+    </div>
+    <style>
+        #demo {
+            width: 10000px;
+            height: 1000px;
+            background-color: rgb(194, 211, 214);
+        }
+    </style>
+    <script>
+
+
+        /* 兼容，求滚动条滚动距离 */
+
+        function getScrollOffset() {
+            // 标准
+            if (window.pageXOffset) {
+                return {
+                    Cx: window.pageXOffset,
+                    Cy: window.pageYOffset
+                }
+
+            } else {
+                return {
+                    Cx: document.body.scrollLeft + document.documentElement.scrollLeft,
+                    Cy: document.body.scrollTop + document.documentElement.scrollTop
+
+                }
+
+            }
+        }
+
+        /*--------------------------------*/
+        /* 可视区窗口状态 */
+        function getViewportOffset() {
+            // IE9以上
+            if (window.innerWidth) {
+                return {
+                    Cw: window.innerWidth,
+                    Ch: window.innerHeight
+
+                }
+            } else {
+                // document.compatMode === BackCompat 向后兼容
+                // document.compatMode === CSS1Compat 标准模式
+                if (document.compatMode === "BackCompat") {
+                    return {
+                        Cw: document.body.clientWidth,
+                        Ch: document.body.clientHeight
+                    }
+
+                } else {
+                    return {
+                        Cw: document.documentElement.clientWidth,
+                        Ch: document.documentElement.clientHeight
+                    }
+
+                }
+
+
+            }
+
+        }
+
+        
+
+
+    </script>
+</body>
+
+</html>
