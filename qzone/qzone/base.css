@@ -86,11 +86,11 @@ body {
     
 }
 .meau li:nth-last-of-type(2n+1) {
-    background-color: rgb(248, 241, 241);
+    background-color: rgb(250, 249, 249);
     
 }
 .meau li:nth-last-of-type(2n+1) a {
-    color: rgb(45, 3, 230);
+    color: rgb(10, 10, 10);
 }
 .meau ul li a {
     /* margin-top: 15px; */
