@@ -96,8 +96,9 @@ body {
 }
 
 .cool ul {
-  height:48px;
-  background-color: rgba(239, 236, 247, 0.6);
+  height:42px;
+  background-color: rgba(242, 241, 247, 0.6);
+  margin-bottom: 12px;
 }
 .cool ul li {
   border-radius: 12px;
@@ -121,13 +122,11 @@ body {
   
 }
 .cool a {
-  border-bottom: 1px solid rgb(214, 202, 202);
-  border-top: 1px solid rgb(214, 202, 202);
+  /* border-bottom: 1px solid rgb(214, 202, 202);
+  border-top: 1px solid rgb(214, 202, 202); */
   /* box-shadow: inset 1px 1px 4px; */
   border-radius: 40px;
-  
-  background-color: rgb(213, 221, 211);
-
+  background-color: rgb(255, 255, 255);
 }
 
 
@@ -251,9 +250,9 @@ footer a {
   
 }
 .cool .banned a {
-  border-bottom: 1px solid rgb(250, 6, 6);
-  border-top: 1px solid rgb(250, 6, 6);
-  background-color: #000;
+  /* border-bottom: 1px solid rgb(250, 6, 6);
+  border-top: 1px solid rgb(250, 6, 6); */
+  background-color: rgb(240, 230, 230);
 }
 
 /* 我自己的url(划掉，就是为了区分) */
