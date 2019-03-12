@@ -71,7 +71,7 @@ ul {
 ul li {
     /* display: inline-block; */
 
-    width: 180px;
+    width: 160px;
     /* height: 300px; */
     background-color: rgb(255, 255, 255);
     
@@ -86,7 +86,7 @@ ul li {
     
 }
 .item-img {
-    width: 160px;
+    width: 140px;
     padding: 10px;
     
     /* margin-bottom: 10px; */
