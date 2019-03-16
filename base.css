@@ -1,250 +1,249 @@
- /*
-        @color-black-s = rgb(3, 3, 3)
-        @color-black-ss = rgba(3, 3, 3, .6)
-
-        @bolor-background-color = #fff;
-        */
-        
-
-        * {
-            margin: 0;
-            padding: 0;
-            /* position: fixed; */
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        body {
-            background-color: rgb(230, 230, 230);
-            /* animation: changeBgc 4s forwards; */
-            /* background-color: rgb(129, 12, 260); */
-        }
-
-        .wrapper {
-            max-width: 300px;
-            /* border: 1px solid rgb(10, 10, 10); */
-            margin: 30px auto 0;
-            padding: 12px;
-            /* height: 120px; */
-            text-align: center;
-            background-color: rgb(252, 252, 252);
-            /* box-shadow: 0 0 4px rgb(230, 230, 230); */
-            border-radius: 6px;
-            /* animation: changeBgc 4s forwards; */
-            position: relative;
-        }
-
-        .avatar {
-            display: block;
-            margin: 30px auto 0;
-            width: 66px;
-            height: 66px;
-        }
-
-        .avatar img {
-            width: 100%;
-            border-radius: 50%;
-            /* box-shadow: 3px 3px 1px rgb(230, 230, 230); */
+/*
+@color-black-s = rgb(3, 3, 3)
+@color-black-ss = rgba(3, 3, 3, .6)
+@bolor-background-color = #fff;
+*/
 
 
-        }
+* {
+margin: 0;
+padding: 0;
+/* position: fixed; */
+}
 
-        .avatar-name {
-            margin: 12px;
-            text-shadow: 1px 3px 3px rgb(34, 32, 32);
-            animation: changeNameShadow 4s forwards;
-            
+a {
+text-decoration: none;
+}
 
-        }
-        @keyframes changeNameShadow {
-            0% {
-                text-shadow: 0px 0px 3px rgb(233, 223, 223);
+li {
+list-style: none;
+}
 
-            }
-            100% {
-                text-shadow: 0px 6px 3px rgb(196, 255, 3);
-            }
-                
-        }
+body {
+background-color: rgb(230, 230, 230);
+/* animation: changeBgc 4s forwards; */
+/* background-color: rgb(129, 12, 260); */
+}
 
-        .avatar-idea {
-            color: rgba(3, 3, 3, .6);
-            margin-bottom: 4px;
-            font-size: 14px;
-        }
+.wrapper {
+max-width: 300px;
+/* border: 1px solid rgb(10, 10, 10); */
+margin: 30px auto 0;
+padding: 12px;
+/* height: 120px; */
+text-align: center;
+background-color: rgb(252, 252, 252);
+/* box-shadow: 0 0 4px rgb(230, 230, 230); */
+border-radius: 6px;
+/* animation: changeBgc 4s forwards; */
+position: relative;
+}
 
-        .items {
-            width: 210px;
-            margin: 30px auto;
-            /* border: 1px solid #000; */
-            height: 70px;
-            /* background-color: rgb(129, 12, 260); */
-            /* animation: changeBgc 4s forwards; */
-            /* overflow: hidden; */
-        }
+.avatar {
+display: block;
+margin: 30px auto 0;
+width: 66px;
+height: 66px;
+}
 
-        /* @keyframes changeBgc {
-            0% {
-                background-color: rgb(129, 12, 260);
-
-            }
-
-            100% {
-                background-color: rgb(255, 255, 255);
-
-            }
-        } */
-
-        li {
-            float: left;
-            /* display: inline-block; */
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            line-height: 60px;
-            margin: 5px;
-            
-            
-            animation: changeItemBgc .06s forwards;
-        }
-
-        /* @keyframes changeItemBgc {
-            0% {
-                background-color: rgb(255, 255, 255);
-
-            }
-
-            100% {
-                background-color: rgb(129, 12, 260);
+.avatar img {
+width: 100%;
+border-radius: 50%;
+/* box-shadow: 3px 3px 1px rgb(230, 230, 230); */
 
 
-            }
-        } */
+}
 
-        li a {
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-            /* animation: changeCol .06s forwards; */
-            border-radius: 50%;
-            background-color: rgb(230, 230, 230);
-            background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
-            color: rgb(0, 0, 0);
-           
-        }
-
-        /* @keyframes changeCol {
-            0% {}
-
-            100% {
-                color: rgb(255, 255, 255);
-            }
-        } */
-
-        li a img {
-            width: 100%;
-            height: 100%;
-        }
-
-        li:hover {
-            opacity: .7;
-            margin-top: -4px;
-            /* width: 100%; */
-        }
+.avatar-name {
+margin: 12px;
+text-shadow: 1px 3px 3px rgb(34, 32, 32);
+animation: changeNameShadow 4s forwards;
 
 
-        .hide-item {
-            background-color: #fff;
-            animation: hideItem 4s forwards;
-            font-size: 16px;
-        }
-        @keyframes hideItem {
-            0% {
-                /* margin-top: 0px; */
-                color: rgb(255, 255, 255);
+}
+@keyframes changeNameShadow {
+0% {
+    text-shadow: 0px 0px 3px rgb(233, 223, 223);
 
-            }
-            
-            100% {
-                /* margin-top: 12px; */
-                /* transform: rotate(36000deg); */
-                color: rgb(0, 0, 0);
-                
-            }
+}
+100% {
+    text-shadow: 0px 6px 3px rgb(196, 255, 3);
+}
+    
+}
 
-        }
-        footer {
-            position: absolute;
-            bottom: 12px;
-            /* display: block; */
-            width: 100%;
-            text-align: center;
-            color: rgb(129, 12, 260);
-            /* padding: 12px; */
+.avatar-idea {
+color: rgba(3, 3, 3, .6);
+margin-bottom: 4px;
+font-size: 14px;
+}
 
-        }
+.items {
+width: 210px;
+margin: 30px auto;
+/* border: 1px solid #000; */
+height: 70px;
+/* background-color: rgb(129, 12, 260); */
+/* animation: changeBgc 4s forwards; */
+/* overflow: hidden; */
+}
 
-        footer a {
-            color: rgba(54, 52, 52, .3);
-            font-size: 12px;
+/* @keyframes changeBgc {
+0% {
+    background-color: rgb(129, 12, 260);
 
-        }
+}
+
+100% {
+    background-color: rgb(255, 255, 255);
+
+}
+} */
+
+li {
+float: left;
+/* display: inline-block; */
+width: 60px;
+height: 60px;
+border-radius: 50%;
+line-height: 60px;
+margin: 5px;
 
 
-        .fixed-item {
-            position: absolute;
-            right: 30px;
-            top: 110px;
-            
-        }
-        .fixed-item img {
-            width: 62px;
-            animation:  yaoPingZhi-s 4s forwards;
-        }
+animation: changeItemBgc .06s forwards;
+}
 
-        /*选择摇瓶子的速度*/
-        @keyframes yaoPingZhi-s {
-            0% {
+/* @keyframes changeItemBgc {
+0% {
+    background-color: rgb(255, 255, 255);
 
-            }
-            100% {
-                transform: rotate(-60deg);
-            }
+}
 
-        }
-        /*left an right*/
-        @keyframes yaoPingZhi-ss {
-            0% {
-                transform: rotate(0deg);
+100% {
+    background-color: rgb(129, 12, 260);
 
-            }
-            50% {
-                transform: rotate(-60deg);
-            }
-            100% {
-                transform: rotate(60deg);
 
-            }
+}
+} */
 
-        }
-        /*360deg*/
-        @keyframes yaoPingZhi-sss {
-            0% {
-                transform: rotate(0deg);
+li a {
+display: inline-block;
+width: 100%;
+height: 100%;
+/* animation: changeCol .06s forwards; */
+border-radius: 50%;
+background-color: rgb(230, 230, 230);
+background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+color: rgb(0, 0, 0);
 
-            }
-            /* 50% {
-                transform: rotate(-60deg);
-            } */
-            100% {
-                transform: rotate(36000deg);
+}
 
-            }
+/* @keyframes changeCol {
+0% {}
 
-        }
+100% {
+    color: rgb(255, 255, 255);
+}
+} */
+
+li a img {
+width: 100%;
+height: 100%;
+}
+
+li:hover {
+opacity: .7;
+margin-top: -4px;
+/* width: 100%; */
+}
+
+
+.hide-item {
+background-color: #fff;
+animation: hideItem 4s forwards;
+font-size: 16px;
+}
+@keyframes hideItem {
+0% {
+    /* margin-top: 0px; */
+    color: rgb(255, 255, 255);
+
+}
+
+100% {
+    /* margin-top: 12px; */
+    /* transform: rotate(36000deg); */
+    color: rgb(0, 0, 0);
+    
+}
+
+}
+footer {
+position: absolute;
+bottom: 12px;
+/* display: block; */
+width: 100%;
+text-align: center;
+color: rgb(129, 12, 260);
+/* padding: 12px; */
+
+}
+
+footer a {
+color: rgba(54, 52, 52, .3);
+font-size: 12px;
+
+}
+
+
+.fixed-item {
+position: absolute;
+right: 30px;
+top: 110px;
+
+}
+.fixed-item img {
+width: 62px;
+animation:  yaoPingZhi-s 4s forwards;
+}
+
+/*选择摇瓶子的速度*/
+@keyframes yaoPingZhi-s {
+0% {
+
+}
+100% {
+    transform: rotate(-60deg);
+}
+
+}
+/*left an right*/
+@keyframes yaoPingZhi-ss {
+    0% {
+        transform: rotate(0deg);
+
+    }
+    50% {
+        transform: rotate(-60deg);
+    }
+    100% {
+        transform: rotate(60deg);
+
+    }
+
+}
+/*360deg*/
+@keyframes yaoPingZhi-sss {
+    0% {
+        transform: rotate(0deg);
+
+    }
+    /* 50% {
+        transform: rotate(-60deg);
+    } */
+    100% {
+        transform: rotate(36000deg);
+
+    }
+}
+
