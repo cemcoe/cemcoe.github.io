@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    color: #f40;
+    text-decoration: none;
+}
+
+
+/* 面向移动端 */
+body {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+    /* background-color: #f40; */
+    /* ︿(￣︶￣)︿ */
+    /* overflow: hidden; */
+    padding: 10px;
+}
+article {
+    box-sizing: border-box;
+    /* padding: 4px; */
+}
+
+h1 {
+    font-size: 18px;
+    text-align: center;
+    padding: 8px;
+}
+h2 {
+    font-size: 16px;
+    padding: 12px;
+    padding-left: 0;
+}
+p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 12px;
+    opacity: .8;
+}
+
+.date {
+    text-align: right;
+    font-size: 12px;
+    opacity: .6;
+
+}
+.code-wrapper {
+    padding: 0;
+}
