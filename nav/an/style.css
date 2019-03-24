@@ -14,17 +14,16 @@ li {
 }
 /* reset end*/
 
-
+/* 默认手机 css*/
 /* body begin */
 body {
   background-color: #f0ecec;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
   position: relative;
-  font: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei",
-  "Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
-  /* 小米字体 */
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
 }
+
 
 
 /* loadings begin */
@@ -68,7 +67,7 @@ header {
 header a {
   display: block;
   width: 100%;
-  max-width: 600px;
+  /* max-width: 600px; */
   position: fixed;
   line-height: 36px;
   background-color: rgb(222, 214, 224);
@@ -135,10 +134,11 @@ header a {
   /* float: left;
   width: 25%;
   line-height: 38px; */
-  height: 30px;
+  height: 40px;
   width: 24.5%;
   margin-bottom: 4px;
-  line-height: 30px;
+  line-height: 40px;
+  box-shadow: 1px 1px 1px rgb(77, 5, 247);
   
   
 }
@@ -148,8 +148,8 @@ header a {
   width:100%;
   height:100%;
   /* border-radius: 40px; */
-  background-color: rgb(255, 255, 255);
-  color: rgb(99, 6, 248);
+  background-color: rgb(82, 11, 247);
+  color: rgb(241, 238, 245);
 }
 /* cool end */
 
@@ -228,6 +228,8 @@ footer a {
   font-size: 12px;
   
 }
+
+
 
 
 /* 被绊的网址(划掉，就是为了区分) */

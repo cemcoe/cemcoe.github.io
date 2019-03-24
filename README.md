@@ -11,6 +11,7 @@
 
 # 一些约定
 - $max-width = 600px;
+- font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
 
 
 
