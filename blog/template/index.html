@@ -12,25 +12,71 @@
 
 <body>
     <header>
-        <h1>这里是最大的标题博客模板</h1>
+        <h1>这里是博客模板示范文档</h1>
         <div class="date">date: 2019-03-22</div>
     </header>
+
+    <style>
+        /* 一行内的代码或强调的内容 */
+        .single-span {
+            background-color: rgb(245, 243, 243);
+            color: rgb(0, 0, 0);
+            padding: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+    </style>
     
 
     <article>
+
         <section>
-            <h2>这里是章节模块</h2>
-            <p>首先我要初始化一下</p>
+            <h2>初始化</h2>
+            <ul>
+                <li>1.
+                    <a href="https://github.com/AlloyTeam/Mars/blob/master/solutions/font-family.md">字体</a>
+                    <span class="single-span">
+                        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+                </span></li>
+                
+                <li>2.主要面向移动端设置
+                    <span class="single-span"> max-width：600</span>
+                </li>
+                
+            </ul>
+           
+           
+
+        </section>
+
+        <section>
+            <h2>模块划分</h2>
+            <p>用标签<span class="single-span">section</span>划分文章的模块</p>
+            
+            <p>其次，
+                其次，主要面向移动端设置max-width：600
+                其次，主要面向移动端设置max-width：600
+                其次，主要面向移动端设置max-width：600
+            </p>
+
+        </section>
+
+
+        <section>
+            <h2>特殊标签</h2>
+            <p><span class="single-span">single-span</span></p>
             <p>其次，主要面向移动端设置max-width：600
                 其次，主要面向移动端设置max-width：600
                 其次，主要面向移动端设置max-width：600
                 其次，主要面向移动端设置max-width：600
             </p>
-            <p>
+            
+        </section>
 
-                <a href="https://github.com/AlloyTeam/Mars/blob/master/solutions/font-family.md">字体</a>
+        <section>
+            <h2>特殊资源</h2>
+            <h3>代码</h3>
 
-            </p>
 <div class="code-wrapper">
 <pre><code>var demo = 123;
 function () {
@@ -39,23 +85,26 @@ function () {
 </code></pre>
 </div>
 
-        </section>
+<h3>图片</h3>
+<div class="img-wrapper">
+    <img src="spring.jpg" alt="">
+</div>
+</section>
 
+<style>
+    .img-wrapper {
+        max-width: 600px;
+        background-color: rgb(255, 255, 255);
+        /* box-shadow: 0 3px 3px rgb(24, 23, 23); */
 
-        <section>
-            <h2>这里是章节模块</h2>
-            <p>首先我要初始化一下</p>
-            <p>其次，主要面向移动端设置max-width：600
-                其次，主要面向移动端设置max-width：600
-                其次，主要面向移动端设置max-width：600
-                其次，主要面向移动端设置max-width：600
-            </p>
-            <p>
-
-                <a href="https://github.com/AlloyTeam/Mars/blob/master/solutions/font-family.md">字体</a>
-
-            </p>
-        </section>
+    }
+    .img-wrapper img {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 6px;
+        border: 1px solid #000;
+    }
+</style>
     </article>
 
 </body>

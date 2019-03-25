@@ -4,9 +4,10 @@
 }
 li {
     list-style: none;
+    padding: 4px;
 }
 a {
-    color: #f40;
+    color: rgb(8, 4, 241);
     text-decoration: none;
 }
 
@@ -38,7 +39,7 @@ h2 {
 }
 p {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 22px;
     margin-bottom: 12px;
     opacity: .8;
 }
