@@ -22,7 +22,7 @@
   <meta name="theme-color" content="green">
 </head>
 
-<body>
+<body id="wrapper">
   <header>
     <div class="loadings">
       <img class="loading" src="loading.webp" alt="loadingimg">
@@ -88,30 +88,30 @@
   </section>
 
   <style>
-  
+
   </style>
 
   <!-- HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH -->
   <section class="cool front-end">
     <h2>
-        <a href="https://github.com/foru17/front-end-collect">front-end</a>
+      <a href="https://github.com/foru17/front-end-collect">front-end</a>
     </h2>
     <ul>
       <li class="ben"><a href="https://cssanimation.rocks/">cssanimation</a></li>
       <li class="ben"><a href="https://www.smashingmagazine.com/">smashingmagazine</a></li>
-      
+
       </li>
     </ul>
     <ul>
       <!-- bbs -->
       <li class="ben"><a href="https://coolshell.cn/">coolshell</a></li>
       <li class="ben"><a href="https://coderwall.com/">coderwall</a></li>
-      
+
     </ul>
     <ul>
       <li class="ben"><a href="https://www.developerdrive.com/">developerdrive</a></li>
       <li class="ben"><a href="https://css-tricks.com/">css-tricks</a></li>
-      
+
     </ul>
     <ul>
       <li class="ben"><a href="http://caniuse.com/">caniuse</a></li>
@@ -120,13 +120,13 @@
       <li class="ben"><a href="https://tympanus.net/codrops/">codrops</a></li>
     </ul>
 
-    
+
   </section>
 
-<!-- HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH -->
+  <!-- HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH -->
 
-  
-  
+
+
 
   <section class="go">
     <h2>
@@ -185,7 +185,8 @@
         <a href="https://dribbble.com/">
           <div class="wrapper">
             <div class="link-img">
-              <img src="https://cdn.dribbble.com/assets/dribbble-ball-192-ec064e49e6f63d9a5fa911518781bee0c90688d052a038f8876ef0824f65eaf2.png" alt="">
+              <img src="https://cdn.dribbble.com/assets/dribbble-ball-192-ec064e49e6f63d9a5fa911518781bee0c90688d052a038f8876ef0824f65eaf2.png"
+                alt="">
             </div>
             <div class="wrapper-right">
               <p>Discover the World’s Top Designers & Creative Professionals</p>
@@ -193,11 +194,11 @@
           </div>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <!-- <li><a href="#">test2</a></li>
       <li><a href="#">test3</a></li>
       <li><a href="#">test4</a></li>
@@ -214,12 +215,14 @@
       width: 98%;
       margin: 4px auto;
       box-shadow: 0px 1px 1px #000;
-      
-      
+
+
     }
+
     .wrapper {
       display: flex;
     }
+
     .go li .link-img {
       /* box-sizing: border-box; */
       /* background-color: #f40; */
@@ -227,28 +230,29 @@
       height: 60px;
       /* padding: 4px; */
     }
+
     .link-img img {
       width: 100%;
       height: 100%;
     }
+
     .wrapper-right {
       padding-left: 10px;
       line-height: 60px;
-      
+
     }
-    
   </style>
-  
+
 
 
   <section class="go-where">
-    
-    
-    
-    
+
+
+
+
   </section>
 
-  
+
   <!-- <h2 class="go"> 
     <a href="#">探索</a>
   </h2>
@@ -279,6 +283,29 @@
       <a href="../../static/emoticons/43825.gif">努力尽早地实现财务自由</a>
     </p>
   </footer>
+
+  <div id="onObj">sss</div>
+  
+
+  <script>
+    var myDate = new Date();
+    console.log(myDate);
+    var myHours = myDate.getHours();
+    var wrapper = document.getElementById('wrapper');
+
+
+    // alarmHour 定时
+    // stepSize 步长，目前以时为单位
+    function alarmClock(message, alarmHour, stepSize) {
+      if (myHours > alarmHour && myHours < alarmHour + stepSize) {
+        alert("嘿伙计，现在已经" + myHours +"点喽" + "\n\n" + "BenGo提醒你该" + message + "了");
+        wrapper.style.backgroundColor = "#000";
+        wrapper.style.opacity = .6;
+      }
+    }
+
+    alarmClock("碎觉觉", 21, 3);
+  </script>
 </body>
 
 </html>
