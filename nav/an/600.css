@@ -246,7 +246,7 @@
   
   /* 被绊的网址(划掉，就是为了区分) */
   .banned a {
-    color: rgb(250, 6, 6);
+    color: #000;
     
   }
   .cool .banned a {
@@ -257,7 +257,7 @@
   
   /* 我自己的url(划掉，就是为了区分) */
   .ben a {
-    color: #ae15b8;
+    color: #000;
   }
   
   /* .cool .ben a {
