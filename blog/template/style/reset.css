@@ -44,12 +44,15 @@ p {
     opacity: .8;
 }
 
-.date {
+.article-info {
     text-align: right;
     font-size: 12px;
     opacity: .6;
-
 }
+.article-info .info-reference {
+    text-shadow: 1px 1px 1px #f40;
+}
+
 .code-wrapper {
     padding: 0;
 }
