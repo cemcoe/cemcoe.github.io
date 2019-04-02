@@ -1,28 +1,18 @@
-/*
-@color-black-s = rgb(3, 3, 3)
-@color-black-ss = rgba(3, 3, 3, .6)
-@bolor-background-color = #fff;
-*/
-
-
 * {
-margin: 0;
-padding: 0;
-/* position: fixed; */
+    margin: 0;
+    padding: 0;
 }
 
 a {
-text-decoration: none;
+    text-decoration: none;
 }
 
 li {
-list-style: none;
+    list-style: none;
 }
 
 body {
-background-color: rgb(230, 230, 230);
-/* animation: changeBgc 4s forwards; */
-/* background-color: rgb(129, 12, 260); */
+    background-color: rgb(230, 230, 230);
 }
 
 .wrapper {
@@ -32,16 +22,13 @@ background-color: rgb(230, 230, 230);
     bottom: 0;
     right: 0;
     max-width: 100px;
-/* margin: 30px auto;
-padding: 12px; */
-text-align: center;
-background-color: rgb(252, 252, 252);
-border-radius: 6px;
-/* width: 50%;  */
-  height: 110px; 
-overflow: hidden;
-margin: auto;
-animation: big .4s forwards;
+    text-align: center;
+    background-color: rgb(252, 252, 252);
+    border-radius: 6px;
+    height: 110px; 
+    overflow: hidden;
+    margin: auto;
+    animation: big .4s forwards;
 }
 /* .wrapper:hover {
     max-width: 300px;
@@ -53,30 +40,28 @@ animation: big .4s forwards;
     }
     100% {
         max-width: 300px;
-        height: 600px;
+        height: 460px;
 
     }
 }
 
 .avatar {
-display: block;
-margin: 20px auto 0;
-width: 80px;
-height: 80px;
+    display: block;
+    margin: 10px auto 0;
+    width: 80px;
+    height: 80px;
 }
 
 .avatar img {
-width: 100%;
-border-radius: 10%;
-/* box-shadow: 3px 3px 1px rgb(230, 230, 230); */
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 3px 3px 1px rgb(230, 230, 230);
 }
 
 .avatar-name {
-margin: 12px;
-text-shadow: 1px 3px 3px rgb(34, 32, 32);
-animation: changeNameShadow 4s forwards;
-
-
+    margin: 4px;
+    text-shadow: 1px 3px 3px rgb(34, 32, 32);
+    animation: changeNameShadow 4s forwards;
 }
 @keyframes changeNameShadow {
 0% {
@@ -90,38 +75,38 @@ animation: changeNameShadow 4s forwards;
 }
 
 .avatar-idea {
-color: rgba(3, 3, 3, .6);
-margin-bottom: 4px;
-font-size: 14px;
+    color: rgba(3, 3, 3, .6);
+    margin-bottom: 4px;
+    font-size: 14px;
 }
 
 .items {
-width: 210px;
-margin: 30px auto;
-border: 1px solid rgb(231, 222, 222);
-height: 70px;
-overflow: hidden;
-/* transform: rotate(90deg); */
+    width: 210px;
+    margin: 10px auto;
+    /* border: 1px solid rgb(231, 222, 222); */
+    height: 80px;
+    overflow: hidden;
+    /* transform: rotate(90deg); */
 
-/* background-color: rgb(129, 12, 260); */
+    /* background-color: rgb(129, 12, 260); */
 
-/* overflow: hidden; */
+    /* overflow: hidden; */
 }
 
 
 
 
 li {
-float: left;
-/* display: inline-block; */
-width: 60px;
-height: 60px;
-border-radius: 8px;
-line-height: 60px;
-margin: 5px;
-transform: rotate(30deg);
-margin-top: -30px;
-animation: changeItemBgc 1s forwards;
+    float: left;
+    /* display: inline-block; */
+    width: 60px;
+    height: 70px;
+    /* border-radius: 1px; */
+    line-height: 70px;
+    margin: 5px;
+    transform: rotate(30deg);
+    margin-top: -30px;
+    animation: changeItemBgc 1s forwards;
 }
 li::before {
     content: '';
@@ -148,64 +133,57 @@ li::before {
 }
 
 li a {
-display: inline-block;
-width: 100%;
-height: 100%;
-/* animation: changeCol .06s forwards; */
-border-radius: 8px;
-/* background-color: rgb(196, 255, 3); */
-background-image: linear-gradient(120deg, 
-#cdd3e0 0%, 
-#e7d6d7 100%);
-color: rgb(0, 0, 0);
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    /* animation: changeCol .06s forwards; */
+    border-radius: 1px;
+    /* background-color: rgb(196, 255, 3); */
+    background-image: 
+    linear-gradient(120deg, 
+    #cdd3e0 0%, 
+    #e7d6d7 100%);
+    color: rgb(0, 0, 0);
 
 }
-
-/* @keyframes changeCol {
-0% {}
-
-100% {
-    color: rgb(255, 255, 255);
-}
-} */
 
 
 
 li:hover {
-width: 58px;
-opacity: .6;
+    width: 58px;
+    opacity: .6;
 }
 
 
 .li {
-background-color: #fff;
-animation: hideItem 4s forwards;
-font-size: 16px;
+    background-color: #fff;
+    animation: hideItem 4s forwards;
+    font-size: 16px;
 }
 
 
 footer {
-position: absolute;
-bottom: 12px;
-/* display: block; */
-width: 100%;
-text-align: center;
-color: rgb(129, 12, 260);
-/* padding: 12px; */
+    position: absolute;
+    bottom: 12px;
+    /* display: block; */
+    width: 100%;
+    text-align: center;
+    color: rgb(129, 12, 260);
+    /* padding: 12px; */
 
 }
 
 footer a {
-color: rgba(54, 52, 52, .3);
-font-size: 12px;
+    color: rgba(54, 52, 52, .3);
+    font-size: 12px;
 
 }
 
 
 .fixed-item {
-position: absolute;
-right: 30px;
-top: 110px;
+    position: absolute;
+    right: 30px;
+    top: 80px;
 
 }
 .fixed-item img {
