@@ -37,6 +37,7 @@ h2 a {
 
 /* reset end*/
 
+
 /* 默认手机 css*/
 /* body begin */
 body {
@@ -62,7 +63,6 @@ body {
   animation: loading 2s infinite;
 }
 
-
 @keyframes loading {
   0% {
       opacity: 0.2;
@@ -71,7 +71,6 @@ body {
   50% {
       opacity: 0.8;   
   }
-  
   100% {
       opacity: 0.2;
       z-index: -100;
@@ -89,7 +88,6 @@ header {
 header a {
   display: block;
   width: 100%;
-  /* max-width: 600px; */
   position: fixed;
   line-height: 36px;
   background-color: rgb(222, 214, 224);
@@ -145,18 +143,12 @@ header a {
 }
 
 .cool ul {
-  /* height: 42px;
-  background-color: rgba(242, 241, 247, 0.6);
-  margin-bottom: 6px; */
   display: flex;
   justify-content: space-between;
 
 }
 .cool ul li {
   border-radius: 2px;
-  /* float: left;
-  width: 25%;
-  line-height: 38px; */
   height: 40px;
   width: 24.5%;
   margin-bottom: 4px;
@@ -170,7 +162,6 @@ header a {
   display:inline-block;
   width:100%;
   height:100%;
-  /* border-radius: 40px; */
   background-color: rgb(82, 11, 247);
   color: rgb(241, 238, 245);
 }
@@ -178,17 +169,16 @@ header a {
 
 /* front-end */
 .front-end ul li {
-  /* display: inline-block; */
-
   margin: 0 auto;
   background-color: #f40;
-
+  display: inline-block;
+  width: 49%;
 }
 .front-end li a {
-
   background-color: rgb(4, 20, 252);
   color: #ffffff;
-  display: block;
+  display: inline-block;
+  
   margin-bottom: 2px;
   height: 60px;
   line-height: 60px;
@@ -273,17 +263,19 @@ header a {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* 我自己的url(划掉，就是为了区分) */
 .ben a {
   color: #ae15b8;
 }
 
-/* .cool .ben a {
-  border-bottom: 1px solid #ae15b8;
-  border-top: 1px solid #ae15b8;
-  background-color: rgb(44, 8, 247);
-  color: rgb(247, 242, 242);
-} */
+
+.go-where {
+  background-color: #000;
+  
+  display: none;
+}
+.go-where a {
+  color: rgb(5, 252, 25);
+}
 
 
 /* footer begin */
