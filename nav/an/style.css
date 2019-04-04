@@ -181,12 +181,15 @@ header a {
   background-color: rgb(4, 20, 252);
   color: #ffffff;
   display: inline-block;
-  
   margin-bottom: 2px;
-  margin-top: 2px;
   height: 60px;
+  width: 100%;
   line-height: 60px;
 }
+.front-end ul:last-child li a {
+  margin-bottom: 0;
+}
+
 
 
 
