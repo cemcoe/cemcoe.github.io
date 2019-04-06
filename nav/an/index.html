@@ -27,7 +27,113 @@
       <img class="loading" src="loading.webp" alt="loadingimg">
     </div>
     <a href="../../blog/2019/write-a-nav-by-yourself/index.html">ChemCode</a>
+
   </header>
+  <div class="main-nav">
+    <ul>
+      <li><a href="#">test</a></li>
+      <li><a href="#">test</a></li>
+      <li><a href="#">test</a></li>
+    </ul>
+    <div class="close">close</div>
+  </div>
+  <style>
+    .main-nav {
+      display: none;
+
+    }
+
+    .js-main-nav {
+      display: block;
+      background-color: rgba(0, 0, 0, .5);
+      width: 80%;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      overflow: hidden;
+      height: 320px;
+      box-shadow: 0 0 3px #fff;
+      border-radius: 2px;
+      max-width: 300px;
+      animation: block-run .4s forwards;
+    }
+
+    @keyframes block-run {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .js-main-nav li {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+    }
+
+    .js-main-nav a {
+      color: rgb(241, 7, 7);
+    }
+
+    .close {
+      margin-bottom: -12px;
+    }
+  </style>
+
+  <script>
+
+
+    var header = document.getElementsByTagName('header')[0];
+    var mainNav = document.getElementsByClassName('main-nav')[0];
+    header.onclick = function (e) {
+      // alert(1);
+      // 取消 a 的跳转事件
+      e.returnValue = false;
+      console.log("你点击了 header ");
+
+
+      if (mainNav.classList.contains('js-main-nav')) {
+        mainNav.classList.remove("js-main-nav");
+        console.log('js-main-nav 已添加');
+
+      } else {
+        mainNav.classList.add("js-main-nav");
+      }
+
+
+    }
+
+
+    var yourName;
+
+    if (window.localStorage) {
+      console.log("浏览器支持localstorage");
+      // if (yourName == undefined) {
+      //   yourName = prompt("name", "");
+      // }
+      localStorage.Name = yourName;
+      if (localStorage.getItem('Name') == "undefined") {
+        // alert(localStorage.Name);
+        console.log(localStorage.Name);
+
+
+      }
+      console.log("localStorage.myName:" + localStorage.myName);
+
+    } else {
+      alert("boom");
+    }
+
+
+  </script>
+
 
 
   <!-- 
@@ -350,6 +456,582 @@
 
 
   <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
