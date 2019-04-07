@@ -25,6 +25,11 @@
 - iconfont 图标字体
 - ico 在线制作 
 
+# 分支说明
+- master 主分支
+- nav-an 管理导航页面 /nav/an
+- blog 管理博客 /blog
+
 
 
 
