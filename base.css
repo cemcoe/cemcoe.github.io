@@ -187,6 +187,10 @@ footer a {
     font-size: 12px;
 
 }
+footer a:hover {
+    text-decoration: underline;
+    color: #000;
+}
 
 
 .fixed-item {
