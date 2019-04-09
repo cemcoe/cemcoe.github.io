@@ -9,7 +9,7 @@
 
 
 # 目录结构
-- [nav 自己写的导航页，沉迷于写导航页](https://chemcode.tk/nav/an/index.html)
+- [nav 自己写的导航页，沉迷于写导航页](https://chemcode.tk/nav/index.html)
 - [blog 我的博客](https://chemcode.tk/blog/index.html)
 - [qzone 早期玩的空间demo](https://chemcode.tk/qzone/index.html)
 - lab 写一写自己觉得好玩但是不是很熟练的玩意儿
@@ -25,9 +25,9 @@
 - iconfont 图标字体
 - ico 在线制作 
 
-# 分支说明
+# 分支管理
 - master 主分支
-- nav-an 管理导航页面 /nav/an
+- nav 管理导航页面 /nav
 - blog 管理博客 /blog
 
 
