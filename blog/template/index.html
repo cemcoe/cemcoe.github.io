@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="blog template" />
+    <link rel="stylesheet" href="style/reset.css">
+    <title>博客模板</title>
+</head>
+
+<body>
+    <header>
+        <h1>这里是博客模板示范文档</h1>
+        
+        <div class="article-info">
+            <ul>
+                <li class="info-date"><span class="iconfont">&#xe786;</span> 2019-03-22</li>
+                <li class="info-reference">
+                    <a href="https://chemcode.tk">reference chemcode.tk</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <style>
+        /* 一行内的代码或强调的内容 */
+        .single-span {
+            background-color: rgb(235, 228, 228);
+            color: rgb(0, 0, 0);
+            padding: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        /* 引入iconfont */
+        @font-face {
+            font-family: 'iconfont';
+            src: url('../../static/iconfont/iconfont.eot');
+            src: url('../../static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('../../static/iconfont/iconfont.woff2') format('woff2'),
+                url('../../static/iconfont/iconfont.woff') format('woff'),
+                url('../../static/iconfont/iconfont.ttf') format('truetype'),
+                url('../../static/iconfont/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 12px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+
+
+    <article>
+
+        <section>
+            <h2>初始化</h2>
+            <ul>
+                <li>1.
+                    
+                    <a href="https://github.com/AlloyTeam/Mars/blob/master/solutions/font-family.md">字体</a>
+                    <span class="single-span">
+                        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica
+                        Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+                    </span></li>
+
+                <li>2.主要面向移动端设置
+                    <span class="single-span"> max-width：600</span>
+                </li>
+
+            </ul>
+
+
+
+        </section>
+
+        <section>
+            <h2>模块划分</h2>
+            <p>用标签<span class="single-span">section</span>划分文章的模块</p>
+
+            <p>其次，
+                其次，主要面向移动端设置max-width：600
+                其次，主要面向移动端设置max-width：600
+                
+                其次，主要面向移动端设置max-width：600
+
+            </p>
+
+        </section>
+
+
+        <section>
+            <h2>特殊标签</h2>
+            <p><span class="single-span">single-span</span></p>
+            <p>其次，主要面向移动端设置max-width：600
+                其次，主要面向移动端设置max-width：600
+                其次，主要面向移动端设置max-width：600
+                其次，主要面向移动端设置max-width：600
+            </p>
+            <!-- <img src="/static/emoticons/233.jpg" alt="" srcset=""> -->
+
+        </section>
+
+        <section>
+            <h2>特殊资源</h2>
+            <h3>代码</h3>
+
+            <div class="code-wrapper">
+                <pre><code>var demo = 123;
+function () {
+    return;
+}
+</code></pre>
+            </div>
+
+            <h3>图片</h3>
+            <div class="img-wrapper">
+                <img src="spring.jpg" alt="">
+            </div>
+        </section>
+
+        <style>
+            .img-wrapper {
+                max-width: 600px;
+                background-color: rgb(255, 255, 255);
+                /* box-shadow: 0 3px 3px rgb(24, 23, 23); */
+
+            }
+
+            .img-wrapper img {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 6px;
+                border: 1px solid #000;
+            }
+        </style>
+
+
+        <section>
+            <h2>iconfont</h2>
+            <ul>
+                <li class="iconfont"><span class="single-span">&amp;#xe77d;</span> &#xe77d;</li>
+                <li class="iconfont"><span class="single-span">&amp;#xe77e;</span> &#xe77e;</li>
+                <li class="iconfont"><span class="single-span">&amp;#xe77f;</span> &#xe77f;</li>
+                <li class="iconfont"><span class="single-span">&amp;#xe780;</span> &#xe780;</li>
+                <li class="iconfont"><span class="single-span">&amp;#xe785;</span> &#xe785;</li>
+                <li class="iconfont"><span class="single-span">&amp;#xe786;</span> &#xe786;</li>
+                <li class="iconfont"><span class="single-span">&amp;#xe788;</span> &#xe788;</li>
+                <li class="iconfont"><span class="single-span">&amp;#xe792;</span> &#xe792;</li>
+            </ul>
+            
+        </section>
+    </article>
+
+</body>
+
+<!-- 代码高亮
+文档地址https://github.com/highlightjs/highlight.js -->
+<link rel="stylesheet" href="../../framework/highlight/styles/atom-one-dark.css">
+<script src="../../framework/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- 代码高亮 end -->
+
+</html>

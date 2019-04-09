@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 12px;
+    background-color: rgb(230, 224, 224);
+    color: rgb(12, 11, 11);
+    max-width: 600px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 14px;
+    text-align: center;
+    padding: 12px;
+}
+li {
+    list-style: none;
+    padding: 6px 12px 6px 18px;
+
+}
