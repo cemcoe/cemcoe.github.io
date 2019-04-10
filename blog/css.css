@@ -9,6 +9,7 @@ body {
 	font: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
 }
 
+.item16 li::before,
 .item18 li::before,
 .item19 li::before {
 	content: '';
@@ -26,6 +27,7 @@ body {
 	background-position: cover;
 }
 
+.item16 li::before,
 .item19 li::before {
 	background: url(source/img/2019icon.png);
 	background-size: 20px 20px;
@@ -62,4 +64,26 @@ a {
 /*private model*/
 .private a {
 	color: rgb(233, 14, 142);
+}
+
+/* footer begin */
+footer {
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	/* background-color: rgb(0, 0, 0); */
+	text-align: center;
+	max-width: 600px;
+	/* border: 1px solid rgb(212, 205, 205);
+	box-sizing: border-box; */
+
+	bottom: 0;
+	/* padding: 10px; */
+}
+
+footer a {
+	color: rgb(59, 55, 55);
+	line-height: 30px;
+	
+
 }
