@@ -21,6 +21,15 @@
 </head>
 
 <body>
+    <div class="back-wrapper">我是隐藏在后面的</div>
+
+    <style>
+    .back-wrapper {
+        background: #000;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+    }
+    </style>
     <div class="wrapper">
 
         <!-- this is a wrapper -->
@@ -45,8 +54,8 @@
             <section>
                 <ul class="items">
                     <li><a href="#">皮卡</a></li>
-                    <li><a href="https://github.com/cemcoe">
-                            项目
+                    <li><a href="lab/index.html">
+                            demo
                         </a></li>
                     <!-- 简历 -->
                     <li><a href="p/resume/index.html">

@@ -15,6 +15,7 @@ body {
     background-color: rgb(230, 230, 230);
 }
 
+
 .wrapper {
     position: absolute;
     top: 0;
@@ -28,7 +29,8 @@ body {
     height: 110px; 
     overflow: hidden;
     margin: auto;
-    animation: big .4s forwards;
+    animation: big .3s forwards;
+   
 }
 /* .wrapper:hover {
     max-width: 300px;
@@ -41,9 +43,12 @@ body {
     100% {
         max-width: 300px;
         height: 460px;
+        
 
     }
 }
+
+
 
 .avatar {
     display: block;
@@ -143,13 +148,15 @@ li a {
     height: 100%;
     /* animation: changeCol .06s forwards; */
     border-radius: 1px;
-    background-color: rgb(230, 230, 230);
+    /* background-color: rgb(230, 230, 230); */
+    background-color: #fff;
     /* background-image: 
     linear-gradient(120deg, 
     #cdd3e0 0%, 
     #e7d6d7 100%); */
     color: rgb(0, 0, 0);
-    /* box-shadow: 0 0 4px rgb(241, 238, 3); */
+    /* box-shadow: 0 0 4px rgb(230, 230, 230); */
+    border: 1px solid rgb(7, 7, 7);
     
 
 }
@@ -201,7 +208,7 @@ footer a:hover {
 }
 .fixed-item img {
 width: 62px;
-animation:  yaoPingZhi-s 4s forwards;
+animation:  yaoPingZhi-s .3s forwards;
 }
 
 /*选择摇瓶子的速度*/
