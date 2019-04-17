@@ -176,23 +176,37 @@ header a {
 /* cool end */
 
 /* front-end */
-.front-end ul li {
+.front-end {
+  width: 98%;
+  /* background-color: #000; */
   margin: 0 auto;
-  background-color: #f40;
-  display: inline-block;
-  width: 49%;
 }
-.front-end li a {
-  background-color: rgb(4, 20, 252);
-  color: #ffffff;
-  display: inline-block;
-  margin-bottom: 2px;
+
+.front-end ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+.front-end ul li {
+  border-radius: 2px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
   height: 60px;
-  width: 100%;
+  width: 49.8%;
+  margin-bottom: 4px;
   line-height: 60px;
+  box-shadow: 1px 1px 1px rgb(222, 220, 226);
+  /* box-sizing: border-box;
+  border-bottom: 1px solid #000; */
 }
-.front-end ul:last-child li a {
-  margin-bottom: 0;
+
+.front-end li a {
+  display:inline-block;
+  width:100%;
+  height:100%;
+  background-color: rgb(82, 11, 247);
+  color: rgb(241, 238, 245);
 }
 
 
