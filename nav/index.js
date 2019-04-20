@@ -2,19 +2,25 @@ var myDate = new Date();
 console.log(myDate);
 var myHours = myDate.getHours();
 var wrapper = document.getElementById('wrapper');
+var header = document.getElementsByTagName('header')[0];
+var headerA = header.getElementsByTagName('a')[0];
 
 
 // alarmHour 定时
-// stepSize 步长，目前以时为单位
-function alarmClock(message, alarmHour, stepSize) {
-  if (myHours > alarmHour && myHours < alarmHour + stepSize) {
-    alert("嘿伙计，现在已经" + myHours + "点喽" + "\n\n" + "BenGo提醒你该" + message + "了");
-    wrapper.style.backgroundColor = "#000";
-    wrapper.style.opacity = .6;
+// nexthour 到几点
+function alarmClock(message, alarmHour, nextHour) {
+  if (myHours > alarmHour && myHours <= nextHour) {
+    // alert("嘿伙计，现在已经" + myHours + "点喽" + "\n\n" + "BenGo提醒你该" + message + "了");
+    // wrapper.style.backgroundColor = "#000";
+    // wrapper.style.opacity = .6;
+    
+    headerA.innerText = message;
   }
 }
 
-alarmClock("碎觉觉", 21, 2);
+alarmClock("上午好", 8, 10);
+alarmClock("次饭饭", 12, 13);
+alarmClock("碎觉觉", 22, 23);
 
 
 //------------控制元素的显示和隐藏---------------

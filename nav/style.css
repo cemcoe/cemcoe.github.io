@@ -410,14 +410,14 @@ footer a {
 
 /* read */
 .read li {
-  border-bottom: 1px solid #000;
+  /* border-bottom: 1px solid #000; */
   margin-bottom: 12px;
   background-color: #fff;
-  padding: 2px;
+  padding: 4px;
 }
 
 .read li a {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .read li a::before {
