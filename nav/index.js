@@ -9,7 +9,7 @@ var headerA = header.getElementsByTagName('a')[0];
 // alarmHour 定时
 // nexthour 到几点
 function alarmClock(message, alarmHour, nextHour) {
-  if (myHours > alarmHour && myHours <= nextHour) {
+  if (myHours >= alarmHour && myHours <= nextHour) {
     // alert("嘿伙计，现在已经" + myHours + "点喽" + "\n\n" + "BenGo提醒你该" + message + "了");
     // wrapper.style.backgroundColor = "#000";
     // wrapper.style.opacity = .6;

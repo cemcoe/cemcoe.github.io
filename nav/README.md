@@ -22,6 +22,8 @@
 - https://www.52sopan.com/
 - 磁力
 https://m.838888.net
+- 茶杯狐 https://www.cupfox.com/
+- 鸠摩 https://www.jiumodiary.com/
 
 ## acg
 - https://nga.178.com
