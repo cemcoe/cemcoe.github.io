@@ -13,16 +13,22 @@ li {
   list-style: none;
 }
 
+.box {
+  background-color: #fff;
+}
+
 /* h2 reset*/
 h2 {
   margin: 66px auto 12px;
   font-weight: 700;
   /* border-top: 6px solid #5011e4; */
-  border-bottom: 6px solid #5011e4;
+  border-top: 6px solid rgb(8, 213, 240);
   width: 120px;
   height: 36px;
   border-radius: 2px;
   background-color: #f0ecec;
+  border-radius: 12px;
+  box-shadow: 1px 1px 1px #d48282;
 }
 h2 a {
   display: block;
@@ -32,6 +38,8 @@ h2 a {
   color: rgb(12, 1, 8);
   letter-spacing: 4px;
   text-align: center;
+  
+  
 }
 /* h2 reset end*/
 
@@ -214,6 +222,7 @@ header a {
   height:100%;
   background-color: #f0ecec;
   /* color: rgb(241, 238, 245); */
+  box-shadow: 1px 1px 1px rgb(77, 5, 247);
 }
 
 
@@ -421,7 +430,7 @@ footer a {
   
 }
 .read ul {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgb(77, 5, 247);
   height: 110px;
   overflow: hidden;
   background-color: #fff;
