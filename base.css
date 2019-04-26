@@ -27,9 +27,11 @@ body {
     background-color: rgb(252, 252, 252);
     border-radius: 6px;
     height: 110px; 
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: auto;
-    animation: big .3s forwards;
+    max-width: 300px;
+    height: 460px;
+    /* animation: big .3s forwards; */
    
 }
 /* .wrapper:hover {
@@ -208,7 +210,7 @@ footer a:hover {
 }
 
 
-.fixed-item {
+/* .fixed-item {
     position: absolute;
     right: 30px;
     top: 80px;
@@ -217,7 +219,7 @@ footer a:hover {
 .fixed-item img {
 width: 62px;
 animation:  yaoPingZhi-s .3s forwards;
-}
+} */
 
 /*选择摇瓶子的速度*/
 @keyframes yaoPingZhi-s {
