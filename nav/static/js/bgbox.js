@@ -1,3 +1,7 @@
+/*
+tab 组件
+*/
+
 var ali = document.getElementById("tabcilk").getElementsByTagName("li");
 var adiv = document.getElementById("tabbox").getElementsByTagName("div");
 
