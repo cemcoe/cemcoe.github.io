@@ -45,7 +45,7 @@
 
 .bgbox .tab-top .js-active {
   color: red;
-  background-color: rgb(5, 5, 5);
+  /* background-color: rgb(5, 5, 5); */
   border-top: 6px solid rgb(240, 120, 8);
   
   
