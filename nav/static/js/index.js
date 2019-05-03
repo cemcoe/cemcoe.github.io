@@ -24,25 +24,25 @@ alarmClock(22, 23, "碎觉觉");
 
 
 // 滚动
-var giftHidden = document.getElementsByClassName("gift-hidden")[0];
-var loadings = document.getElementsByClassName('loadings')[0];
+// var giftHidden = document.getElementsByClassName("gift-hidden")[0];
+// var loadings = document.getElementsByClassName('loadings')[0];
 
 
-var demoTimeInterval = setInterval(function () {
-  if (getScrollOffset().y > headerA.offsetTop) {
-    headerA.style.position = "fixed";
-    loadings.style.position = "fixed";
-    giftHidden.style.display = "none";
-    console.log("圣诞老爷爷消失");
+// var demoTimeInterval = setInterval(function () {
+//   if (getScrollOffset().y > headerA.offsetTop) {
+//     headerA.style.position = "fixed";
+//     loadings.style.position = "fixed";
+//     giftHidden.style.display = "none";
+//     console.log("圣诞老爷爷消失");
 
-    clearInterval(demoTimeInterval);
-    console.log("圣诞老爷爷消失，清除坏蛋定时器");
+//     clearInterval(demoTimeInterval);
+//     console.log("圣诞老爷爷消失，清除坏蛋定时器");
 
-  } else {
-    console.log("待滚动");
-  }
+//   } else {
+//     console.log("待滚动");
+//   }
 
-}, 1000);
+// }, 1000);
 
 
 
