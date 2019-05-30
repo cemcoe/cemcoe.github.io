@@ -18,7 +18,7 @@ function alarmClock(beginHour, endHour, message) {
 
 alarmClock(8, 10, "上午好");
 alarmClock(12, 13, "次饭饭");
-alarmClock(22, 23, "碎觉觉");
+alarmClock(22, 23, "碎觉觉喽");
 
 
 
