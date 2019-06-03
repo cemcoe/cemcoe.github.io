@@ -59,6 +59,9 @@ a {
 	text-decoration: none;
 	padding-left: 6px;
 }
+a:hover {
+	text-decoration: underline;
+}
 
 
 /* 存放在github */

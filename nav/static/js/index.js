@@ -51,25 +51,3 @@ alarmClock(22, 23, "碎觉觉喽");
 
 
 
-// localhost
-var yourName;
-
-if (window.localStorage) {
-  console.log("浏览器支持localstorage");
-  // if (yourName == undefined) {
-  //   yourName = prompt("name", "");
-  // }
-  localStorage.Name = yourName;
-  if (localStorage.getItem('Name') == "undefined") {
-    // alert(localStorage.Name);
-    console.log(localStorage.Name);
-
-
-  }
-  console.log("localStorage.myName:" + localStorage.myName);
-
-} else {
-  alert("boom");
-}
-
-

@@ -185,10 +185,10 @@ header a {
 .cool ul li {
   border-radius: 2px;
   height: 40px;
-  width: 24.5%;
+  width: 24.6%;
   margin-bottom: 4px;
   line-height: 40px;
-  box-shadow: 1px 1px 1px rgb(77, 5, 247);
+  /* box-shadow: 1px 1px 1px rgb(77, 5, 247); */
 }
 
 .cool li a {

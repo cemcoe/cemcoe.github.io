@@ -22,7 +22,7 @@ time {
     opacity: .5;
 }
 article {
-    /* max-width: 600px; */
+    max-width: 600px;
     margin: 0 auto;
     border: 1px solid #f40;
     padding: 6px;
