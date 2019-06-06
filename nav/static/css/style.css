@@ -115,7 +115,6 @@ header a {
   width: 100%;
   height: 36px;
   position: fixed;
-  
   line-height: 36px;
   background-color: rgb(222, 214, 224);
   text-shadow: 1px 2px 3px #e3dbdb;
@@ -242,14 +241,6 @@ header a {
 
 
 
-.ex {
-  width: 120px;
-  border: 1px solid rgb(7, 21, 224);
-  padding: 4px 12px;
-  margin: 12px 0;
-  color: rgb(245, 245, 252);
-  background-color: rgb(44, 8, 247);
-}
 
 .explore li {
   display: inline-block;
@@ -307,19 +298,6 @@ header a {
 
 }
 
-
-
-
-.go-where {
-  background-color: #000;
-  
-  display: none;
-}
-.go-where a {
-  color: rgb(5, 252, 25);
-}
-
-
 /* footer begin */
 footer {
   margin: 2px auto 0 auto;
@@ -343,121 +321,7 @@ footer a {
 }
 
 
-/* main-nav */
-.main-nav {
-  display: none;
-  padding: 4px;
-
-  background-color: rgb(255, 254, 254);
-  width: 80%;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  overflow: hidden;
-  height: 320px;
-  box-shadow: 0 0 100px rgb(24, 22, 22);
-  border-radius: 2px;
-  max-width: 300px;
-  animation: block-run .3s forwards;
-  -webkit-animation: block-run .3s forwards; /* Safari 和 Chrome */
-
-  z-index: 998;
-  
-
-}
-.js-main-nav {
-  display: block;
-}
-
-@keyframes block-run {
-  0% {
-    opacity: 0;
- 
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-.js-main-nav ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
-
-}
-
-.js-main-nav li {
-  display: inline-block; 
-  
-  height: 20px;
-  background-color: rgb(7, 237, 245);
-  text-align: center;
-  padding: 4px 10px; 
-  margin-bottom: 4px;
-}
 
 
-
-
-/* read */
-.read {
-  position: relative;
-  
-}
-.read ul {
-  border: 1px solid rgb(77, 5, 247);
-  height: 110px;
-  overflow: hidden;
-  background-color: #fff;
-  opacity: .8;
-}
-
-.read ul:hover {
-  height: auto;
-}
-.read li {
-  /* border-bottom: 1px solid #000; */
-  margin-bottom: 10px;
-  background-color: #fff;
-  height: 30px;
-  line-height: 30px;
-  
-}
-.read li:nth-last-child(1) {
-  margin-bottom: 0;
-}
-
-
-
-
-.read li a::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: rgb(3, 40, 245);
-  /* padding-left: 12px; */
-  margin-right: 2px;
-  
-}
-
-.more {
-  background: #f40;
-  width: 60px;
-  height: 110px;
-  position: absolute;
-  right: 0;
-  /* border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px; */
-  opacity: .6;
-  z-index: -1;
-
-
-}
 
 
