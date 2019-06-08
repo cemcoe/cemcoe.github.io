@@ -12,9 +12,8 @@ a {
 li {
   list-style: none;
 }
-
-.box {
-  background-color: #fff;
+a:hover {
+  opacity: .6;
 }
 
 /* h2 reset*/
@@ -54,6 +53,7 @@ h2 a:target {
 body {
   background-color: #f0ecec;
   max-width: 600px;
+  min-width: 300px;
   margin: 0 auto;
   position: relative;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
@@ -234,8 +234,9 @@ header a {
   width:100%;
   height:100%;
   background-color: #f0ecec;
+  
   /* color: rgb(241, 238, 245); */
-  box-shadow: 1px 1px 1px rgb(77, 5, 247);
+  /* box-shadow: 1px 1px 1px rgb(77, 5, 247); */
 }
 
 
@@ -281,7 +282,7 @@ header a {
 
 .go li .link-img {
   /* box-sizing: border-box; */
-  /* background-color: #f40; */
+  background-color: #000;
   width: 50px;
   height: 50px;
   /* padding: 4px; */
