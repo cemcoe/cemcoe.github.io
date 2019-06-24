@@ -9,97 +9,112 @@
 
 <url>
   <loc>https://cemcoe.com/</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/qzone/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/blog/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/nav/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/blog/index.html</loc>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/about/index.html</loc>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/links/index.html</loc>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/lab/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://cemcoe.com/p/enjoy/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://cemcoe.com/chem/index.html</loc>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/blog/2019/init-Git-username-and-usermail/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2019/write-a-nav-by-yourself/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/blog/2019/init-Git-username-and-usermail/index.html</loc>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2019/some-sleep-think/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/template/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/flag.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2018/%E6%BD%9C%E4%BC%8F%E5%9C%A8%E5%90%84%E5%A4%A7%E6%8A%80%E6%9C%AF%E7%BE%A4and%E8%AE%BA%E5%9D%9B%E5%90%8Eget/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2018/create-a-web-server-by-IIS/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2018/change_domains/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2018/packet-capture/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2016/be-as-calm-as-rain-or-wind/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/lab/chemshop/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/lab/%E9%A1%B5%E9%9D%A2%E5%88%87%E6%8D%A2/index.html</loc>
-  <lastmod>2019-05-20T09:56:26+00:00</lastmod>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/lab/blank/index.html</loc>
+  <lastmod>2019-06-24T09:29:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
