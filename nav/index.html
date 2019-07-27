@@ -43,8 +43,9 @@
   <section id="mingzhan" class="mingzhan">
     <ul>
       <li v-for="site in mingZhanList">
-        <a v-bind:href="site.url">
-          {{site.title}}
+        <a v-bind:href="site.url"
+        v-bind:title="site.title">
+          {{site.name}}
         </a>
       </li>
     </ul>
@@ -56,20 +57,27 @@
   <!-- 酷站 -->
   <section id="coolZhan" class="cool">
     <ul>
-      <li v-for="site in CoolZhanListFirst"><a v-bind:href="site.url">
-          {{site.title}}
+      <li v-for="site in CoolZhanListFirst">
+        <a 
+        v-bind:href="site.url"
+        v-bind:title="site.title">
+          {{site.name}}
         </a></li>
 
     </ul>
     <ul>
-      <li v-for="site in CoolZhanListSecond"><a v-bind:href="site.url">
-          {{site.title}}
+      <li v-for="site in CoolZhanListSecond">
+        <a v-bind:href="site.url"
+        v-bind:title="site.title">
+          {{site.name}}
         </a></li>
 
     </ul>
     <ul>
-      <li v-for="site in CoolZhanListThird"><a v-bind:href="site.url">
-          {{site.title}}
+      <li v-for="site in CoolZhanListThird">
+        <a v-bind:href="site.url"
+        v-bind:title="site.title">
+          {{site.name}}
         </a></li>
 
     </ul>
@@ -129,7 +137,7 @@
   </section>
   <footer>
     <p><a class="add" href="../about/index.html">
-        2019-7-5
+        2019-7-27
       </a>
     </p>
     <p><a href="../blog/index.html">
