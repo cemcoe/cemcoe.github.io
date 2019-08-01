@@ -93,59 +93,34 @@
     </ul>
   </section>
 
-  <section class="go">
+  <section class="explore" id="exploreZhan">
     <h2>向未知探索</h2>
     <ul>
-      <li>
-        <a href="https://www.pinterest.com/">
+      <li v-for="site in exploreZhan">
+        <a v-bind:href="site.url">
           <div class="wrapper">
             <div class="link-img">
               <!-- <img src="./static/img/default.webp" alt="default"> -->
             </div>
             <div class="wrapper-right">
-              <p>pinterest</p>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="https://acg.mn/">
-          <div class="wrapper">
-            <div class="link-img">
-              <!-- <img src="./static/img/default.webp" alt="default"> -->
-            </div>
-            <div class="wrapper-right">
-              <p>Mastodon（长毛象）社交网络</p>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="https://backlog.com/git-tutorial/cn/">
-          <div class="wrapper">
-            <div class="link-img">
-              <!-- <img src="./static/img/default.webp" alt="default"> -->
-            </div>
-            <div class="wrapper-right">
-              <p>猴子都能懂的GIT入门</p>
+              <p>{{site.name}}</p>
             </div>
           </div>
         </a>
       </li>
     </ul>
   </section>
-  <footer>
+  <footer id="footer">
     <p><a class="add" href="../about/index.html">
-        2019-7-27
+        {{update}}
       </a>
     </p>
     <p><a href="../blog/index.html">
-        ChemCode
+        {{copyright}}
       </a>
     </p>
     <p><a href="../static/emoticons/43825.gif">
-        admin@cemcoe.com
+        {{email}}
       </a>
     </p>
   </footer>
@@ -155,7 +130,8 @@
   <script src="./comjs/header.js"></script>
   <script src="./comjs/mingzhan.js"></script>
   <script src="./comjs/coolzhan.js"></script>
-  <script>
+  <script src="./comjs/explorezhan.js"></script>
+  <script src="./comjs/siteInfo.js"></script>
 
   </script>
 

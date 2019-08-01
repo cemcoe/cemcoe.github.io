@@ -241,7 +241,7 @@ header a {
 
 
 
-
+/* 
 
 .explore li {
   display: inline-block;
@@ -258,13 +258,13 @@ header a {
   width: 100%;
   height: 100%;
   
-}
+} */
 /**/
 
 
 
 
-.go li {
+.explore li {
   height: 50px;
   background-color: rgb(238, 229, 229);
   /* margin-bottom: 4px; */
@@ -280,7 +280,7 @@ header a {
   display: flex;
 }
 
-.go li .link-img {
+.explore li .link-img {
   /* box-sizing: border-box; */
   background-color: #000;
   width: 50px;
