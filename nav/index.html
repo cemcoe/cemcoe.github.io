@@ -100,10 +100,10 @@
         <a v-bind:href="site.url">
           <div class="wrapper">
             <div class="link-img">
-              <!-- <img src="./static/img/default.webp" alt="default"> -->
+              <img v-bind:src="site.icon" alt="default">
             </div>
             <div class="wrapper-right">
-              <p>{{site.name}}</p>
+              <p>{{site.title}}</p>
             </div>
           </div>
         </a>
