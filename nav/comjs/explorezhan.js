@@ -17,11 +17,10 @@ var app = new Vue({
 
         }, {
             id: "003",
-            url: "https://javdb.com/",
-            title: "JavDB 日本成人影片資料庫",
-            name: "JavDB",
-            icon: "https://javdb.com/favicon-32x32.png",
-            keywords: "番号,种子,有码,无码,骑兵,步兵,福利,开车,老司机,日本成人电影,bt下载,磁力下载,gif出处,torrent,kitty,magnet"
+            url: "https://www.slant.co/",
+            title: "Choose the best",
+            icon: "https://www.slant.co/images/favicon.png"
+            
         }, {
             id: "004",
             url: "https://3cwork.com/",
@@ -30,16 +29,11 @@ var app = new Vue({
             icon: "https://3cwork.com/assets/favicon/favicon-32x32-6197ba182511d56654de3a1bdf935168f2714a89aad90644c5bb521f1852e1c9.png"
         }, {
             id: "005",
-            url: "https://www.slant.co/",
-            title: "Choose the best",
-            icon: "https://www.slant.co/images/favicon.png"
-        }, {
-            id: "006",
             url: "https://lorefree.com/",
             title: "LoreFree - 首个基于EOS和IPFS的去中心化知识共享社区",
             icon: "https://lorefree.com/static/images/favicon-32x32.png"
             
-        }]
+        }, ]
     }
 
 
