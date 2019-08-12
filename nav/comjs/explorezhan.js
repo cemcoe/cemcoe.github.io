@@ -1,12 +1,19 @@
 var app = new Vue({
     el: "#exploreZhan",
     data: {
-        "exploreZhan":[{
+        "exploreZhan": [{
             id: "001",
             url: "https://zh.wikipedia.org/",
             title: "维基百科，自由的百科全书",
             name: "wikipedia",
             icon: "https://zh.wikipedia.org/static/apple-touch/wikipedia.png"
+
+        }, {
+            id: "002",
+            url: "https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb",
+            title: "电脑端推荐搭配使用",
+            name: "vimium",
+            icon: "https://lh3.googleusercontent.com/BdBMEyMNvlK8QEd1FQg7GK_dfAw04WbllM390aBU1yLKOR0qjwqtJejVcV6-iKWgPdPJhTIM=w128-h128-e365"
 
         }, {
             id: "002",
@@ -20,7 +27,7 @@ var app = new Vue({
             url: "https://www.slant.co/",
             title: "Choose the best",
             icon: "https://www.slant.co/images/favicon.png"
-            
+
         }, {
             id: "004",
             url: "https://3cwork.com/",
@@ -32,8 +39,8 @@ var app = new Vue({
             url: "https://lorefree.com/",
             title: "LoreFree - 首个基于EOS和IPFS的去中心化知识共享社区",
             icon: "https://lorefree.com/static/images/favicon-32x32.png"
-            
-        }, ]
+
+        }]
     }
 
 

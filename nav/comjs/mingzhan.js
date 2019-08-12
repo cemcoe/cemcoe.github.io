@@ -16,9 +16,9 @@ var app = new Vue({
             },
             {
                 "id": "003",
-                "url": "https://segmentfault.com/",
+                "url": "https://www.facebook.com/",
                 "title": "this is def title",
-                "name": "SEG"
+                "name": "facebook"
             },
             {
                 "id": "004",
@@ -28,9 +28,9 @@ var app = new Vue({
             },
             {
                 "id": "005",
-                "url": "https://github.com/cemcoe/606/issues",
+                "url": "https://github.com/cemcoe/812/issues",
                 "title": "this is def title",
-                "name": "606"
+                "name": "812"
             },
             {
                 "id": "006",
@@ -54,7 +54,7 @@ var app = new Vue({
                 "id": "009",
                 "url": "http://mail.google.com/",
                 "title": "this is def title",
-                "name": "邮件"
+                "name": "mail"
             },
             {
                 "id": "010",
