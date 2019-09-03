@@ -47,9 +47,9 @@ var app = new Vue({
         }],
         CoolZhanListThird:[{
             id: "001",
-            url: "https://liaoxuefeng.com/",
+            url: "https://www.taptap.com/",
             title: "this is def title",
-            name: "廖雪峰"
+            name: "Tab"
 
         }, {
             id: "002",
@@ -58,9 +58,9 @@ var app = new Vue({
             name: "恩山"
         },  {
             id: "003",
-            url: "https://www.zhangxinxu.com/",
+            url: "https://meirifuli.org/",
             title: "this is def title",
-            name: "张鑫旭"
+            name: "日福"
         }, {
             id: "004",
             url: "http://hot.mrcuriosity.org/",
