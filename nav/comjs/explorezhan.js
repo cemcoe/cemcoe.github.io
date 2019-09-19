@@ -17,10 +17,10 @@ var app = new Vue({
 
         }, {
             id: "002",
-            url: "https://acg.mn/",
-            title: "Mastodon（长毛象）社交网络",
-            name: "Mastodon（长毛象）社交网络",
-            icon: "https://acg.mn/apple-touch-icon.png"
+            url: "https://www.1337x.to/home/",
+            title: "Download verified torrents: movies, music, games, software | 1337x",
+            name: "1337x",
+            icon: "https://www.1337x.to/images/logo.svg"
 
         }, {
             id: "003",
@@ -39,6 +39,12 @@ var app = new Vue({
             url: "https://lorefree.com/",
             title: "LoreFree - 首个基于EOS和IPFS的去中心化知识共享社区",
             icon: "https://lorefree.com/static/images/favicon-32x32.png"
+
+        }, {
+            id: "006",
+            url: "https://kenengba.com/",
+            title: "多人供稿的分享计算机技巧，关于互联网、搜索引擎，原创博客。",
+            icon: "https://kenengba.com/apple-touch-icon-180x180.png"
 
         }]
     }

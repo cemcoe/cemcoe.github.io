@@ -12,13 +12,13 @@ var app = new Vue({
                 "id": "002",
                 "url": "https://www.instagram.com/",
                 "title": "用来看小姐姐",
-                "name": "Ins"
+                "name": "Ig"
             },
             {
                 "id": "003",
-                "url": "https://www.facebook.com/",
+                "url": "https://www.cnblogs.com/",
                 "title": "this is def title",
-                "name": "facebook"
+                "name": "博客园"
             },
             {
                 "id": "004",
@@ -28,9 +28,9 @@ var app = new Vue({
             },
             {
                 "id": "005",
-                "url": "https://github.com/cemcoe/812/issues",
-                "title": "this is def title",
-                "name": "812"
+                "url": "https://github.com/cemcoe/cwiki",
+                "title": "Personal knowledge management",
+                "name": "cwiki"
             },
             {
                 "id": "006",
@@ -41,7 +41,7 @@ var app = new Vue({
             {
                 "id": "007",
                 "url": "https://readhub.cn/topics",
-                "title": "this is def title",
+                "title": "每天三分钟的科技新闻聚合阅读",
                 "name": "readhub"
             },
             {
