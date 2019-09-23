@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>video speed</title>
+    <meta name="description" content="视频在线倍速播放" />
+</head>
+
+<body>
+    <div id="demo">
+        <video controls src=""></video>
+    </div>
+
+    <script>
+        /* play video twice as fast */
+        var video = document.querySelector('video');
+        video.defaultPlaybackRate = 2.0;
+        video.play();
+
+        /* now play three times as fast just for the heck of it */
+        video.playbackRate = 3.0;
+
+        var videoSrc = prompt("请输入要加速播放的视频链接", "");
+        if (videoSrc != null) {
+            console.log(videoSrc);
+            video.src = videoSrc;
+
+        }
+
+
+    </script>
+
+    <a href="https://stackoverflow.com/questions/3027707/how-to-change-the-playing-speed-of-videos-in-html5">参考</a>
+
+
+
+</body>
+
+</html>
