@@ -17,23 +17,22 @@ var app = new Vue({
 
         }, {
             id: "002",
-            url: "https://www.1337x.to/home/",
-            title: "Download verified torrents: movies, music, games, software | 1337x",
-            name: "1337x",
-            icon: "https://www.1337x.to/images/logo.svg"
+            url: "http://www.shouxb.com/",
+            title: "86收线报网赚羊毛赚客薅羊毛线报",
+            name: "86收线报网",
+            icon: "./static/img/loading.webp"
 
         }, {
             id: "003",
-            url: "https://www.slant.co/",
-            title: "Choose the best",
-            icon: "https://www.slant.co/images/favicon.png"
+            url: "https://www.smzdm.com/",
+            title: "什么值得买 | 认真生活，好好花钱",
+            icon: "https://www.smzdm.com/favicon.ico?v=201906300250"
 
         }, {
             id: "004",
-            url: "https://3cwork.com/",
-            title: "一早一晚 | 只工作，不上班",
-            name: "一早一晚",
-            icon: "https://3cwork.com/assets/favicon/favicon-32x32-6197ba182511d56654de3a1bdf935168f2714a89aad90644c5bb521f1852e1c9.png"
+            url: "https://www.quanlaoda.com/",
+            title: "券老大优惠券网 | 京东优惠券,拼多多优惠券",
+            icon: "https://www.quanlaoda.com/static/icon/favicon.ico"
         }, {
             id: "005",
             url: "https://lorefree.com/",
@@ -42,9 +41,9 @@ var app = new Vue({
 
         }, {
             id: "006",
-            url: "https://kenengba.com/",
-            title: "多人供稿的分享计算机技巧，关于互联网、搜索引擎，原创博客。",
-            icon: "https://kenengba.com/apple-touch-icon-180x180.png"
+            url: "https://www.xd0.com/",
+            title: "小刀娱乐网，专注活动，软件，教程分享",
+            icon: "./static/img/loading.webp"
 
         }]
     }
