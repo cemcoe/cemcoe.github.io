@@ -27,7 +27,7 @@ var app = new Vue({
             id: "001",
             url: "https://www.freebuf.com/",
             title: "国内领先的互联网安全新媒体,同时也是爱好者们交流与分享安全技术的社区",
-            name: "freebuf"
+            name: "#"
 
         }, {
             id: "002",
@@ -58,9 +58,9 @@ var app = new Vue({
             name: "恩山"
         },  {
             id: "003",
-            url: "https://meirifuli.org/",
+            url: "http://www.semorn.com/",
             title: "this is def title",
-            name: "日福"
+            name: "清沫"
         }, {
             id: "004",
             url: "http://hot.mrcuriosity.org/",
