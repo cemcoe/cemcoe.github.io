@@ -25,9 +25,9 @@ var app = new Vue({
         }],
         CoolZhanListSecond:[{
             id: "001",
-            url: "https://www.freebuf.com/",
-            title: "国内领先的互联网安全新媒体,同时也是爱好者们交流与分享安全技术的社区",
-            name: "#"
+            url: "https://guangdiu.com/m/?kf=detail",
+            title: "逛丢rtel",
+            name: "逛丢"
 
         }, {
             id: "002",
