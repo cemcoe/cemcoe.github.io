@@ -33,8 +33,8 @@ var app = new Vue({
             icon: "https://images.squarespace-cdn.com/content/55520a32e4b08eb084d46a8d/1433170542458-CVL4HV2QJ5YHYYLINWYR/BC_fav.png?format=1000w&content-type=image%2Fpng"
         }, {
             id: "003",
-            url: "https://netflav.com/",
-            title: "Netflav | 讓您在線上觀賞日本成人電影",
+            url: "https://go.cemcoe.workers.dev/",
+            title: "Netflav | 讓您在線上觀賞日本成人電影，有福利",
             icon: "https://netflav.com/static/favicon.ico"
         }]
 
