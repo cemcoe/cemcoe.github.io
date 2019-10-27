@@ -63,9 +63,9 @@ var app = new Vue({
             name: "清沫"
         }, {
             id: "004",
-            url: "http://hot.mrcuriosity.org/",
+            url: "https://hacpai.com/",
             title: "this is def title",
-            name: "热榜"
+            name: "黑派"
         }]
     }
 

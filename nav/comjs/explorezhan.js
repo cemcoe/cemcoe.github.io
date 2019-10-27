@@ -37,11 +37,6 @@ var app = new Vue({
             title: "AbemaTV｜国内最大の無料インターネットテレビ局",
             icon: "https://hayabusa.io/abema/assets/img_icon.w180.h180.v1f486dd.png"
         }, {
-            id: "003",
-            url: "https://go.cemcoe.workers.dev/",
-            title: "go.cemcoe.workers",
-            icon: "https://netflav.com/static/favicon.ico"
-        }, {
             id: "001",
             url: "https://www.wuzuowei.net",
             title: "无作为 | 分享不仅仅是一种态度！",
