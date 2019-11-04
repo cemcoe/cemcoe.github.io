@@ -25,9 +25,9 @@ var app = new Vue({
         }],
         CoolZhanListSecond:[{
             id: "001",
-            url: "https://guangdiu.com/m/?kf=detail",
-            title: "逛丢rtel",
-            name: "逛丢"
+            url: "http://www.shouxb.com/",
+            title: "86",
+            name: "86"
 
         }, {
             id: "002",

@@ -13,9 +13,9 @@ var app = new Vue({
             icon: "https://lh3.googleusercontent.com/BdBMEyMNvlK8QEd1FQg7GK_dfAw04WbllM390aBU1yLKOR0qjwqtJejVcV6-iKWgPdPJhTIM=w128-h128-e365"
         }, {
             id: "001",
-            url: "https://www.xd0.com/",
-            title: "小刀娱乐网 | 网络那些事",
-            icon: "https://www.xd0.com/upload/1/146486/images/2015-7-3/20150703161516081608.png"
+            url: "https://www.xda-developers.com/",
+            title: "XDA-Developers Android Forums",
+            icon: "https://forum.xda-cdn.com/images/2015/favicons/apple-touch-icon-152x152.png"
         }, {
             id: "001",
             url: "https://www.tofugu.com/",
@@ -27,11 +27,6 @@ var app = new Vue({
             title: "네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요",
             icon: "https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png"
         }, {
-            id: "001",
-            url: "https://www.beautifulchemistry.net/",
-            title: "Beautiful Chemistry",
-            icon: "https://images.squarespace-cdn.com/content/55520a32e4b08eb084d46a8d/1433170542458-CVL4HV2QJ5YHYYLINWYR/BC_fav.png?format=1000w&content-type=image%2Fpng"
-        },  {
             id: "002",
             url: "https://abema.tv/",
             title: "AbemaTV｜国内最大の無料インターネットテレビ局",
@@ -43,14 +38,19 @@ var app = new Vue({
             icon: "https://www.wuzuowei.net/favicon.ico"
         }, {
             id: "001",
-            url: "https://m.xiachufang.com/",
-            title: "下厨房 | 吃饭那些事",
-            icon: "https://s.chuimg.com/favicon.ico"
-        }, {
-            id: "001",
             url: "https://www.sigure.tw/",
             title: "時雨の町 | 日文學習園地",
             icon: "https://www.sigure.tw/templates/ol_transparent2/images/favicon.ico"
+        }, {
+            id: "001",
+            url: "http://www.sssoou.com/",
+            title: "telegram频道搜索",
+            icon: "#"
+        }, {
+            id: "001",
+            url: "https://salttiger.com/",
+            title: "SaltTiger | 每天一本编程书，每天进步一点点",
+            icon: "#"
         }]
 
     }
