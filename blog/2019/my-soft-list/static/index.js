@@ -1,0 +1,1 @@
+console.log('index加载成功');
