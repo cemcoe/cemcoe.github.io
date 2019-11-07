@@ -8,19 +8,17 @@
     <title>我的软件清单 | PC</title>
     <link rel="stylesheet" href="./static/css/reset.css">
     <link rel="stylesheet" href="./static/css/base.css">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
     <h1>我的软件清单 | PC</h1>
-    <section>
+    <section id="app">
         <ul>
-            <li><a href="https://www.google.com/chrome/">
-                    Chrome</a></li>
-            <li><a href="https://code.visualstudio.com/">Visual Studio Code - Code Editing. Redefined</a></li>
-            <li><a href="https://lrepacks.ru/repaki-programm-dlya-interneta/56-internet-download-manager-repack.html">
-                Internet Download Manager 6.35.8 (Repack)
-                俄大神重新打包版IDM6.35.8
-            </a></li>
+            <li v-for="(soft, index) in softs"><a v-bind:href="soft.href">
+                {{index}}. {{soft.name}}
+            </a></li> 
         </ul>
     </section>
 
