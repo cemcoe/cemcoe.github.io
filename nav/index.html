@@ -11,8 +11,6 @@
   <link rel="shortcut icon" href="./favicon.ico">
   <!-- <link rel="manifest" href="manifest.json"> -->
   <link rel="stylesheet" type="text/css" href="./static/css/style.css">
-  <link rel="stylesheet" href="./static/css/bgbox.css">
-  <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
 
   <!-- For Android -->
   <!-- <link rel="icon" sizes="128x128" href="./static/img/my_logo_128.webp">
@@ -34,9 +32,9 @@
   <!-- com Header: -->
   <header id="header">
     <div class="loadings">
-      <img class="loading" v-bind:src="imgUrl" alt="loadingimg">
+      <img class="loading" :src="imgUrl" alt="loadingimg">
     </div>
-    <a v-bind:href="refUrl">{{name}}</a>
+    <a :href="refUrl">{{name}}</a>
   </header>
 
 
@@ -44,7 +42,9 @@
   <section id="mingzhan" class="mingzhan">
     <ul>
       <li v-for="site in mingZhanList">
-        <a v-bind:href="site.url" v-bind:title="site.title">
+        <a 
+        :href="site.url" 
+        :title="site.title">
           {{site.name}}
         </a>
       </li>
@@ -58,45 +58,41 @@
   <section id="coolZhan" class="cool">
     <ul>
       <li v-for="site in CoolZhanListFirst">
-        <a v-bind:href="site.url" v-bind:title="site.title">
+        <a 
+        :href="site.url" 
+        :title="site.title">
           {{site.name}}
         </a></li>
 
     </ul>
     <ul>
       <li v-for="site in CoolZhanListSecond">
-        <a v-bind:href="site.url" v-bind:title="site.title">
+        <a 
+        :href="site.url" 
+        :title="site.title">
           {{site.name}}
         </a></li>
 
     </ul>
     <ul>
       <li v-for="site in CoolZhanListThird">
-        <a v-bind:href="site.url" v-bind:title="site.title">
+        <a 
+        :href="site.url" 
+        :title="site.title">
           {{site.name}}
         </a></li>
 
     </ul>
   </section>
 
-  <!-- <section class="front-end">
-    <h2>全栈</h2>
-    <ul>
-      <li><a href="https://www.freecodecamp.cn/chemxcode">freecodecamp</a></li>
-      <li><a href="https://nqdeng.github.io/7-days-nodejs/">7天搞定Node</a></li>
-      <li><a href="http://es6.ruanyifeng.com/#README">学习ES6</a></li>
-      <li><a href="https://css-tricks.com/">css-tricks</a></li>
-    </ul>
-  </section> -->
-
   <section class="explore" id="exploreZhan">
     <h2>向未知探索</h2>
     <ul>
       <li v-for="site in exploreZhan">
-        <a v-bind:href="site.url">
+        <a :href="site.url">
           <div class="wrapper">
             <div class="link-img">
-              <img v-bind:src="site.icon" alt="default">
+              <img :src="site.icon" alt="default">
             </div>
             <div class="wrapper-right">
               <p>{{site.title}}</p>
@@ -122,7 +118,7 @@
   </footer>
 
   <!-- <script src="./static/js/index.js"></script> -->
-  <script src="./static/js/bgbox.js"></script>
+  <!-- <script src="./static/js/bgbox.js"></script> -->
   <script src="./comjs/header.js"></script>
   <script src="./comjs/mingzhan.js"></script>
   <script src="./comjs/coolzhan.js"></script>
