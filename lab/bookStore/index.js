@@ -49,6 +49,13 @@ const app = new Vue({
                 date: '2011',
                 price: 128.00,
                 count: 1
+            },{
+                id: 7,
+                isbn: 9781118008188,
+                name: '《HTML and CSS: Design and Build Websites》',
+                date: '2011',
+                price: 128.00,
+                count: 1
             },
         ]
 

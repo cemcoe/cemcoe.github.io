@@ -11,6 +11,7 @@ li {
     list-style: none;
 }
 
+
 body {
     background-color: rgb(230, 230, 230);
 }
@@ -26,12 +27,9 @@ body {
     background-color: rgb(252, 252, 252);
     border-radius: 6px;
     height: 110px; 
-    /* overflow: hidden; */
     margin: auto;
     max-width: 300px;
-    height: 460px;
-    /* animation: big .3s forwards; */
-   
+    height: 460px;  
 }
 .avatar {
     display: block;
@@ -44,25 +42,19 @@ body {
 }
 
 .avatar-idea {
-    color: rgba(3, 3, 3, .6);
+    color: rgba(3, 3, 3, 0.6);
     margin-bottom: 4px;
     font-size: 14px;
 }
-
 .items {
     width: 210px;
     margin: 30px auto;
     height: 80px;
 }
-
-
-
-
 li {
     margin: 10px auto;
     width: 120px;
     height: 40px;
-    /* border-radius: 1px; */
     line-height: 40px;   
 }
 
@@ -73,23 +65,14 @@ li a {
     border-radius: 10px;
     background-color: rgb(0, 47, 255);
     color: rgb(0, 0, 0); 
-
 }
-
-
-
 li:hover {
-    opacity: .6;
+    opacity: 0.6;
 }
-
-
 li a {
     background-color: rgb(238, 227, 227);
     box-shadow: inset 0px 1px 1px #000;
-
 }
-
-
 footer {
     position: absolute;
     bottom: 12px;
@@ -98,7 +81,6 @@ footer {
     text-align: center;
     color: rgb(129, 12, 260);
 }
-
 footer a {
     color: rgba(54, 52, 52, .3);
     font-size: 12px;
