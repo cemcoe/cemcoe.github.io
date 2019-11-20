@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -8,9 +7,9 @@
   <meta name="keywords" content="上网导航,网址大全,网址导航,简洁导航" />
   <meta name="description" content="一只化学狗和一只设计喵在维护的导航网站。沉淀全网优质网址及资源的上网导航。及时收录好玩、有趣、技术、小众等分类的网址和内容，上网络实验室，从摇瓶子开始。" />
   <title>书签 | cemcoe</title>
-  <link rel="shortcut icon" href="./favicon.ico">
+  <!-- <link rel="shortcut icon" href="favicon.ico"> -->
   <!-- <link rel="manifest" href="manifest.json"> -->
-  <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="./static/css/style.css"> -->
 
   <!-- For Android -->
   <!-- <link rel="icon" sizes="128x128" href="./static/img/my_logo_128.webp">
@@ -25,14 +24,15 @@
 
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
+<link rel="shortcut icon" href="favicon.ico"></head>
 
 <body>
 
   <!-- com Header: -->
   <header id="header">
     <div class="loadings">
-      <img class="loading" :src="imgUrl" alt="loadingimg">
+      <div class="loading"></div>
+      <!-- <img class="loading" src="./static/img/my_logo_128.png" alt="loadingimg"> -->
     </div>
     <a :href="refUrl">{{name}}</a>
   </header>
@@ -50,10 +50,7 @@
       </li>
     </ul>
   </section>
-  <script>
-
-
-  </script>
+ 
   <!-- 酷站 -->
   <section id="coolZhan" class="cool">
     <ul>
@@ -116,17 +113,4 @@
       </a>
     </p>
   </footer>
-
-  <!-- <script src="./static/js/index.js"></script> -->
-  <!-- <script src="./static/js/bgbox.js"></script> -->
-
-  <script src="./dist/bundle.js"></script>
-  <!-- <script src="./comjs/header.js"></script>
-  <script src="./comjs/mingzhan.js"></script>
-  <script src="./comjs/coolzhan.js"></script>
-  <script src="./comjs/explorezhan.js"></script>
-  <script src="./comjs/siteInfo.js"></script> -->
-
-  </script>
-
-</html>
+</html><script type="text/javascript" src="bundle.js"></script>
