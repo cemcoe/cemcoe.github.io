@@ -2,26 +2,12 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <meta name="keywords" content="上网导航,网址大全,网址导航,简洁导航" />
   <meta name="description" content="一只化学狗和一只设计喵在维护的导航网站。沉淀全网优质网址及资源的上网导航。及时收录好玩、有趣、技术、小众等分类的网址和内容，上网络实验室，从摇瓶子开始。" />
   <title>书签 | cemcoe</title>
-  <!-- <link rel="shortcut icon" href="favicon.ico"> -->
-  <!-- <link rel="manifest" href="manifest.json"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="./static/css/style.css"> -->
-
-  <!-- For Android -->
-  <!-- <link rel="icon" sizes="128x128" href="./static/img/my_logo_128.webp">
-  <link rel="icon" sizes="192x192" href="./static/img/my_logo_192.webp"> -->
-
-  <!-- For Android not support webp -->
-  <!-- <link rel="icon" sizes="128x128" href="./static/img/my_logo_128.png"> -->
-  <!-- <link rel="icon" sizes="192x192" href="./static/img/my_logo_192.png"> -->
-
   <!-- Chrome Bar Color -->
   <meta name="theme-color" content="#f0ecec">
-
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <link rel="shortcut icon" href="favicon.ico"></head>
@@ -32,7 +18,6 @@
   <header id="header">
     <div class="loadings">
       <div class="loading"></div>
-      <!-- <img class="loading" src="./static/img/my_logo_128.png" alt="loadingimg"> -->
     </div>
     <a :href="refUrl">{{name}}</a>
   </header>
@@ -60,7 +45,6 @@
         :title="site.title">
           {{site.name}}
         </a></li>
-
     </ul>
     <ul>
       <li v-for="site in CoolZhanListSecond">
@@ -69,7 +53,6 @@
         :title="site.title">
           {{site.name}}
         </a></li>
-
     </ul>
     <ul>
       <li v-for="site in CoolZhanListThird">
@@ -78,7 +61,6 @@
         :title="site.title">
           {{site.name}}
         </a></li>
-
     </ul>
   </section>
 
@@ -88,9 +70,6 @@
       <li v-for="site in exploreZhan">
         <a :href="site.url">
           <div class="wrapper">
-            <div class="link-img">
-              <img :src="site.icon" alt="default">
-            </div>
             <div class="wrapper-right">
               <p>{{site.title}}</p>
             </div>
