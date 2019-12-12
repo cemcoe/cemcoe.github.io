@@ -70,3 +70,13 @@ li {
     padding-left: 20px;
 }
 
+.do {
+    background-color: #f40;
+    color: #fff;
+    padding: 0 6px;
+    
+}
+.do a {
+    background-color: #000;
+}
+
