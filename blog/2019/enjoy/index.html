@@ -16,7 +16,6 @@
     /* 待看 */
     .ready {
         color: #f40;
-
     }
     /*niu*/
     .niu {
@@ -31,19 +30,22 @@
 
     <!-- 未来做一个弹窗 -->
     <section class="popInfo">
-        <p>说明：带有强烈的主观色彩，最后更新于2019.5.29</p>
+        <p>说明：带有强烈的主观色彩，最后更新于2020.01.11</p>
     </section>
 
     <section>
         <h2>综艺</h2>
         <ul>
             <li>综艺玩很大</li>
-            <li>天天乐财神</li>
             <li>天天向上</li>
             <li>快乐大本营</li>
             <li>国光帮帮忙</li>
             <li class="end">极限挑战</li>
             <li class="end">康熙来了</li>
+            <li class="end">密室大逃脱</li>
+            <li class="end">天天乐财神</li>
+            <li class="end">哎呀！好身材</li>
+            <li class="end">哥哥别闹啦</li>
             <li class="end">CCTV5城市之间 ^2005^ 勇攀高峰环节</li>
             <li class="end">谢天谢地你来啦</li>
             <li class="end">夕阳红^1993^</li>
@@ -53,7 +55,7 @@
     <section id="film">
         <h2>电影film</h2>
         <ul>
-            <li v-for="(film, index) in films">{{index}} {{ film.name }} {{ film.goal }}</li>
+            <li v-for="(film, index) in films">{{index}} {{ film.name }}</li>
         </ul>
 
     </section>
@@ -65,38 +67,33 @@
                 films: [
                     {
                         name: '大人物(本以为是个喜剧片，结果片子好沉重)',
-                        goal: 6
+                    },
+                    {
+                        name: '武林外传|注意是电影2011',
                     },
                     {
                         name: '飞驰人生 ^2019^ ',
-                        goal: 6
                     },
                     {
                         name: '互联网之子',
-                        goal: 6
                     },
                     {
                         name: '纽约之王（很早的一部片）',
-                        goal: 6
                     },
                     {
                         name: '硅谷',
-                        goal: 6
                     },
                     {
                         name: '我是谁：没有绝对安全的系统',
-                        goal: 6
                     },
                     {
                         name: '网络迷踪',
-                        goal: 6
-                    },
+                    }, 
                     {
-                        name: '疯狂外星人 ^2019^ ++++',
-                        goal: 6
-                    },
-                    
-                    
+                        name: '唐人街探案',
+                    }, {
+                        name: '二代妖精之今生有幸',
+                    } 
                 ]
             }
         })
@@ -115,6 +112,7 @@
         <ul>
             <li>东方华尔街 ***** </li>
             <li>炊事班的故事 ^2002-2007^</li>
+            <li>我不是购物狂</li>
             <li>金牌投资人</li>
         </ul>
     </section>
@@ -141,7 +139,7 @@
 
 
 
-    <section>
+    <!-- <section>
         <h1>我的心愿单,总是要有一些奔头heartList</h1>
         <ul>
             <li>奥迪双砖悠悠球</li>
@@ -157,7 +155,7 @@
             <li>风铃</li>
             <li>垂丝海棠</li>
         </ul>
-    </section>
+    </section> -->
 </body>
 
 </html>
