@@ -1,0 +1,196 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Vue | 组件化 | 基本操作 | 化学小子的前端实验册</title>
+    
+<link rel="stylesheet" href="../../static/css/post.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+    <div id="book-nav">
+        <button class="open-chapter">
+            目录
+        </button>
+        <a class="book-info" href="../../index.html">
+            <span class="nameoneline">化学小子的前端实验册</span>
+        </a>
+    </div>
+    <article class="post">
+        <div class="post-title">
+            <h2 class="title">Vue | 组件化 | 基本操作</h2>
+        </div>
+        <div class="article-info">
+            <div class="meta">
+
+                
+                <span class="tags">Vue</span>
+                
+
+                <span class="post-time">2020-03-07</span>
+            </div>
+        </div>
+        <div class="note-content">
+            <p>来个目录：</p>
+<ul>
+<li>瞎掰组件概念</li>
+<li>web components 是个什么东西</li>
+<li>用 web components 来写一个简单的组件 demo</li>
+<li>Vue 中的组件化是一个怎样的流程</li>
+<li>局部组件 &amp;&amp; 全局组件 || 父组件 &amp;&amp; 子组件</li>
+</ul>
+<hr>
+<p>作为前端工程化的重要一环，组件化在原生的实现上看上去不是很好。</p>
+<p>那什么是组件化嘞？<br><img src="https://upload-images.jianshu.io/upload_images/3750332-a0efc2a021056006.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="工艺流程图部分"></p>
+<p>数据看不到，有点虚。不妨看一看上面的工艺流程图，组件就是上图的各种反应容器，本文主要实现各种罐的创建和使用，至于物料的运输，即各个组件间数据的传递，有空再填。</p>
+<p>其实使用 Vue 创建一个应用大概就是上图的步骤，先将各个组件完成，接着连通物流（组件之间数据传递），同时可能还会监控物流的理化性质（监控数据类型），监控各个罐的状态（Vuex）。。。我编不下去了。大概就那么个意思。做饮料啥的总不能都莽到一个反应釜里吧。</p>
+<hr>
+<p>组件化就是大事化小，将一个复杂的工程拆解成众多的小任务，再分配给众多小人物。</p>
+<p>这样如果某个组件发生了问题，不至于影响整个工程。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-f7b4e344384f5671.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="はたらく細胞"></p>
+<p>在看 Vue 的组件化之前不妨先看看原生的实现方案。</p>
+<p>这里就要提到 web components 了，至于它的概念，优缺点啥的不多介绍，若想了解直达 <a href="https://www.webcomponents.org/introduction" target="_blank" rel="noopener">官网</a>。</p>
+<p>这个东西支持使用原生的 js 来定义和使用组件。不用引入额外的文件。拎包开发。。。</p>
+<p>直接看怎么用，一些要点：</p>
+<ul>
+<li>自定义组件 custom element 必须短线连接</li>
+<li>将定义的类和标签关联</li>
+<li>使用自定义的组件</li>
+</ul>
+<p>一个简单的小栗子</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">user-card</span>&gt;</span><span class="tag">&lt;/<span class="name">user-card</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user-card</span>&gt;</span><span class="tag">&lt;/<span class="name">user-card</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user-card</span>&gt;</span><span class="tag">&lt;/<span class="name">user-card</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"userCardTemplate"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>cemcoe<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="class"><span class="keyword">class</span> <span class="title">UserCard</span> <span class="keyword">extends</span> <span class="title">HTMLElement</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">constructor</span>() &#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">super</span>()</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">const</span> templateElem = <span class="built_in">document</span>.querySelector(<span class="string">"#userCardTemplate"</span>)</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">const</span> content = templateElem.content.cloneNode(<span class="literal">true</span>)</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.appendChild(content)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.customElements.define(<span class="string">"user-card"</span>, UserCard)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>有点小复杂，来个指向图如下：<br><img src="https://upload-images.jianshu.io/upload_images/3750332-e46b2e672591923a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="指向图"></p>
+<p>嗯，不出意外的话，网页上会显示三个字符串。</p>
+<p>使用 web components 来使用组件大概就是这样的一个流程。</p>
+<p>更多功能请自行探索。</p>
+<hr>
+<p>下面来看一下 Vue 的组件化思想。</p>
+<p>—具体代码如何写—<br>直接进入注册组件的流程</p>
+<ul>
+<li>创建组件构造器 Vue.extend()</li>
+<li>注册组件 Vue.component()</li>
+<li>使用组件 </li>
+</ul>
+<p>emm，是不是和 web components 很像？有点。具体的实现上可能有一些差异。</p>
+<p>来看代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">3. 使用组件</span><br><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;my-cpn&gt;&lt;&#x2F;my-cpn&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&#x2F;&#x2F;---js----</span><br><span class="line">&#x2F;&#x2F; 1. 创建组件构造器对象</span><br><span class="line">const cpnContructor &#x3D; Vue.extend(&#123;</span><br><span class="line">    template: &#96;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;我是cemcoe&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;p&gt;我今年18岁&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;嘤嘤嘤&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &#96;</span><br><span class="line">&#125;)</span><br><span class="line">&#x2F;&#x2F; 2.注册组件两个参数 标签名 构造器</span><br><span class="line">Vue.component(&#39;my-cpn&#39;, cpnContructor)</span><br></pre></td></tr></table></figure>
+<p>然而，上面这种全局组件用的不多。</p>
+<hr>
+<p>全局和局部就是字面意思，可以配合全局作用域和局部作用域理解。</p>
+<p>开发中常用局部组件，将组件放到特定的实例下进行注册。</p>
+<p>使用 components 字段：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 1. 构造器</span><br><span class="line">const cpnConstructor = Vue.extend(&#123;</span><br><span class="line">   template: `</span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>cemcoe<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   `</span><br><span class="line">&#125;)</span><br><span class="line">const app = new Vue(&#123;</span><br><span class="line">   el: "#app",</span><br><span class="line">   // 2. 注册局部组件，在特定实例中定义</span><br><span class="line">   components: &#123;</span><br><span class="line">       cpn: cpnConstructor </span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>来看另一对概念父组件和子组件，emm，还是字面意思，不多解析。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cp2</span>&gt;</span><span class="tag">&lt;/<span class="name">cp2</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">// 创建组件</span><br><span class="line">const cpnC1 = Vue.extend(&#123;</span><br><span class="line">   template: `<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>cem<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>`</span><br><span class="line">&#125;)</span><br><span class="line">const cpnC2 = Vue.extend(&#123;</span><br><span class="line">   template: `<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>coe<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;<span class="name">cp1</span>&gt;</span><span class="tag">&lt;/<span class="name">cp1</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>`,</span><br><span class="line">   components: &#123;</span><br><span class="line">       cp1: cpnC1</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br><span class="line">const app = new Vue(&#123;</span><br><span class="line">   el: "#app",</span><br><span class="line">   components: &#123;</span><br><span class="line">       cp2: cpnC2</span><br><span class="line">   &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>cp1 在 cp2 中注册，cp2 在 Vue 实例中注册，在 html 使用时只需添加 cp2 标签。cp2 是父组件，cp1 是子组件。</p>
+<hr>
+<p>我想偷懒，下面来看语法糖：<br>—语法糖—</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 创建组件</span><br><span class="line">// const cpnC1 = Vue.extend()</span><br><span class="line">Vue.component('cp1', &#123;</span><br><span class="line">   template: `<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>cem<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>`</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>将构造器放入注册操作中，实际还是调用 extend。</p>
+<p>嵌套太多，抽离。。。使用 template 标签定义模板。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"cpn"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>cemcoe<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">// ---data---</span><br><span class="line">Vue.component('cp1', &#123;</span><br><span class="line">   template: '#cpn'</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>大概就是这样了。</p>
+<hr>
+<p>这里的 web components 和 Vue 的关系，其实和 <a href="https://www.jianshu.com/p/7cf3f99698f2" target="_blank" rel="noopener">CSS | CSS Variable | CSS变量</a> 与那些 less sass 预处理器的关系一样一样的。</p>
+<p>如果搞得完善的话，肯定是原生的 web components 性能肯定是刚刚的，期待ing。</p>
+<p>最后来一个 web components &amp;&amp; Vue components 的对比图。<br><img src="https://upload-images.jianshu.io/upload_images/3750332-87b5ee42ceec9181.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="web components &amp;&amp; Vue components"></p>
+<blockquote>
+<p>每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+</blockquote>
+<blockquote>
+<p>这里是 cemcoe 的连载 <a href="https://www.jianshu.com/nb/40206736" target="_blank" rel="noopener">化学小子的前端实验册</a> 的第 21 篇，欢迎关注。</p>
+</blockquote>
+
+            <p>> 这里是 cemcoe 连载 [化学小子的前端实验册] 的第 7 篇，欢迎关注。</p>
+            <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+        </div>
+    </article>
+    <!-- 我是章节目录  -->
+    <div id="book-chapters">
+        <div class="book-chapters-header">
+            <span class="title">目录(共11篇)</span>
+            <button class="reset">切换顺序</button>
+        </div>
+        --------
+
+        
+        
+        
+            
+        <ul>
+            <li><a href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../hexo_how-to-make-a-hexo-theme-post/index.html">---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="">7---Vue | 组件化 | 基本操作</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
+        </ul>
+        
+        <div class="book-chapters-drawer-footer">
+            <a href="../../index.html">前往作品主页</a>
+        </div>
+
+
+    </div>
+    <!-- 111 -->
+    
+<script src="../../static/js/index.js"></script>
+
+
+</body>
+
+</html>

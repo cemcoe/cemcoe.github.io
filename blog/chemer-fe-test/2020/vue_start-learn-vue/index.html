@@ -1,0 +1,168 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Vue 入手 | 化学小子的前端实验册</title>
+    
+<link rel="stylesheet" href="../../static/css/post.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+    <div id="book-nav">
+        <button class="open-chapter">
+            目录
+        </button>
+        <a class="book-info" href="../../index.html">
+            <span class="nameoneline">化学小子的前端实验册</span>
+        </a>
+    </div>
+    <article class="post">
+        <div class="post-title">
+            <h2 class="title">Vue 入手</h2>
+        </div>
+        <div class="article-info">
+            <div class="meta">
+
+                
+                <span class="tags">Vue</span>
+                
+
+                <span class="post-time">2020-03-01</span>
+            </div>
+        </div>
+        <div class="note-content">
+            <p>Vue 的介绍，优缺点等概念这里就不瞎掰了。若想了解请直达<a href="https://cn.vuejs.org/index.html" target="_blank" rel="noopener">官网</a>。</p>
+<a id="more"></a>
+
+<p>如何进行元素的双向绑定，这是一个普遍的需求点。</p>
+<p>在 tab 效果中，tab 变换时内容区域要跟着变，那么内容如果发生了切换而 tab 却还停留在原来的位置。</p>
+<p>同样的，在轮播图中轮播图和小白点也是要双向绑定的，那么这里其实就存在着重复的需求。</p>
+<p>Vue 其实是支持元素的双向绑定的。</p>
+<p>原生的 js 有点难搞，这时可以捋一捋 Vue 的知识点了。</p>
+<p>还是从国际传统 Hello World 开始。</p>
+<p>在 Vue 中写一个Hello World 是要这样的：</p>
+<ul>
+<li>引入 Vue.js || 本质上就是引入一个外部的 js 文件</li>
+<li>html 中定义要挂载的元素 || 看一看哪个幸运儿可以被选中，独得皇上恩宠</li>
+<li>使用 new Vue() 创建实例 || 该实例接受一个对象作为参数</li>
+<li>填充字段，接收的字段包括：el，data</li>
+</ul>
+<p>HTML 文档结构</p>
+<p>下面是 js  示例，同时也是核心代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// function Vue() &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// new Vue 做了什么？这个要看一下源码。</span></span><br><span class="line"><span class="comment">// 接受一个对象参数</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>, <span class="comment">// 用于挂载要管理的元素</span></span><br><span class="line">    data: &#123;</span><br><span class="line">        <span class="comment">// 定义数据</span></span><br><span class="line">        message: <span class="string">"Hello cemcoe"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>效果就是页面上会展示 “Hello cemcoe”。</p>
+<p>上面的编程范式是声明式编程，至于什么是声明式编程，简单说就是：点外卖，自己做饭可能要去买菜，接着洗菜，下一步切菜。。。<br>点外卖就不需要考虑各个步骤了，直接点击要的下单，我要这个，还有这个，至于怎么做完全不用考虑。</p>
+<hr>
+<p>想一下，如果不使用框架要实现上面的 Hello World 是一个什么流程。</p>
+<p>与声明式编程相对，这里其实是命令式编程，一步一步怎么做，每一步都要精确。</p>
+<ol>
+<li>首先肯定要使用诸如 querySelector() 等方法选择节点</li>
+<li>而后创建文本节点，并为其赋值</li>
+<li>将创建的文本节点挂载到选择的节点</li>
+</ol>
+<hr>
+<p>下面来看一下如何展示一个列表。</p>
+<p>省略固定不变的代码，在 data 中定义一个书籍列表</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">books: [</span><br><span class="line">        <span class="string">"数学"</span>,</span><br><span class="line">        <span class="string">"物理"</span>,</span><br><span class="line">        <span class="string">"生物"</span>,</span><br><span class="line">        <span class="string">"化学"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>下面是展示，有了 Hello World 的经验，对于列表比较容易想到的方法是：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>books[0]<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>books[1]<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>books[2]<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的方法可以吗，当然可以，就是有点憨憨，就好像老师让算从1到100的整数和时，真就从1开始加到100。</p>
+<p>比较简洁的是下面的方式，Vue 已经帮我们搞好了，真贴心。</p>
+<hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in books"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>不出意外会展示一个列表 。</p>
+<p>技术点在于 <code>v-for=&quot;item in books&quot;</code>，可以大致猜一下，这是遍历了一下数组并将值赋给每个 item，并将 item 搞到页面中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 仅供理解</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; books.length; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(books[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 Vue 中类似于 <code>v-for</code> 这种命名规则的还有 <code>v-if</code> 等，他们的术语是指令。</p>
+<p>到此就是 Vue 的入手笔记了。</p>
+
+            <p>> 这里是 cemcoe 连载 [化学小子的前端实验册] 的第 1 篇，欢迎关注。</p>
+            <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+        </div>
+    </article>
+    <!-- 我是章节目录  -->
+    <div id="book-chapters">
+        <div class="book-chapters-header">
+            <span class="title">目录(共11篇)</span>
+            <button class="reset">切换顺序</button>
+        </div>
+        --------
+
+        
+        
+        
+            
+        <ul>
+            <li><a href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../hexo_how-to-make-a-hexo-theme-post/index.html">---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="">1---Vue 入手</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
+        </ul>
+        
+        <div class="book-chapters-drawer-footer">
+            <a href="../../index.html">前往作品主页</a>
+        </div>
+
+
+    </div>
+    <!-- 111 -->
+    
+<script src="../../static/js/index.js"></script>
+
+
+</body>
+
+</html>

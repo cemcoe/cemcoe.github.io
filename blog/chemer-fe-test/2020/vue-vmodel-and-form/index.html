@@ -1,0 +1,217 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Vue | v-model &amp;&amp; form | 化学小子的前端实验册</title>
+    
+<link rel="stylesheet" href="../../static/css/post.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+    <div id="book-nav">
+        <button class="open-chapter">
+            目录
+        </button>
+        <a class="book-info" href="../../index.html">
+            <span class="nameoneline">化学小子的前端实验册</span>
+        </a>
+    </div>
+    <article class="post">
+        <div class="post-title">
+            <h2 class="title">Vue | v-model &amp;&amp; form</h2>
+        </div>
+        <div class="article-info">
+            <div class="meta">
+
+                
+                <span class="tags">Vue</span>
+                
+
+                <span class="post-time">2020-03-06</span>
+            </div>
+        </div>
+        <div class="note-content">
+            <p>和 v-on v-bind 等类似 v-model 也是 Vue 中常用的一种指令。</p>
+<a id="more"></a>
+
+<p>v-model 常常和表单配合一起使用。</p>
+<p>应用场景主要有 用户注册页面，购物车多选功能等。</p>
+<p>来看一看目录</p>
+<ul>
+<li>v-model 的基本操作</li>
+<li>如何使用学过的东西来模拟 v-model </li>
+<li>什么是值绑定</li>
+<li>v-model 的修饰符</li>
+</ul>
+<p>进入基本操作</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">&#123;&#123;name&#125;&#125;</span><br><span class="line">//---data---</span><br><span class="line">name: "cemcoe"</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-e6e80af1c23f8ddd.gif?imageMogr2/auto-orient/strip" alt="基本操作"></p>
+<p>可以看到更改 data 中的数据时，DOM 中的文本会发生变化，同时更改输入时 data 中的数据也会随之改变。</p>
+<p>双向指页面中显示的信息和 vue 中定义的 data 字段。</p>
+<hr>
+<p>不如使用学过的东西来动手实现一下 v-model。</p>
+<p>先来实现 data 到 DOM 的单向绑定，可以使用 v-bind 指令。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-bind:value</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">&#123;&#123;name&#125;&#125;</span><br><span class="line">//---data---</span><br><span class="line">name: "cemcoe"</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-62e8c8d911936800.gif?imageMogr2/auto-orient/strip" alt="单向绑定"></p>
+<p>data 中的 name 改动会影响数据的显示，但 DOM 中的数据改变，并不会触发 data 中 name 的改变，目前来讲，这个绑定是单向的。</p>
+<p>无动于衷的大猪蹄子。</p>
+<p>接下来实现 DOM 中的数据改变触发 data 中 的数据变化，要用到事件监听。</p>
+<p>input 有个 input 事件，监听用户输入，只要输入就会触发事件。来使用该事件来进行另一向的绑定。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-bind:value</span>=<span class="string">"name"</span> <span class="attr">v-on:input</span>=<span class="string">"valueChange"</span>&gt;</span></span><br><span class="line">&#123;&#123;name&#125;&#125;</span><br><span class="line">//---data---</span><br><span class="line">data: &#123;</span><br><span class="line">    name: "cemcoe"</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    valueChange(event) &#123;</span><br><span class="line">        this.name = event.target.value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>methos 通过监听 input 事件获得 input 的实时值，并将结果放到了 data 中的 name。</p>
+<p>到这里就实现了双向绑定，图呢，就不放了，和 v-model 一样一样的。</p>
+<p>总结一下：<br>双向绑定是两个指令的结合体</p>
+<ul>
+<li>v-bind 绑定 value || data 对 DOM 的绑定</li>
+<li>v-on 监听 input event 获取实时的 input value || DOM 对 data 的绑定</li>
+</ul>
+<hr>
+<p>下面来看一看 v-model 和 各类表单的结合。</p>
+<p>v-model &amp;&amp; radio</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"male"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">id</span>=<span class="string">"male"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">v-model</span>=<span class="string">"sex"</span>&gt;</span>男</span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"female"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">id</span>=<span class="string">"female"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"0"</span> <span class="attr">v-model</span>=<span class="string">"sex"</span>&gt;</span>女</span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;sex&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">//---data---</span><br><span class="line">sex: ''</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-3ce405f01f676af5.gif?imageMogr2/auto-orient/strip" alt="v-model &amp;&amp; radio"></p>
+<p>向服务器传递用户选择对应的 value 值，一般为数字。</p>
+<hr>
+<p>v-model &amp;&amp; checkbox</p>
+<ul>
+<li>单选</li>
+<li>多选</li>
+</ul>
+<p>添加 label 可以点文字选择。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"agree"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"agree"</span> <span class="attr">v-model</span>=<span class="string">"isAgree"</span>&gt;</span>同意协议</span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;isAgree&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-bind:disabled</span>=<span class="string">"!isAgree"</span>&gt;</span>下一步<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">//----data---</span><br><span class="line">isAgree: false</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-4fbfe591442ba0ca.gif?imageMogr2/auto-orient/strip" alt="checkbox 单选"><br>button 不能同意协议不能进行下一步，一个变量控制两个东西的状态。</p>
+<hr>
+<p>来看 checkbox 多选框</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>1</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"2"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>2</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"3"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>3</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"4"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>4</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"5"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>5</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"6"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>6</span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>喜欢的数字：&#123;&#123;nums&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">//---data---</span><br><span class="line">nums: []</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-252be874f6fc3022.gif?imageMogr2/auto-orient/strip" alt="checkbox 多选"></p>
+<p>使用场景如购物车选择结算。</p>
+<p>单选框对应布尔值，多选框对应数组</p>
+<hr>
+<p>v-model &amp;&amp; select<br>同样分为单选和多选</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">v-model</span>=<span class="string">"num"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"4"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;num&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">//---data---</span><br><span class="line">num: ''</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-9f03dfa608b46c41.gif?imageMogr2/auto-orient/strip" alt="select 单选"></p>
+<p>下面是多选的例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">v-model</span>=<span class="string">"nums"</span> <span class="attr">multiple</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"4"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;nums&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">// --data--</span><br><span class="line">nums: []</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-80b05ee0ccc2841f.gif?imageMogr2/auto-orient/strip" alt="select 多选"></p>
+<p>添加 multiple，按住 Ctrl 键进行多选。</p>
+<p>—概念—<br>值绑定 这他喵的什么玩意？选项不写死，从服务器请求遍历。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>1</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"2"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>2</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"3"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>3</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"4"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>4</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"5"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>5</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"6"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span>&gt;</span>6</span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>喜欢的数字：&#123;&#123;nums&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">//---data---</span><br><span class="line">nums: []</span><br></pre></td></tr></table></figure>
+
+<p>使用值绑定以后的代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">v-for</span>=<span class="string">"item in originNumbers"</span> <span class="attr">:for</span>=<span class="string">"item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">v-model</span>=<span class="string">"nums"</span> <span class="attr">:value</span>=<span class="string">"item"</span>&gt;</span>&#123;&#123;item&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>喜欢的数字：&#123;&#123;nums&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">//---data---</span><br><span class="line">nums: [],</span><br><span class="line">originNums: [1, 2, 3, 4, 5, 6]</span><br></pre></td></tr></table></figure>
+
+<p>这样上面的方式写法有点憨憨了。<br>开发中也是服务器给个列表，毕竟每个人的购物车是不一样的。。。</p>
+<p>值不要写死，要动态绑定。</p>
+<hr>
+<p>看看 v-model 的修饰符，v-model 实时更改是有点消耗资源的。</p>
+<p>可参考函数的节流防抖问题，有空写一些。</p>
+<p>拿一个 lazy 修饰符举个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model.lazy</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">//---data---</span><br><span class="line">name: "cemcoe"</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-5c155ffae8cec02e.gif?imageMogr2/auto-orient/strip" alt="v-model lazy"></p>
+<p>可以发现数据不再实时进行更改，而是失去焦点再进行更改，在一定程度上节约了计算机资源。</p>
+<p>下面有一些可能会用到的修饰符：</p>
+<ul>
+<li>number 数据类型固定为 number</li>
+<li>trim 将前后空格去除</li>
+</ul>
+<p>以上就是对 v-model &amp;&amp; form 的瞎掰了。</p>
+<p>美好的周末又开始了。</p>
+<blockquote>
+<p>每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+</blockquote>
+<blockquote>
+<p>这里是连载 <a href="https://www.jianshu.com/nb/40206736" target="_blank" rel="noopener">化学小子的前端实验册</a> 的第 20 篇，欢迎关注。</p>
+</blockquote>
+
+            <p>> 这里是 cemcoe 连载 [化学小子的前端实验册] 的第 6 篇，欢迎关注。</p>
+            <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+        </div>
+    </article>
+    <!-- 我是章节目录  -->
+    <div id="book-chapters">
+        <div class="book-chapters-header">
+            <span class="title">目录(共11篇)</span>
+            <button class="reset">切换顺序</button>
+        </div>
+        --------
+
+        
+        
+        
+            
+        <ul>
+            <li><a href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../hexo_how-to-make-a-hexo-theme-post/index.html">---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="">6---Vue | v-model && form</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
+        </ul>
+        
+        <div class="book-chapters-drawer-footer">
+            <a href="../../index.html">前往作品主页</a>
+        </div>
+
+
+    </div>
+    <!-- 111 -->
+    
+<script src="../../static/js/index.js"></script>
+
+
+</body>
+
+</html>

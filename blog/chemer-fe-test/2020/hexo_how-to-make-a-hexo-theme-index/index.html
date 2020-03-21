@@ -1,0 +1,178 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>如何搞一个专属的 Hexo 的主题 | 首页篇 | 化学小子的前端实验册</title>
+    
+<link rel="stylesheet" href="../../static/css/post.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+    <div id="book-nav">
+        <button class="open-chapter">
+            目录
+        </button>
+        <a class="book-info" href="../../index.html">
+            <span class="nameoneline">化学小子的前端实验册</span>
+        </a>
+    </div>
+    <article class="post">
+        <div class="post-title">
+            <h2 class="title">如何搞一个专属的 Hexo 的主题 | 首页篇</h2>
+        </div>
+        <div class="article-info">
+            <div class="meta">
+
+                
+                <span class="tags">demo</span>
+                
+
+                <span class="post-time">2020-03-20</span>
+            </div>
+        </div>
+        <div class="note-content">
+            <p>如何使用 Hexo 搭建博客不是本文重点，本文主要搞一个专属的个人博客主题。</p>
+<a id="more"></a>
+
+<p>来看一下首页的效果。</p>
+<p>往大了分可以分为上部用户信息和下部文章列表部分。<br>先抛开 CSS 样式不谈，先来看一看内在美（主要目前不想调样式），来找一找我们要用到的数据和内在逻辑。</p>
+<p>从预览图可以看到可以分成两个区域，分别是 用户信息区 和 文章列表区。下面依次来看。</p>
+<hr>
+<h2 id="用户信息区"><a href="#用户信息区" class="headerlink" title="用户信息区"></a>用户信息区</h2><p>在上部的用户信息区可以看到包含用户头像，用户名，用户介绍等部分。<br>这些数据大都定义在 <code>_config.yml</code> 中，下面对着文档来找一找数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 化学小子的前端实验册</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: &#39;&#39;</span><br><span class="line">keywords:</span><br><span class="line">author: cemcoe</span><br><span class="line">author_intro: 略懂化学和代码想学剪视频和日语有个连载化学小子的前端实验册https:&#x2F;&#x2F;www.jianshu.com&#x2F;nb&#x2F;40206736</span><br><span class="line">language: zh</span><br><span class="line">timezone: &#39;&#39;</span><br></pre></td></tr></table></figure>
+<p>那么问题来了如何拿到并使用这些数据？</p>
+<p>如果在 Vue 中是可以使用双大括号语法拿到我们 data 中我们需要的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可这里是 Hexo，入乡随俗，这里有什么法子搞到数据。</p>
+<p>这里要用到模板引擎，推荐 <code>ejs</code>，若想了解可以查看文档，这里是<a href="https://ejs.bootcss.com/" target="_blank" rel="noopener">文档</a>。</p>
+<p>为了简化流程（懒）,我这里写了两个模板，分别是首页和文章详情页。</p>
+<p>本文主要是对首页的记录。</p>
+<hr>
+<p>目录结构是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- layout</span><br><span class="line">  - index.ejs</span><br><span class="line">  - post.ejs</span><br><span class="line">- source</span><br><span class="line">  - css</span><br><span class="line">    - index.js</span><br><span class="line">    - post.js</span><br><span class="line">  - imgs</span><br><span class="line">  - js</span><br><span class="line">- README.md</span><br></pre></td></tr></table></figure>
+
+<p>layout 文件夹中存放的就是模板了。<br>先看 <code>index.ejs</code> 即首页模板。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user-info&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;background&quot;&gt;</span><br><span class="line">    &lt;img src&#x3D;&quot;#&quot;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;avatar&quot;&gt;</span><br><span class="line">    &lt;img src&#x3D;&quot;#&quot;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;author-info&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;name&quot;&gt;&lt;%&#x3D; config.author %&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;follow-meta&quot;&gt;</span><br><span class="line">      &lt;span&gt;文章数: &lt;%&#x3D; site.posts.length %&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;intro&quot;&gt;</span><br><span class="line">    &lt;%&#x3D; config.author_intro %&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>其实和 html 没多大的差别，仔细看一下，不同可能在百分号上，随便拎出来一个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%&#x3D; config.author %&gt;</span><br></pre></td></tr></table></figure>
+<p>嗯，是不是很容易想到 Vue 的双大括号语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; ejs：</span><br><span class="line">&lt;%&#x3D; config.author %&gt;</span><br><span class="line">&#x2F;&#x2F; Vue:</span><br><span class="line">&#123;&#123; config.author &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>翻看 <code>ejs</code> 的文档可以发现，尖括号和百分号是模板标签，这里主要用到四种</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;% &#39;脚本&#39; 标签，用于流程控制，无输出。</span><br><span class="line">&lt;%&#x3D; 输出数据到模板（输出是转义 HTML 标签）</span><br><span class="line">&lt;%- 输出非转义的数据到模板</span><br><span class="line">%&gt; 一般结束标签</span><br></pre></td></tr></table></figure>
+
+<p>如前面看到的index.ejs 的代码使用的就是 <code>&lt;%=</code><br>看一下index.ejs 中用到的数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- config.author 用户名</span><br><span class="line">- config.author_intro 用户简介</span><br><span class="line">- site.posts.length 文章数</span><br></pre></td></tr></table></figure>
+<p>前两条数据都好理解，他们都存储在 <code>_config.yml</code> 中，最后一条数据的 <code>site</code> 是哪里来的。</p>
+<p>不妨打印一下先，将 <code>&lt;% console.log(site) %&gt;</code> 添加到首页，并刷新首页可以看到类似结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  posts: _Query &#123;</span><br><span class="line">    data: [</span><br><span class="line">      [_Document], [_Document],</span><br><span class="line">      [_Document], [_Document],</span><br><span class="line">      [_Document], [_Document],</span><br><span class="line">      [_Document], [_Document],</span><br><span class="line">      [_Document], [_Document]</span><br><span class="line">    ],</span><br><span class="line">    length: 10</span><br><span class="line">  &#125;,</span><br><span class="line">  pages: _Query &#123; data: [], length: 0 &#125;,</span><br><span class="line">  categories: _Query &#123; data: [], length: 0 &#125;,</span><br><span class="line">  tags: _Query &#123; data: [ [_Document], [_Document] ], length: 2 &#125;,</span><br><span class="line">  data: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>查 <a href="https://hexo.io/zh-cn/docs/variables#%E7%BD%91%E7%AB%99%E5%8F%98%E9%87%8F" target="_blank" rel="noopener">文档</a> 可以发现，<code>site.posts</code> 存储着网站的所有文章，并且通过测试打印的数据可以发现 <code>site.posts</code> 本身是一个对象，其拥有一个属性 <code>length</code> 存储着文章的数量，这些都是 Hexo 定义好的。</p>
+<hr>
+<h2 id="文章列表项"><a href="#文章列表项" class="headerlink" title="文章列表项"></a>文章列表项</h2><p>看完用户信息项，不妨再来看一看文章列表项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;flow-list-container&quot;&gt;</span><br><span class="line">  &lt;% page.posts.each(function (post) &#123; %&gt;</span><br><span class="line">  &lt;ul class&#x3D;&quot;flow-list-ul&quot;&gt;</span><br><span class="line">    &lt;li class&#x3D;&quot;note-flow&quot;&gt;</span><br><span class="line">      &lt;a class&#x3D;&quot;content&quot; href&#x3D;&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;summary&quot;&gt;</span><br><span class="line">          &lt;h6 class&#x3D;&quot;title&quot;&gt;&lt;%&#x3D; post.title %&gt;&lt;&#x2F;h6&gt;</span><br><span class="line">          &lt;div class&#x3D;&quot;abstract&quot;&gt;</span><br><span class="line">            &lt;%- post.excerpt %&gt;</span><br><span class="line">          &lt;&#x2F;div&gt;</span><br><span class="line">          &lt;div class&#x3D;&quot;meta&quot;&gt;</span><br><span class="line">            &lt;span&gt;&lt;%&#x3D; post.order %&gt;&lt;&#x2F;span&gt;</span><br><span class="line"></span><br><span class="line">            &lt;% post.tags.data.forEach(function (tag) &#123; %&gt;</span><br><span class="line">            &lt;span&gt;&lt;%- tag.name %&gt;&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;% &#125;) %&gt;</span><br><span class="line"></span><br><span class="line">            &lt;span class&#x3D;&quot;time&quot;&gt;&lt;%- date(post.date, &quot;MM-DD&quot;) %&gt;&lt;&#x2F;span&gt;</span><br><span class="line">          &lt;&#x2F;div&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;% &#125;) %&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>比用户信息项更简单了有没有？并没有。</p>
+<p>有了用户信息项的经验，这里我们可以找一找 <code>ejs</code> 模板标签。<br>这里出现了三类模板标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- url_for(post.path) %&gt;</span><br><span class="line"></span><br><span class="line">&lt;% page.posts.each(function (post) &#123; %&gt;</span><br><span class="line">&lt;% &#125;) %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%&#x3D; post.title %&gt;</span><br></pre></td></tr></table></figure>
+<p>先看 <code>&lt;%- url_for(post.path) %&gt;</code>，是的，它出现了，这不就是 <code>v-for</code> 吗？<br>准确地说是<code>v-bind</code> 和 <code>v-for</code> 的结合体，因为它是被插入到了元素属性 <code>href</code> 中。</p>
+<p>再来看第二个，就是一个遍历操作，<code>page.posts</code> 的数据结构和 <code>site.posts</code> 类似。</p>
+<p>来看一看用到的数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- post.path</span><br><span class="line">- post.excerpt</span><br><span class="line">- post.order</span><br><span class="line">- post.tags.data 这里需要注意遍历post.tags是拿不到tag的</span><br><span class="line">- post.date</span><br></pre></td></tr></table></figure>
+
+<p>同时用到了两个 Hexo 的<a href="https://hexo.io/zh-cn/docs/helpers" target="_blank" rel="noopener">辅助函数</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- url_for()</span><br><span class="line">- date()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+            <p>> 这里是 cemcoe 连载 [化学小子的前端实验册] 的第 0 篇，欢迎关注。</p>
+            <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+        </div>
+    </article>
+    <!-- 我是章节目录  -->
+    <div id="book-chapters">
+        <div class="book-chapters-header">
+            <span class="title">目录(共11篇)</span>
+            <button class="reset">切换顺序</button>
+        </div>
+        --------
+
+        
+        
+        
+            
+        <ul>
+            <li><a href="">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../hexo_how-to-make-a-hexo-theme-post/index.html">---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
+        </ul>
+        
+        <div class="book-chapters-drawer-footer">
+            <a href="../../index.html">前往作品主页</a>
+        </div>
+
+
+    </div>
+    <!-- 111 -->
+    
+<script src="../../static/js/index.js"></script>
+
+
+</body>
+
+</html>

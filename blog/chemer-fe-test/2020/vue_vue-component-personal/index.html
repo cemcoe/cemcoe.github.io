@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Vue | 组件化 | 个性化组件slot | 化学小子的前端实验册</title>
+    
+<link rel="stylesheet" href="../../static/css/post.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+    <div id="book-nav">
+        <button class="open-chapter">
+            目录
+        </button>
+        <a class="book-info" href="../../index.html">
+            <span class="nameoneline">化学小子的前端实验册</span>
+        </a>
+    </div>
+    <article class="post">
+        <div class="post-title">
+            <h2 class="title">Vue | 组件化 | 个性化组件slot</h2>
+        </div>
+        <div class="article-info">
+            <div class="meta">
+
+                
+                <span class="tags">Vue</span>
+                
+
+                <span class="post-time">2020-03-09</span>
+            </div>
+        </div>
+        <div class="note-content">
+            <p>组件通信讲的是如何搞到数据，这里要拿到整个的组件。</p>
+<ul>
+<li>如何拿到组件对象</li>
+<li>如何对组件进行个性化设置</li>
+</ul>
+<p>先来看关键词</p>
+<ul>
+<li>父子 <code>$children</code> || <code>$refs</code>【常用】</li>
+<li>子父 <code>$parent</code></li>
+</ul>
+<p><code>$children</code> 得到数组，通过索引得到特定组件。</p>
+<p><code>$refs</code> 得到对象 配合  <code>ref</code> 使用，通过 <code>ref</code> 的值得到组件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;cpn ref&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;cpn&gt;</span><br><span class="line">&#x2F;&#x2F;---</span><br><span class="line">this.$refs.demo</span><br><span class="line">&#x2F;&#x2F; 得到cpn组件</span><br></pre></td></tr></table></figure>
+
+
+<p>大家都是有身份的人，<code>$refs</code> 使用的较多。</p>
+<hr>
+<p>个性化，非主流<br>slot 插槽</p>
+<ul>
+<li>具名插槽</li>
+<li>编译作用域</li>
+</ul>
+<p>扩展性<br>自定义组件，暴漏一定的接口，组件可以动态化。</p>
+<p>求同存异 函数的参数 而不仅仅是表达式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;cpn&gt;</span><br><span class="line">        &lt;button&gt;函数实参，替换函数形参&lt;&#x2F;button&gt;</span><br><span class="line">    &lt;&#x2F;cpn&gt;</span><br><span class="line">    &lt;cpn&gt;&lt;&#x2F;cpn&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;template id&#x3D;&quot;cpn&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;cemcoe&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;slot&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">        &lt;!-- 函数() 形参 --&gt;  </span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const cpn &#x3D; &#123;</span><br><span class="line">        template: &quot;#cpn&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    const app &#x3D; new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        components: &#123;</span><br><span class="line">            cpn</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-482bc95885157b9d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="slot1.jpg"></p>
+<p>还可以默认值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;slot&gt;&lt;button&gt;我是默认值&lt;&#x2F;button&gt;&lt;&#x2F;slot&gt;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p>给插槽名字 对象的属性名 数组 <code>refs</code> 是不是相通的？？<br>多个插槽 插哪个？ <code>name + slot</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;cpn&gt;</span><br><span class="line">        &lt;span slot&#x3D;&quot;sa&quot;&gt;我把老大绑了&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;cpn&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;template id&#x3D;&quot;cpn&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;slot name&#x3D;&quot;sa&quot;&gt;&lt;button&gt;我是老大&lt;&#x2F;button&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">        &lt;slot name&#x3D;&quot;xi&quot;&gt;&lt;button&gt;我是老二&lt;&#x2F;button&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">        &lt;slot name&#x3D;&quot;si&quot;&gt;&lt;button&gt;我是老三&lt;&#x2F;button&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://upload-images.jianshu.io/upload_images/3750332-736e877852d6264b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="老大.jpg"></p>
+<p>来波总结：</p>
+<p>拿特定的组件和定义插槽都借助了 <code>key-value</code> 的数据结构。</p>
+<ul>
+<li>拿组件是 <code>refs: ref</code></li>
+<li>配置组件插槽是<code>slot: name</code></li>
+</ul>
+
+            <p>> 这里是 cemcoe 连载 [化学小子的前端实验册] 的第 9 篇，欢迎关注。</p>
+            <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+        </div>
+    </article>
+    <!-- 我是章节目录  -->
+    <div id="book-chapters">
+        <div class="book-chapters-header">
+            <span class="title">目录(共11篇)</span>
+            <button class="reset">切换顺序</button>
+        </div>
+        --------
+
+        
+        
+        
+            
+        <ul>
+            <li><a href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../hexo_how-to-make-a-hexo-theme-post/index.html">---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
+        </ul>
+        
+            
+        <ul>
+            <li><a href="">9---Vue | 组件化 | 个性化组件slot</a></li>
+        </ul>
+        
+        <div class="book-chapters-drawer-footer">
+            <a href="../../index.html">前往作品主页</a>
+        </div>
+
+
+    </div>
+    <!-- 111 -->
+    
+<script src="../../static/js/index.js"></script>
+
+
+</body>
+
+</html>
