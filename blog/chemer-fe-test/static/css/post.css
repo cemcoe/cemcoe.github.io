@@ -10,6 +10,10 @@ li {
     list-style: none;
 }
 
+/* body{    
+    overflow-y: hidden;
+    overflow-x: hidden;
+} */
 
 
 button {
@@ -86,6 +90,17 @@ button {
 }
 
 
+
+#backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(77, 72, 72, 0.6);
+    display: none;
+
+}
 /* chapter */
 #book-chapters {
     background-color: rgb(255, 255, 255);
@@ -93,24 +108,40 @@ button {
     width: 70%;
     height: 100%;
     display: none;
+    overflow: scroll;
 
     top: 0;
     right: 0;
 }
 .book-chapters-header {
+    position: fixed;
     height: 46px;
-    padding: 0 6px;
+    top: 0;
+    width: 70%;
+    right: 0;
+
+    background-color: rgb(255, 255, 255);
     border-bottom: 1px solid;
     border-color: #eaeaea;
-
+}
+#book-chapters ul {
+   margin-top: 46px;
+   margin-bottom: 100px;
 }
 .book-chapters-header .title {
     line-height: 46px;
+    padding-left: 4px;
 }
 .book-chapters-header .reset {
     float: right;
+    padding-right: 30px;
     line-height: 46px;
     color: rgb(80, 75, 75);
+}
+#book-chapters ul {
+    display: flex;
+    flex-direction: column;
+
 }
 #book-chapters li {
     padding: 18px 6px;
@@ -122,17 +153,18 @@ button {
 
 
 .book-chapters-drawer-footer {
-    bottom: 0;
-    position: absolute;
-    width: 100%;
+    width: 70%;
     height: 60px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
     box-shadow: 0 -2px 4px rgba(0,0,0,.1);
 
 }
 .book-chapters-drawer-footer a {
     text-align: center;
-    font-size: 16px;
     display: block;
+    font-size: 16px;
     height: 60px;
     line-height: 60px;
     background-color: #fff;

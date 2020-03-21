@@ -42,7 +42,7 @@
 <p>从预览图可以看到可以分成两个区域，分别是 用户信息区 和 文章列表区。下面依次来看。</p>
 <hr>
 <h2 id="用户信息区"><a href="#用户信息区" class="headerlink" title="用户信息区"></a>用户信息区</h2><p>在上部的用户信息区可以看到包含用户头像，用户名，用户介绍等部分。<br>这些数据大都定义在 <code>_config.yml</code> 中，下面对着文档来找一找数据。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 化学小子的前端实验册</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: &#39;&#39;</span><br><span class="line">keywords:</span><br><span class="line">author: cemcoe</span><br><span class="line">author_intro: 略懂化学和代码想学剪视频和日语有个连载化学小子的前端实验册https:&#x2F;&#x2F;www.jianshu.com&#x2F;nb&#x2F;40206736</span><br><span class="line">language: zh</span><br><span class="line">timezone: &#39;&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 化学小子的前端实验册</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: &#39;&#39;</span><br><span class="line">keywords:</span><br><span class="line">author: cemcoe</span><br><span class="line">author_intro: 略懂化学和代码</span><br><span class="line">language: zh</span><br><span class="line">timezone: &#39;&#39;</span><br></pre></td></tr></table></figure>
 <p>那么问题来了如何拿到并使用这些数据？</p>
 <p>如果在 Vue 中是可以使用双大括号语法拿到我们 data 中我们需要的值。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message &#125;&#125;</span><br></pre></td></tr></table></figure>
@@ -96,72 +96,50 @@
             <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
         </div>
     </article>
-    <!-- 我是章节目录  -->
+    <!-- 我是章节目录遮罩  -->
+    <div id="backdrop"></div>
+
     <div id="book-chapters">
         <div class="book-chapters-header">
             <span class="title">目录(共11篇)</span>
             <button class="reset">切换顺序</button>
         </div>
-        --------
-
-        
-        
-        
-            
         <ul>
-            <li><a href="">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
-        </ul>
-        
             
-        <ul>
-            <li><a href="../hexo_how-to-make-a-hexo-theme-post/index.html">---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
-        </ul>
-        
+            <li style="order: 0;"><a
+                    href="">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
             
-        <ul>
-            <li><a href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
-        </ul>
-        
+            <li style="order: 0;"><a
+                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
             
-        <ul>
-            <li><a href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
-        </ul>
-        
+            <li style="order: 2;"><a
+                    href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
             
-        <ul>
-            <li><a href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
-        </ul>
-        
+            <li style="order: 5;"><a
+                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
             
-        <ul>
-            <li><a href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
-        </ul>
-        
+            <li style="order: 3;"><a
+                    href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
             
-        <ul>
-            <li><a href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
-        </ul>
-        
+            <li style="order: 4;"><a
+                    href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
             
-        <ul>
-            <li><a href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
-        </ul>
-        
+            <li style="order: 1;"><a
+                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
             
-        <ul>
-            <li><a href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
-        </ul>
-        
+            <li style="order: 6;"><a
+                    href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
             
-        <ul>
-            <li><a href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
-        </ul>
-        
+            <li style="order: 7;"><a
+                    href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
             
-        <ul>
-            <li><a href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
+            <li style="order: 8;"><a
+                    href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
+            
+            <li style="order: 9;"><a
+                    href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
+            
         </ul>
-        
         <div class="book-chapters-drawer-footer">
             <a href="../../index.html">前往作品主页</a>
         </div>
