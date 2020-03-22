@@ -176,17 +176,26 @@ img {
     width: 100%;
 }
 
-figure {
+pre {
+    overflow-x: auto;
+}
+
+/* figure {
     background-color: #000;
     color: #f40;
+    overflow-x: auto;
 }
 figure span {
     color: #f40;
     padding: 4px;
 }
 
+pre {
+    background-color: #000;
+}
+
 code {
-    background-color: rgb(228, 231, 223);
+    
     color: #f40;
     padding: 4px;
-}
+} */

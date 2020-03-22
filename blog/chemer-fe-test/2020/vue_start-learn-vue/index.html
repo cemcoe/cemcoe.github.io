@@ -4,9 +4,17 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>Vue 入手 | 化学小子的前端实验册</title>
+    <meta name="description" content="化学小子cemcoe的前端实验册笔记"">
+    <meta name="author" content="cemcoe">
+    <link rel="shortcut icon" href="../../static/imgs/favicon.ico">
+
     
 <link rel="stylesheet" href="../../static/css/post.css">
 
+    
+<link rel="stylesheet" href="../../static/js/prism/prism.css">
+
+    
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
@@ -52,7 +60,18 @@
 </ul>
 <p>HTML 文档结构</p>
 <p>下面是 js  示例，同时也是核心代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// function Vue() &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// new Vue 做了什么？这个要看一下源码。</span></span><br><span class="line"><span class="comment">// 接受一个对象参数</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>, <span class="comment">// 用于挂载要管理的元素</span></span><br><span class="line">    data: &#123;</span><br><span class="line">        <span class="comment">// 定义数据</span></span><br><span class="line">        message: <span class="string">"Hello cemcoe"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-js">// function Vue() {
+
+// }
+// new Vue 做了什么？这个要看一下源码。
+// 接受一个对象参数
+const app = new Vue({
+    el: &#39;#app&#39;, // 用于挂载要管理的元素
+    data: {
+        // 定义数据
+        message: &quot;Hello cemcoe&quot;
+    }
+})</code></pre>
 <p>效果就是页面上会展示 “Hello cemcoe”。</p>
 <p>上面的编程范式是声明式编程，至于什么是声明式编程，简单说就是：点外卖，自己做饭可能要去买菜，接着洗菜，下一步切菜。。。<br>点外卖就不需要考虑各个步骤了，直接点击要的下单，我要这个，还有这个，至于怎么做完全不用考虑。</p>
 <hr>
@@ -66,19 +85,30 @@
 <hr>
 <p>下面来看一下如何展示一个列表。</p>
 <p>省略固定不变的代码，在 data 中定义一个书籍列表</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">books: [</span><br><span class="line">        <span class="string">"数学"</span>,</span><br><span class="line">        <span class="string">"物理"</span>,</span><br><span class="line">        <span class="string">"生物"</span>,</span><br><span class="line">        <span class="string">"化学"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-js">books: [
+        &quot;数学&quot;,
+        &quot;物理&quot;,
+        &quot;生物&quot;,
+        &quot;化学&quot;
+]</code></pre>
 <p>下面是展示，有了 Hello World 的经验，对于列表比较容易想到的方法是：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>books[0]<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>books[1]<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>books[2]<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-html">&lt;ul&gt;
+    &lt;li&gt;books[0]&lt;/li&gt;
+    &lt;li&gt;books[1]&lt;/li&gt;
+    &lt;li&gt;books[2]&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 <p>上面的方法可以吗，当然可以，就是有点憨憨，就好像老师让算从1到100的整数和时，真就从1开始加到100。</p>
 <p>比较简洁的是下面的方式，Vue 已经帮我们搞好了，真贴心。</p>
 <hr>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in books"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-html">&lt;ul&gt;
+    &lt;li v-for=&quot;item in books&quot;&gt;{{item}}&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 <p>不出意外会展示一个列表 。</p>
 <p>技术点在于 <code>v-for=&quot;item in books&quot;</code>，可以大致猜一下，这是遍历了一下数组并将值赋给每个 item，并将 item 搞到页面中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 仅供理解</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; books.length; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(books[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-js">// 仅供理解
+for(let i = 0; i &lt; books.length; i++) {
+    console.log(books[i])
+}</code></pre>
 <p>在 Vue 中类似于 <code>v-for</code> 这种命名规则的还有 <code>v-if</code> 等，他们的术语是指令。</p>
 <p>到此就是 Vue 的入手笔记了。</p>
 
@@ -96,37 +126,37 @@
         </div>
         <ul>
             
-            <li style="order: 0;"><a
+            <li style="order: '0;'"><a
                     href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
             
-            <li style="order: 0;"><a
-                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
-            
-            <li style="order: 2;"><a
+            <li style="order: '2;'"><a
                     href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
             
-            <li style="order: 5;"><a
-                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
-            
-            <li style="order: 3;"><a
+            <li style="order: '3;'"><a
                     href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
             
-            <li style="order: 4;"><a
+            <li style="order: '0;'"><a
+                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+            
+            <li style="order: '4;'"><a
                     href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
             
-            <li style="order: 1;"><a
-                    href="">1---Vue 入手</a></li>
-            
-            <li style="order: 6;"><a
+            <li style="order: '6;'"><a
                     href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
             
-            <li style="order: 7;"><a
+            <li style="order: '5;'"><a
+                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+            
+            <li style="order: '7;'"><a
                     href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
             
-            <li style="order: 8;"><a
+            <li style="order: '8;'"><a
                     href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
             
-            <li style="order: 9;"><a
+            <li style="order: '1;'"><a
+                    href="">1---Vue 入手</a></li>
+            
+            <li style="order: '9;'"><a
                     href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
             
         </ul>
@@ -139,6 +169,9 @@
     <!-- 111 -->
     
 <script src="../../static/js/index.js"></script>
+
+    
+<script src="../../static/js/prism/prism.js"></script>
 
 
 </body>

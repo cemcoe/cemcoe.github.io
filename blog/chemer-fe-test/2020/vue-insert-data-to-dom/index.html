@@ -4,9 +4,17 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>Vue | 如何将数据插入到DOM中 | 化学小子的前端实验册</title>
+    <meta name="description" content="化学小子cemcoe的前端实验册笔记"">
+    <meta name="author" content="cemcoe">
+    <link rel="shortcut icon" href="../../static/imgs/favicon.ico">
+
     
 <link rel="stylesheet" href="../../static/css/post.css">
 
+    
+<link rel="stylesheet" href="../../static/js/prism/prism.css">
+
+    
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
@@ -44,36 +52,49 @@
 <p>来看具体的代码<br>插值操作，将 data 中的数据插入到 DOM 中。</p>
 <p>这里需要用到 mustache 语法，俗称双大括号语法。被双大括号包裹的可以是变量，也可以是表达式。</p>
 <p>下面要用到的易拉罐即 data 为：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">    name: <span class="string">"cemcoe"</span>,</span><br><span class="line">    age: <span class="number">18</span>,</span><br><span class="line">    num: <span class="number">3</span>,</span><br><span class="line">    site: <span class="string">"https://www.jianshu.com/u/e20f22d3e8d3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-js">data: {
+    name: &quot;cemcoe&quot;,
+    age: 18,
+    num: 3,
+    site: &quot;https://www.jianshu.com/u/e20f22d3e8d3&quot;
+}</code></pre>
 <p>这个 data 中，定义了名字，年龄永远18，num和链接。</p>
 <hr>
 <p>下面格式假定是 mustache 紧跟对应的解析结果，下面是一些测试：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello, &#123;&#123;name&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">Hello, {{name}}</code></pre>
 <blockquote>
 <p>Hello, cemcoe</p>
 </blockquote>
 <p>来个表达式</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;age + num&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">{{age + num}}</code></pre>
 <blockquote>
 <p>21</p>
 </blockquote>
 <hr>
 <p>接下来进入激动人心的指令环节。</p>
 <p>首先是 <code>v-once</code> ，一生只够爱一人，一旦定义便不再改变。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-once</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">&lt;h1&gt;{{name}}&lt;/h1&gt;
+&lt;h1 v-once&gt;{{name}}&lt;/h1&gt;</code></pre>
 <p><img src="https://upload-images.jianshu.io/upload_images/3750332-3a53d8cb69e6a34e.gif?imageMogr2/auto-orient/strip" alt="v-once"></p>
 <p>通过对比测试可以发现 <code>v-once</code> 可以保证在 data 中的数据发生更改时，可以使页面展示保持原有的值，屏蔽掉双向绑定效果。</p>
 <p>来看另一个指令 v-html</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;site&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">"site"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">&lt;p&gt;{{site}}&lt;/p&gt;
+&lt;p v-html=&quot;site&quot;&gt;&lt;/p&gt;</code></pre>
 <p><img src="https://upload-images.jianshu.io/upload_images/3750332-e653385f42512888.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="v-html"></p>
 <p>明显，数据会被当成 html 进行渲染，而非简单地当成字符串进行解析。</p>
 <hr>
 <p>最后拉看一个 <code>v-cloak</code> 斗篷指令，它地应用场景主要是防止闪动的出现，闪动是指 js 代码卡住了，双括号显示出来。<br><img src="https://upload-images.jianshu.io/upload_images/3750332-41ea29bf45f231ed.gif?imageMogr2/auto-orient/strip" alt="闪动"></p>
 <p>解决：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span> <span class="attr">v-cloak</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;site&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;site&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;site&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;site&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-html">&lt;div id=&quot;app&quot; v-cloak&gt;
+    &lt;p&gt;{{site}}&lt;/p&gt;
+    &lt;p&gt;{{site}}&lt;/p&gt;
+    &lt;p&gt;{{site}}&lt;/p&gt;
+    &lt;p&gt;{{site}}&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 <p>同时使用属性选择器将其 display 设为 none。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[v-cloak]</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-css">[v-cloak] {
+    display: none;
+}</code></pre>
 <p>当 Vue 加载完毕时，v-clock 会被删除，此时 p 标签可以显示了。</p>
 <p>工作中解决闪动问题使用虚拟DOM。</p>
 <blockquote>
@@ -94,37 +115,37 @@
         </div>
         <ul>
             
-            <li style="order: 0;"><a
+            <li style="order: '0;'"><a
                     href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
             
-            <li style="order: 0;"><a
-                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
-            
-            <li style="order: 2;"><a
+            <li style="order: '2;'"><a
                     href="">2---Vue | 如何将数据插入到DOM中</a></li>
             
-            <li style="order: 5;"><a
-                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
-            
-            <li style="order: 3;"><a
+            <li style="order: '3;'"><a
                     href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
             
-            <li style="order: 4;"><a
+            <li style="order: '0;'"><a
+                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+            
+            <li style="order: '4;'"><a
                     href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
             
-            <li style="order: 1;"><a
-                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
-            
-            <li style="order: 6;"><a
+            <li style="order: '6;'"><a
                     href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
             
-            <li style="order: 7;"><a
+            <li style="order: '5;'"><a
+                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+            
+            <li style="order: '7;'"><a
                     href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
             
-            <li style="order: 8;"><a
+            <li style="order: '8;'"><a
                     href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
             
-            <li style="order: 9;"><a
+            <li style="order: '1;'"><a
+                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+            
+            <li style="order: '9;'"><a
                     href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
             
         </ul>
@@ -137,6 +158,9 @@
     <!-- 111 -->
     
 <script src="../../static/js/index.js"></script>
+
+    
+<script src="../../static/js/prism/prism.js"></script>
 
 
 </body>

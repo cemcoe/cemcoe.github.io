@@ -4,9 +4,17 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>Vue | 事件监听的两个小伙伴 | 化学小子的前端实验册</title>
+    <meta name="description" content="化学小子cemcoe的前端实验册笔记"">
+    <meta name="author" content="cemcoe">
+    <link rel="shortcut icon" href="../../static/imgs/favicon.ico">
+
     
 <link rel="stylesheet" href="../../static/css/post.css">
 
+    
+<link rel="stylesheet" href="../../static/js/prism/prism.css">
+
+    
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
@@ -41,11 +49,14 @@
 <p>两个搞到一块可以实现术语唤为 事件监听 的东西。</p>
 <hr>
 <p>来波回忆杀，看看原生的 JavaScript 是如何进行事件监听的？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const demo &#x3D; document.querySelector(&#39;#demo&#39;)</span><br><span class="line">demo.onclick &#x3D; () &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&quot;mama，我被人点了。嘤嘤嘤。&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>看上去不大高端，唤 addEventListener 来看看。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const demo &#x3D; document.querySelector(&#39;#demo&#39;)</span><br><span class="line">addEventListener(&#39;click&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&quot;mama，我被人点了。嘤嘤嘤。&quot;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>emm，有点样子了。</p>
+<pre><code>const demo = document.querySelector(&#39;#demo&#39;)
+demo.onclick = () =&gt; {
+    console.log(&quot;mama，我被人点了。嘤嘤嘤。&quot;)
+}</code></pre><p>看上去不大高端，唤 addEventListener 来看看。</p>
+<pre><code>const demo = document.querySelector(&#39;#demo&#39;)
+addEventListener(&#39;click&#39;, () =&gt; {
+    console.log(&quot;mama，我被人点了。嘤嘤嘤。&quot;)
+})</code></pre><p>emm，有点样子了。</p>
 <p>通过上面的一波回忆，要来监听事件可以提取下列步骤：</p>
 <ul>
 <li>找到要监听谁？ || 监听对象</li>
@@ -54,41 +65,83 @@
 <p>简言之，事件监听就是：某元素发生了什么事情，我要做出相应的反应证明我不是吃干饭的。</p>
 <hr>
 <p>来看看在 Vue 的地盘事件监听是怎么的一个玩法？</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;cemcoe&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"qinqin"</span>&gt;</span>qinqin<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"baobao"</span>&gt;</span>baobao<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">&lt;h1&gt;{{cemcoe}}&lt;/h1&gt;
+&lt;button v-on:click=&quot;qinqin&quot;&gt;qinqin&lt;/button&gt;
+&lt;button v-on:click=&quot;baobao&quot;&gt;baobao&lt;/button&gt;</code></pre>
 <p>v-on 监听事件，起到的是找到监听元素的作用；methods 提供具体的应对策略，被打要不要被打回去，还是以理服人。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const demo &#x3D; document.querySelector(&#39;#demo&#39;)</span><br><span class="line">&#x2F;&#x2F; 老兄，找元素的事情交给我 v-on</span><br><span class="line">addEventListener(&#39;click&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">&#x2F;&#x2F; 回调函数就交给 methods 好了</span><br><span class="line">    console.log(&quot;mama，我被人点了。嘤嘤嘤。&quot;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>这个东西还有语法糖 v-on:click === @click</p>
+<pre><code>const demo = document.querySelector(&#39;#demo&#39;)
+// 老兄，找元素的事情交给我 v-on
+addEventListener(&#39;click&#39;, () =&gt; {
+// 回调函数就交给 methods 好了
+    console.log(&quot;mama，我被人点了。嘤嘤嘤。&quot;)
+})</code></pre><p>这个东西还有语法糖 v-on:click === @click</p>
 <p>用上语法糖，有点简洁的写法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;cemcoe&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"qinqin"</span>&gt;</span>qinqin<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"baobao"</span>&gt;</span>baobao<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">&lt;h1&gt;{{cemcoe}}&lt;/h1&gt;
+&lt;button @click=&quot;qinqin&quot;&gt;qinqin&lt;/button&gt;
+&lt;button @click=&quot;baobao&quot;&gt;baobao&lt;/button&gt;</code></pre>
 <p>具体的 qinqin 和 baobao 函数这里就不实现了，当伪代码看。</p>
 <hr>
 <p>通过上面的一番瞎掰，可以知道 methods 中其实是原先 addEventListener 的回调函数，函数肯定要有参数才能发挥它的魅力。</p>
 <p>关于参数的问题：</p>
 <ul>
-<li>如果方法(函数)不需要参数，那方法后的 () 可以不写<pre><code>· 若方法本身有参数，会默认将原生事件 event 传进去</code></pre></li>
+<li>如果方法(函数)不需要参数，那方法后的 () 可以不写<pre><code>  · 若方法本身有参数，会默认将原生事件 event 传进去</code></pre></li>
 <li>同时传某个参数和 event 时，通过 $event 传进去</li>
 </ul>
 <p>这个关于 event 的一些东西有空再写。 </p>
 <hr>
 <p>下面来看一些例子，正常的逻辑</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"fn(‘cemcoe’)"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// ---methods---</span><br><span class="line">fn (a) &#123; console.log(a) &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">&lt;button @click=&quot;fn(‘cemcoe’)&quot;&gt;点我&lt;/button&gt;
+
+// ---methods---
+fn (a) { console.log(a) }</code></pre>
 <p>这是乖孩子，方法有一个函数，那么在使用时就规规矩矩地传给它一个参数，合作愉快。</p>
 <hr>
 <p>那遇到就是叛逆，就是要彰显与众不同，就是不传参数且不加括号，会怎么样？下面是点三次按钮的结果。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"fn"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// ---methods---</span><br><span class="line">fn (a) &#123; console.log(a) &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">&lt;button @click=&quot;fn&quot;&gt;点我&lt;/button&gt;
+
+// ---methods---
+fn (a) { console.log(a) }</code></pre>
 <p><img src="https://upload-images.jianshu.io/upload_images/3750332-3fa3a06c1f2232bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="MouseEvent"></p>
 <blockquote>
 <p>在事件定义时，写方法时省略小括号，但是方法本身需要参数，这时Vue会默认将浏览器生产的 event 事件对象作为参数传入方法中。</p>
 </blockquote>
 <p>下面来看一个方法定义时，需要 event 对象，同时需要其他参数的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click&#x3D;&quot;fn(&#39;cemcoe&#39;, $event)&quot;&gt;点我&lt;&#x2F;button&gt;</span><br><span class="line">&#x2F;&#x2F;---methods---</span><br><span class="line"> fn (name, event) &#123;</span><br><span class="line">        console.log(name, event)</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; cemcoe MouseEvent</span><br></pre></td></tr></table></figure>
-<p>大概就是这个样子，传参时使用 $event 传递事件本身。</p>
+<pre><code>&lt;button @click=&quot;fn(&#39;cemcoe&#39;, $event)&quot;&gt;点我&lt;/button&gt;
+//---methods---
+ fn (name, event) {
+        console.log(name, event)
+}
+// cemcoe MouseEvent</code></pre><p>大概就是这个样子，传参时使用 $event 传递事件本身。</p>
 <hr>
 <p>原生的 事件监听 会有事件冒泡等问题，Vue 为这些问题提供了解决方案，术语叫做修饰符。换成大白话就是加点加状态。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"divClick"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"btnClick"</span>&gt;</span></span><br><span class="line">        button</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//---methods---</span><br><span class="line">divClick() &#123;</span><br><span class="line">    console.log("div")</span><br><span class="line">&#125;,</span><br><span class="line">btnClick() &#123;</span><br><span class="line">    console.log("btn")</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">&lt;div @click=&quot;divClick&quot;&gt;
+    &lt;button @click=&quot;btnClick&quot;&gt;
+        button
+    &lt;/button&gt;
+&lt;/div&gt;
+
+//---methods---
+divClick() {
+    console.log(&quot;div&quot;)
+},
+btnClick() {
+    console.log(&quot;btn&quot;)
+}</code></pre>
 <p>当点击 button 时会发现控制台会打印 div 和 btn，也就是说，两个点击都被激活，这就是事件冒泡。</p>
 <p>阻止冒泡，Vue 可以使用修饰符 <code>.stop</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click.stop</span>=<span class="string">"divClick"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"btnClick"</span>&gt;</span></span><br><span class="line">        button</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//---methods---</span><br><span class="line">divClick() &#123;</span><br><span class="line">    console.log("div")</span><br><span class="line">&#125;,</span><br><span class="line">btnClick() &#123;</span><br><span class="line">    console.log("btn")</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">&lt;div @click.stop=&quot;divClick&quot;&gt;
+    &lt;button @click=&quot;btnClick&quot;&gt;
+        button
+    &lt;/button&gt;
+&lt;/div&gt;
+
+//---methods---
+divClick() {
+    console.log(&quot;div&quot;)
+},
+btnClick() {
+    console.log(&quot;btn&quot;)
+}</code></pre>
 <p>修饰符的使用方法如上例 ，直接在事件监听后加修饰符。</p>
 <hr>
 <p>这里有一些其他修饰符：</p>
@@ -117,37 +170,37 @@
         </div>
         <ul>
             
-            <li style="order: 0;"><a
+            <li style="order: '0;'"><a
                     href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
             
-            <li style="order: 0;"><a
-                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
-            
-            <li style="order: 2;"><a
+            <li style="order: '2;'"><a
                     href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
             
-            <li style="order: 5;"><a
-                    href="">5---Vue | 事件监听的两个小伙伴</a></li>
-            
-            <li style="order: 3;"><a
+            <li style="order: '3;'"><a
                     href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
             
-            <li style="order: 4;"><a
+            <li style="order: '0;'"><a
+                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+            
+            <li style="order: '4;'"><a
                     href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
             
-            <li style="order: 1;"><a
-                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
-            
-            <li style="order: 6;"><a
+            <li style="order: '6;'"><a
                     href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
             
-            <li style="order: 7;"><a
+            <li style="order: '5;'"><a
+                    href="">5---Vue | 事件监听的两个小伙伴</a></li>
+            
+            <li style="order: '7;'"><a
                     href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
             
-            <li style="order: 8;"><a
+            <li style="order: '8;'"><a
                     href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
             
-            <li style="order: 9;"><a
+            <li style="order: '1;'"><a
+                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+            
+            <li style="order: '9;'"><a
                     href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
             
         </ul>
@@ -160,6 +213,9 @@
     <!-- 111 -->
     
 <script src="../../static/js/index.js"></script>
+
+    
+<script src="../../static/js/prism/prism.js"></script>
 
 
 </body>

@@ -4,9 +4,17 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>Vue | 组件化 | 个性化组件slot | 化学小子的前端实验册</title>
+    <meta name="description" content="化学小子cemcoe的前端实验册笔记"">
+    <meta name="author" content="cemcoe">
+    <link rel="shortcut icon" href="../../static/imgs/favicon.ico">
+
     
 <link rel="stylesheet" href="../../static/css/post.css">
 
+    
+<link rel="stylesheet" href="../../static/js/prism/prism.css">
+
+    
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
@@ -46,10 +54,10 @@
 </ul>
 <p><code>$children</code> 得到数组，通过索引得到特定组件。</p>
 <p><code>$refs</code> 得到对象 配合  <code>ref</code> 使用，通过 <code>ref</code> 的值得到组件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;cpn ref&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;cpn&gt;</span><br><span class="line">&#x2F;&#x2F;---</span><br><span class="line">this.$refs.demo</span><br><span class="line">&#x2F;&#x2F; 得到cpn组件</span><br></pre></td></tr></table></figure>
-
-
-<p>大家都是有身份的人，<code>$refs</code> 使用的较多。</p>
+<pre><code>&lt;cpn ref=&quot;demo&quot;&gt;&lt;/cpn&gt;
+//---
+this.$refs.demo
+// 得到cpn组件</code></pre><p>大家都是有身份的人，<code>$refs</code> 使用的较多。</p>
 <hr>
 <p>个性化，非主流<br>slot 插槽</p>
 <ul>
@@ -58,20 +66,45 @@
 </ul>
 <p>扩展性<br>自定义组件，暴漏一定的接口，组件可以动态化。</p>
 <p>求同存异 函数的参数 而不仅仅是表达式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;cpn&gt;</span><br><span class="line">        &lt;button&gt;函数实参，替换函数形参&lt;&#x2F;button&gt;</span><br><span class="line">    &lt;&#x2F;cpn&gt;</span><br><span class="line">    &lt;cpn&gt;&lt;&#x2F;cpn&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;template id&#x3D;&quot;cpn&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;cemcoe&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;slot&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">        &lt;!-- 函数() 形参 --&gt;  </span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const cpn &#x3D; &#123;</span><br><span class="line">        template: &quot;#cpn&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    const app &#x3D; new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        components: &#123;</span><br><span class="line">            cpn</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/3750332-482bc95885157b9d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="slot1.jpg"></p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;cpn&gt;
+        &lt;button&gt;函数实参，替换函数形参&lt;/button&gt;
+    &lt;/cpn&gt;
+    &lt;cpn&gt;&lt;/cpn&gt;
+&lt;/div&gt;
+&lt;template id=&quot;cpn&quot;&gt;
+    &lt;div&gt;
+        &lt;h1&gt;cemcoe&lt;/h1&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+        &lt;!-- 函数() 形参 --&gt;  
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    const cpn = {
+        template: &quot;#cpn&quot;
+    }
+    const app = new Vue({
+        el: &quot;#app&quot;,
+        components: {
+            cpn
+        }
+    })
+&lt;/script&gt;</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/3750332-482bc95885157b9d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="slot1.jpg"></p>
 <p>还可以默认值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;slot&gt;&lt;button&gt;我是默认值&lt;&#x2F;button&gt;&lt;&#x2F;slot&gt;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
+<pre><code>&lt;slot&gt;&lt;button&gt;我是默认值&lt;/button&gt;&lt;/slot&gt;</code></pre><hr>
 <p>给插槽名字 对象的属性名 数组 <code>refs</code> 是不是相通的？？<br>多个插槽 插哪个？ <code>name + slot</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;cpn&gt;</span><br><span class="line">        &lt;span slot&#x3D;&quot;sa&quot;&gt;我把老大绑了&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;cpn&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;template id&#x3D;&quot;cpn&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;slot name&#x3D;&quot;sa&quot;&gt;&lt;button&gt;我是老大&lt;&#x2F;button&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">        &lt;slot name&#x3D;&quot;xi&quot;&gt;&lt;button&gt;我是老二&lt;&#x2F;button&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">        &lt;slot name&#x3D;&quot;si&quot;&gt;&lt;button&gt;我是老三&lt;&#x2F;button&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="https://upload-images.jianshu.io/upload_images/3750332-736e877852d6264b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="老大.jpg"></p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;cpn&gt;
+        &lt;span slot=&quot;sa&quot;&gt;我把老大绑了&lt;/span&gt;
+    &lt;/cpn&gt;
+&lt;/div&gt;
+&lt;template id=&quot;cpn&quot;&gt;
+    &lt;div&gt;
+        &lt;slot name=&quot;sa&quot;&gt;&lt;button&gt;我是老大&lt;/button&gt;&lt;/slot&gt;
+        &lt;slot name=&quot;xi&quot;&gt;&lt;button&gt;我是老二&lt;/button&gt;&lt;/slot&gt;
+        &lt;slot name=&quot;si&quot;&gt;&lt;button&gt;我是老三&lt;/button&gt;&lt;/slot&gt;
+    &lt;/div&gt;
+&lt;/template&gt;</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/3750332-736e877852d6264b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="老大.jpg"></p>
 <p>来波总结：</p>
 <p>拿特定的组件和定义插槽都借助了 <code>key-value</code> 的数据结构。</p>
 <ul>
@@ -93,37 +126,37 @@
         </div>
         <ul>
             
-            <li style="order: 0;"><a
+            <li style="order: '0;'"><a
                     href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
             
-            <li style="order: 0;"><a
-                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
-            
-            <li style="order: 2;"><a
+            <li style="order: '2;'"><a
                     href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
             
-            <li style="order: 5;"><a
-                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
-            
-            <li style="order: 3;"><a
+            <li style="order: '3;'"><a
                     href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
             
-            <li style="order: 4;"><a
+            <li style="order: '0;'"><a
+                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+            
+            <li style="order: '4;'"><a
                     href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
             
-            <li style="order: 1;"><a
-                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
-            
-            <li style="order: 6;"><a
+            <li style="order: '6;'"><a
                     href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
             
-            <li style="order: 7;"><a
+            <li style="order: '5;'"><a
+                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+            
+            <li style="order: '7;'"><a
                     href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
             
-            <li style="order: 8;"><a
+            <li style="order: '8;'"><a
                     href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
             
-            <li style="order: 9;"><a
+            <li style="order: '1;'"><a
+                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+            
+            <li style="order: '9;'"><a
                     href="">9---Vue | 组件化 | 个性化组件slot</a></li>
             
         </ul>
@@ -136,6 +169,9 @@
     <!-- 111 -->
     
 <script src="../../static/js/index.js"></script>
+
+    
+<script src="../../static/js/prism/prism.js"></script>
 
 
 </body>

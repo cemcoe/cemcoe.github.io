@@ -4,9 +4,17 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>Vue | 两对cp methods &amp;&amp; computed || v-if &amp;&amp; v-show | 化学小子的前端实验册</title>
+    <meta name="description" content="化学小子cemcoe的前端实验册笔记"">
+    <meta name="author" content="cemcoe">
+    <link rel="shortcut icon" href="../../static/imgs/favicon.ico">
+
     
 <link rel="stylesheet" href="../../static/css/post.css">
 
+    
+<link rel="stylesheet" href="../../static/js/prism/prism.css">
+
+    
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
@@ -47,8 +55,10 @@
 <p>在比较之前先看一个 computed 的个人问题。</p>
 <p>为何计算属性写的时候是函数，用的时候当成属性【不加小括号】来操作？</p>
 <p>假设接下来用到的 data 为：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">    firstName: <span class="string">'cem'</span>,</span><br><span class="line">    lastName: <span class="string">'coe'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-js">data: {
+    firstName: &#39;cem&#39;,
+    lastName: &#39;coe&#39;
+}</code></pre>
 <p>现在要在页面中展示完整的名字，可以使用的方式：</p>
 <ul>
 <li>双大括号语法 NaN 语法过于繁琐</li>
@@ -56,24 +66,51 @@
 <li>computed</li>
 </ul>
 <p>使用计算属性：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">    fullName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="keyword">this</span>.lastName</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-js">computed: {
+    fullName() {
+        return this.firstName + this.lastName
+    }
+}</code></pre>
 <p>在 html 中使用时可能是这样的：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;fullName&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-html">&lt;h1&gt;{{fullName}}&lt;/h1&gt;</code></pre>
 <p>为什么不加小括号呢？它不是函数吗？</p>
 <p>这里其实是计算属性的简写，完整的写法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">    fullName: &#123;</span><br><span class="line">        <span class="keyword">set</span>: function() &#123;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="keyword">get</span>: function() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="keyword">this</span>.lastName</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-js">computed: {
+    fullName: {
+        set: function() {
+        },
+        get: function() {
+            return this.firstName + this.lastName
+        }
+    }
+}</code></pre>
 <p>计算属性本质上就是一个属性，并非函数，只是开发时一般不实现 set 方法。只是简写以后给人一种函数的感觉。</p>
 <p>这也就解释了为何计算属性写的时候是函数，用的时候当成属性来操作。</p>
 <p>那么接下进入正题，来看一下这对 cp 的异同。</p>
 <hr>
 <p>这里做一个对比实验，methods &amp;&amp; computed 在页面中均搞 3 次。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    &#123;&#123;fullName&#125;&#125;</span><br><span class="line">    &#123;&#123;fullName&#125;&#125;</span><br><span class="line">    &#123;&#123;fullName&#125;&#125;</span><br><span class="line">    ---</span><br><span class="line">    &#123;&#123;getFullName()&#125;&#125;</span><br><span class="line">    &#123;&#123;getFullName()&#125;&#125;</span><br><span class="line">    &#123;&#123;getFullName()&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-html">&lt;div id=&quot;app&quot;&gt;
+    {{fullName}}
+    {{fullName}}
+    {{fullName}}
+    ---
+    {{getFullName()}}
+    {{getFullName()}}
+    {{getFullName()}}
+&lt;/div&gt;</code></pre>
 <p>为了看到结果在它们身上埋点 console</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    getFullName() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"methods"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="keyword">this</span>.lastName</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">    fullName() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"computed"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="keyword">this</span>.lastName</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-js">methods: {
+    getFullName() {
+        console.log(&quot;methods&quot;)
+        return this.firstName + this.lastName
+    }
+},
+computed: {
+    fullName() {
+        console.log(&quot;computed&quot;)
+        return this.firstName + this.lastName
+    }
+}</code></pre>
 <p><img src="https://upload-images.jianshu.io/upload_images/3750332-16a098d1863f8d87.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="methods &amp;&amp; computed"></p>
 <p>从结果来看，同样请求三次数据的情况下， methods 执行3次，而 computed 仅仅执行1次。</p>
 <p>在 firstName 和 lastName 不改改变时，computed 会使用缓存的结果，效率更高，更加节省资源。</p>
@@ -81,8 +118,8 @@
 <hr>
 <p>来看第二对 v-if &amp;&amp; v-show,，两者用于条件渲染。</p>
 <p>通过一个对比实验来看一看 v-if &amp;&amp; v-show 的区别，为了看清结果，给他们埋下 id：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"isShow"</span> <span class="attr">id</span>=<span class="string">"if"</span>&gt;</span>cemcoe<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">"isShow"</span> <span class="attr">id</span>=<span class="string">"show"</span>&gt;</span>cemcoe<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-html">&lt;h1 v-if=&quot;isShow&quot; id=&quot;if&quot;&gt;cemcoe&lt;/h1&gt;
+&lt;h1 v-show=&quot;isShow&quot; id=&quot;show&quot;&gt;cemcoe&lt;/h1&gt;</code></pre>
 <p><img src="https://upload-images.jianshu.io/upload_images/3750332-3c84bee2f0bb3237.gif?imageMogr2/auto-orient/strip" alt="v-if &amp;&amp; v-show"></p>
 <p>当 isShow 的值被改成 false 时，两个都消失。但他们不一样，通过观察埋下的 id 可以发现：v-if 直接从 DOM 中删掉，v-show 增加了行内样式 display:none，仅仅是视觉不可见。</p>
 <p>v-show 更像是一件隐身斗篷。元素仍然存在，只是不可见。</p>
@@ -108,37 +145,37 @@
         </div>
         <ul>
             
-            <li style="order: 0;"><a
+            <li style="order: '0;'"><a
                     href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
             
-            <li style="order: 0;"><a
-                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
-            
-            <li style="order: 2;"><a
+            <li style="order: '2;'"><a
                     href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
             
-            <li style="order: 5;"><a
-                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
-            
-            <li style="order: 3;"><a
+            <li style="order: '3;'"><a
                     href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
             
-            <li style="order: 4;"><a
+            <li style="order: '0;'"><a
+                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+            
+            <li style="order: '4;'"><a
                     href="">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
             
-            <li style="order: 1;"><a
-                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
-            
-            <li style="order: 6;"><a
+            <li style="order: '6;'"><a
                     href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
             
-            <li style="order: 7;"><a
+            <li style="order: '5;'"><a
+                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+            
+            <li style="order: '7;'"><a
                     href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
             
-            <li style="order: 8;"><a
+            <li style="order: '8;'"><a
                     href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
             
-            <li style="order: 9;"><a
+            <li style="order: '1;'"><a
+                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+            
+            <li style="order: '9;'"><a
                     href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
             
         </ul>
@@ -151,6 +188,9 @@
     <!-- 111 -->
     
 <script src="../../static/js/index.js"></script>
+
+    
+<script src="../../static/js/prism/prism.js"></script>
 
 
 </body>

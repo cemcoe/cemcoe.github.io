@@ -4,9 +4,17 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>Vue | 组件化 | 组件通信 | 化学小子的前端实验册</title>
+    <meta name="description" content="化学小子cemcoe的前端实验册笔记"">
+    <meta name="author" content="cemcoe">
+    <link rel="shortcut icon" href="../../static/imgs/favicon.ico">
+
     
 <link rel="stylesheet" href="../../static/css/post.css">
 
+    
+<link rel="stylesheet" href="../../static/js/prism/prism.css">
+
+    
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
@@ -61,13 +69,51 @@
 <p>陈佩斯：（从台侧上）队长——别开抢！是我！（然后像电线竿立着）<br>朱时茂：哦——你小子。说话！是你把敌人引到这儿来的？（陈佩斯不做声）<br>朱时茂：你说话呀！<br>陈佩斯：你们家电线杆子能说话吗！<br>朱时茂：你这个……台词还是要说的嘛！<br>陈佩斯：让说就说呗。<br>朱时茂：你千万记得啊！只要我掏出枪来一抬手——<br>陈佩斯：怎么着？<br>朱时茂：你就倒下。<br>陈佩斯：为什么？<br>朱时茂：这表示我的枪法准啊！</p>
 </blockquote>
 <p>来理一理下面的组件关系:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"cpn"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        &#123;&#123;goods&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">//----data----</span><br><span class="line">const cpn = &#123;</span><br><span class="line">    template: "#cpn"</span><br><span class="line">&#125;</span><br><span class="line">const app = new Vue(&#123;</span><br><span class="line">    el: "#app",</span><br><span class="line">    data: &#123;</span><br><span class="line">        goods: ['腊肉', "肥肠", "咸鸭蛋"]</span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">        cpn</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="line-numbers language-html">&lt;template id=&quot;cpn&quot;&gt;
+    &lt;div&gt;
+        {{goods}}
+    &lt;/div&gt;
+&lt;/template&gt;
+//----data----
+const cpn = {
+    template: &quot;#cpn&quot;
+}
+const app = new Vue({
+    el: &quot;#app&quot;,
+    data: {
+        goods: [&#39;腊肉&#39;, &quot;肥肠&quot;, &quot;咸鸭蛋&quot;]
+    },
+    components: {
+        cpn
+    }
+})</code></pre>
 <p>app 是 cpn 的父组件，现在的需求是儿子 cpn 向爸爸 app 要物资，即 goods 列表。</p>
 <p>怎么要？打电话还是发短信。</p>
 <p>怎么传，电报？</p>
 <p>传递信息需要双发的共同努力，父组件发送，子组件接收。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cpn</span> <span class="attr">v-bind:cgoods</span>=<span class="string">"goods"</span>&gt;</span><span class="tag">&lt;/<span class="name">cpn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"cpn"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;cgoods&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> cpn = &#123;</span></span><br><span class="line"><span class="actionscript">        template: <span class="string">"#cpn"</span>,</span></span><br><span class="line"><span class="actionscript">        props: [<span class="string">"cgoods"</span>],</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el: <span class="string">"#app"</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="actionscript">            goods: [<span class="string">'腊肉'</span>, <span class="string">"肥肠"</span>, <span class="string">"咸鸭蛋"</span>]</span></span><br><span class="line">        &#125;,</span><br><span class="line">        components: &#123;</span><br><span class="line">            cpn</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="line-numbers language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;cpn v-bind:cgoods=&quot;goods&quot;&gt;&lt;/cpn&gt;
+&lt;/div&gt;
+&lt;template id=&quot;cpn&quot;&gt;
+    &lt;div&gt;
+        &lt;h1&gt;{{cgoods}}&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    const cpn = {
+        template: &quot;#cpn&quot;,
+        props: [&quot;cgoods&quot;],
+    }
+    const app = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            goods: [&#39;腊肉&#39;, &quot;肥肠&quot;, &quot;咸鸭蛋&quot;]
+        },
+        components: {
+            cpn
+        }
+    })
+&lt;/script&gt;</code></pre>
 <p>通过 <code>&lt;cpn v-bind:cgoods=&quot;goods&quot;&gt;&lt;/cpn&gt;</code> 将父子组件连接，子组件通过 props 接收父组件传来的数据。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/3750332-4ff34393e8bba989.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="爸，我要吃的"></p>
 <p>下面来理智分析（瞎掰）一波。</p>
@@ -80,21 +126,111 @@
 <hr>
 <p>逻辑理通后来看一波零碎的知识。</p>
 <p>有点 TypeScript 的影子，类型限制和默认值，‘来波TypeScript 代码，TypeScript 搞起来。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">    cgoods: &#123;</span><br><span class="line">        type: String,</span><br><span class="line">        default: &quot;烤肠&quot;,</span><br><span class="line">        required: true</span><br><span class="line">        &#x2F;&#x2F; 必须传值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>也就是说可以对 props 的接收数据可以进行类型限制，确定默认值等。</p>
+<pre><code>props: {
+    cgoods: {
+        type: String,
+        default: &quot;烤肠&quot;,
+        required: true
+        // 必须传值
+    }
+}</code></pre><p>也就是说可以对 props 的接收数据可以进行类型限制，确定默认值等。</p>
 <hr>
 <p>反过来看一下子传父的过程。<br><img src="https://upload-images.jianshu.io/upload_images/3750332-4eb4b20b099335be.gif?imageMogr2/auto-orient/strip" alt="换个角度"></p>
 <p>子组件发生事件，父组件要知道，比如人生大事结婚订婚等。</p>
 <p>家人是坚强后盾。</p>
 <p>先让自己知道自己发生了什么事情？？？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;cpn&gt;&lt;&#x2F;cpn&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;template id&#x3D;&quot;cpn&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;button </span><br><span class="line">        v-for&#x3D;&quot;item in categories&quot;</span><br><span class="line">        @click&#x3D;&quot;btnClick(item)&quot;&gt;&#123;&#123;item.name&#125;&#125;&lt;&#x2F;button&gt; </span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;---data---</span><br><span class="line"></span><br><span class="line">const cpn &#x3D; &#123;</span><br><span class="line">    template: &quot;#cpn&quot;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            categories: [</span><br><span class="line">                &#123;id: 001, name: &quot;评论&quot;&#125;,</span><br><span class="line">                &#123;id: 002, name: &quot;简信&quot;&#125;,</span><br><span class="line">                &#123;id: 003, name: &quot;投稿请求&quot;&#125;,</span><br><span class="line">                &#123;id: 004, name: &quot;喜欢和赞&quot;&#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        btnClick(item) &#123;</span><br><span class="line">            console.log(item)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const app &#x3D; new Vue(&#123;</span><br><span class="line">    el: &quot;#app&quot;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">        cpn</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;cpn&gt;&lt;/cpn&gt;
+&lt;/div&gt;
 
-<p>首先儿子要先知道自己目前的状况，发生了什么事情。这里就要用到事件监听。要用到 <a href="https://www.jianshu.com/p/b2aa1eeb30c7" target="_blank" rel="noopener">@click &amp;&amp; method</a> 一对基友。</p>
+&lt;template id=&quot;cpn&quot;&gt;
+    &lt;div&gt;
+        &lt;button 
+        v-for=&quot;item in categories&quot;
+        @click=&quot;btnClick(item)&quot;&gt;{{item.name}}&lt;/button&gt; 
+    &lt;/div&gt;
+&lt;/template&gt;
+
+//---data---
+
+const cpn = {
+    template: &quot;#cpn&quot;,
+    data() {
+        return {
+            categories: [
+                {id: 001, name: &quot;评论&quot;},
+                {id: 002, name: &quot;简信&quot;},
+                {id: 003, name: &quot;投稿请求&quot;},
+                {id: 004, name: &quot;喜欢和赞&quot;}
+            ]
+        }
+    },
+    methods: {
+        btnClick(item) {
+            console.log(item)
+        }
+    }
+}
+const app = new Vue({
+    el: &quot;#app&quot;,
+    data: {
+
+    },
+    components: {
+        cpn
+    }
+})</code></pre><p>首先儿子要先知道自己目前的状况，发生了什么事情。这里就要用到事件监听。要用到 <a href="https://www.jianshu.com/p/b2aa1eeb30c7" target="_blank" rel="noopener">@click &amp;&amp; method</a> 一对基友。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/3750332-298202b5d1a0e2fa.gif?imageMogr2/auto-orient/strip" alt="时刻关注自身的状况"></p>
 <p>问题来了，如何将自己的近况及时告诉自己的父母，父母知道儿子的近况以后做出相应的回应，或放心，或担心，或嘱咐添加衣物按时吃饭，不要累着。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;cpn v-on:item-click&#x3D;&quot;cpnClick&quot;&gt;&lt;&#x2F;cpn&gt;</span><br><span class="line">    &lt;!-- 4. 得到孩子的近况 --&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;template id&#x3D;&quot;cpn&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;button </span><br><span class="line">        v-for&#x3D;&quot;item in categories&quot;</span><br><span class="line">        @click&#x3D;&quot;btnClick(item)&quot;&gt;&#123;&#123;item.name&#125;&#125;&lt;&#x2F;button&gt; </span><br><span class="line">        &lt;!-- 1. 时刻关注自己的状况 --&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const cpn &#x3D; &#123;</span><br><span class="line">        template: &quot;#cpn&quot;,</span><br><span class="line">        data() &#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                categories: [</span><br><span class="line">                    &#123;id: 001, name: &quot;饿了&quot;&#125;,</span><br><span class="line">                    &#123;id: 002, name: &quot;没钱了&quot;&#125;,</span><br><span class="line">                    &#123;id: 003, name: &quot;有女朋友了&quot;&#125;,</span><br><span class="line">                    &#123;id: 004, name: &quot;结婚了&quot;&#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            btnClick(item) &#123;</span><br><span class="line">                console.log(item)</span><br><span class="line">                &#x2F;&#x2F; 2. 我发生了什么事情</span><br><span class="line">                this.$emit(&#39;item-click&#39;, item)</span><br><span class="line">                &#x2F;&#x2F; 3. 告诉父母我发生了什么事情</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    const app &#x3D; new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            cpnClick(item) &#123;</span><br><span class="line">                console.log(&quot;老子知道你小子的事情了 | &quot;, item.name)</span><br><span class="line">                &#x2F;&#x2F; 5. 对孩子的近况做出响应</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        components: &#123;</span><br><span class="line">            cpn</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;cpn v-on:item-click=&quot;cpnClick&quot;&gt;&lt;/cpn&gt;
+    &lt;!-- 4. 得到孩子的近况 --&gt;
+&lt;/div&gt;
 
-<p>将在子组件监听到的事件通过 <code>$emit</code> 传出去，通过 <code>&lt;cpn v-on:item-click=&quot;cpnClick&quot;&gt;&lt;/cpn&gt;</code> 将两者连接，父组件在自己的 <code>methods</code> 中实现对应的响应逻辑。</p>
+&lt;template id=&quot;cpn&quot;&gt;
+    &lt;div&gt;
+        &lt;button 
+        v-for=&quot;item in categories&quot;
+        @click=&quot;btnClick(item)&quot;&gt;{{item.name}}&lt;/button&gt; 
+        &lt;!-- 1. 时刻关注自己的状况 --&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    const cpn = {
+        template: &quot;#cpn&quot;,
+        data() {
+            return {
+                categories: [
+                    {id: 001, name: &quot;饿了&quot;},
+                    {id: 002, name: &quot;没钱了&quot;},
+                    {id: 003, name: &quot;有女朋友了&quot;},
+                    {id: 004, name: &quot;结婚了&quot;}
+                ]
+            }
+        },
+        methods: {
+            btnClick(item) {
+                console.log(item)
+                // 2. 我发生了什么事情
+                this.$emit(&#39;item-click&#39;, item)
+                // 3. 告诉父母我发生了什么事情
+            }
+        }
+    }
+    const app = new Vue({
+        el: &quot;#app&quot;,
+        methods: {
+            cpnClick(item) {
+                console.log(&quot;老子知道你小子的事情了 | &quot;, item.name)
+                // 5. 对孩子的近况做出响应
+            }
+        },
+        components: {
+            cpn
+        }
+    })
+&lt;/script&gt;</code></pre><p>将在子组件监听到的事件通过 <code>$emit</code> 传出去，通过 <code>&lt;cpn v-on:item-click=&quot;cpnClick&quot;&gt;&lt;/cpn&gt;</code> 将两者连接，父组件在自己的 <code>methods</code> 中实现对应的响应逻辑。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/3750332-bf9f00d13eaca159.gif?imageMogr2/auto-orient/strip" alt="子父.gif"></p>
 <p>捋一捋大概是这样：</p>
 <ul>
@@ -146,37 +282,37 @@
         </div>
         <ul>
             
-            <li style="order: 0;"><a
+            <li style="order: '0;'"><a
                     href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
             
-            <li style="order: 0;"><a
-                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
-            
-            <li style="order: 2;"><a
+            <li style="order: '2;'"><a
                     href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
             
-            <li style="order: 5;"><a
-                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
-            
-            <li style="order: 3;"><a
+            <li style="order: '3;'"><a
                     href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
             
-            <li style="order: 4;"><a
+            <li style="order: '0;'"><a
+                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+            
+            <li style="order: '4;'"><a
                     href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
             
-            <li style="order: 1;"><a
-                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
-            
-            <li style="order: 6;"><a
+            <li style="order: '6;'"><a
                     href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
             
-            <li style="order: 7;"><a
+            <li style="order: '5;'"><a
+                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+            
+            <li style="order: '7;'"><a
                     href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
             
-            <li style="order: 8;"><a
+            <li style="order: '8;'"><a
                     href="">8---Vue | 组件化 | 组件通信</a></li>
             
-            <li style="order: 9;"><a
+            <li style="order: '1;'"><a
+                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+            
+            <li style="order: '9;'"><a
                     href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
             
         </ul>
@@ -189,6 +325,9 @@
     <!-- 111 -->
     
 <script src="../../static/js/index.js"></script>
+
+    
+<script src="../../static/js/prism/prism.js"></script>
 
 
 </body>
