@@ -35,33 +35,67 @@
             <div class="meta">
 
                 
+                    
                 <span class="tags">Hexo</span>
                 
 
-                <span class="post-time">2020-03-21</span>
+                <span class="post-time">2020-03-23</span>
             </div>
         </div>
         <div class="note-content">
             <p>如何使用 Hexo 搭建博客不是本文重点，本文主要搞一个专属的个人博客主题。</p>
 <a id="more"></a>
-
-<p>来看一下首页的效果。</p>
-<p>渲染相关<br>被`包裹会被渲染成code<br>双大括号会报错</p>
-<p>下面列举一些md搭配html标签的例子用于添加样式：</p>
-<pre><code>``     ===&gt; code
+<p>点我去 <a href="https://cemcoe.com/blog/chemer-fe-test/index.html">预览</a> 主题。</p>
+<p>今天来看一看文章详情的模板如何写？</p>
+<p>先进行功能点拆分：</p>
+<ul>
+<li>文章元信息如标题，时间，tags 等的展示问题</li>
+<li>如何拿到文章内容的主体数据</li>
+<li>如何处理文章里出现的代码，图片等特殊资源</li>
+</ul>
+<hr>
+<p>现在看一下使用 <code>forEach</code> 遍历 tags，来看一下 tag 的数据结构。</p>
+<pre><code class="line-numbers language-md">_Document {
+  name: &#39;Hexo&#39;,
+  _id: &#39;ck82sbm4z000fkoie38def1hh&#39;,
+  slug: [Getter],
+  path: [Getter],
+  permalink: [Getter],
+  posts: [Getter],
+  length: [Getter]
+}</code></pre>
+<p>嗯，我们需要的数据是 <code>tag.name</code>，开始遍历。</p>
+<pre><code class="line-numbers language-html">&lt;% page.tags.data.forEach(function (tag) { %&gt;
+&lt;span class=&quot;tags&quot;&gt;&lt;%- tag.name %&gt;&lt;/span&gt;
+&lt;% }) %&gt;</code></pre>
+<p>拿到文章主体数据：</p>
+<pre><code class="line-numbers language-html">&lt;%- page.content %&gt;</code></pre>
+<p>右侧目录排序功能点</p>
+<pre><code class="line-numbers language-html">&lt;ul&gt;
+    &lt;% site.posts.data.forEach( function(post){ %&gt;
+    &lt;li style=&quot;order: &lt;%- post.order %&gt;;&quot;&gt;&lt;a
+      href=&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;&lt;%- post.order %&gt;---&lt;%- post.title %&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;% }) %&gt;
+&lt;/ul&gt;</code></pre>
+<p>在这里使用 flex 布局中的 order 进行正序排列。</p>
+<p>在这里有个坑，在 <code>site.posts.data</code> 中的数组是按照文件在系统中的排序，而不是创建时间，就很迷，看了好久不知道排序的依据是啥。</p>
+<hr>
+<p>接下来看一看如何处理文章里出现的代码，图片等特殊资源。<br>被 ` 包裹会被渲染成 code 标签，双大括号会报错。</p>
+<p>下面列举一些 md 搭配 html 标签的例子用于添加样式：</p>
+<pre><code class="line-numbers language-md">``     ===&gt; code
 &gt;      ===&gt; blockquote
 `````` ===&gt; figure.[hihlight plain]
-</code></pre><p>site.posts 是按照什么进行排序的？<br>文件时间？id？<br>其实是文件再系统中的存在次序，即node文件系统依次读取</p>
-<p>现在需求是按照order进行排序js? flex</p>
-<p>将对应的order 插入到元素中order中</p>
-<pre><code>&lt;li style=&quot;order: &lt;%- post.order %&gt;;&quot;&gt;&lt;a href=&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;&lt;%- post.order %&gt;---&lt;%- post.title %&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;% }) %&gt;</code></pre><p>我想到的小方法是这样的。</p>
-<p>有点讨巧的做法，可切换顺序还是要搞。<br>排序算法</p>
-<p>遮罩问题</p>
-<p>小小目录功能涉及的点<br>数组排序<br>滚动条的使用</p>
-<p>pre {<br>    overflow-x: auto;<br>}<br>防止代码撑开页面</p>
-<p>fixed 定位<br>flex 布局</p>
-<p>代码高亮<br><a href="https://prismjs.com/download.html" target="_blank" rel="noopener">https://prismjs.com/download.html</a></p>
+</code></pre>
+<!-- 小小目录功能涉及的点
+数组排序
+遮罩问题
+滚动条的使用 -->
+<pre><code class="line-numbers language-css">pre {
+  overflow-x: auto;
+}</code></pre>
+<p>防止代码撑开页面</p>
+<p>代码高亮 <a href="https://prismjs.com/download.html" target="_blank" rel="noopener">https://prismjs.com/download.html</a></p>
+<p>整体上这个 Hexo 主题大致就搞好了，还剩一些边边角角。</p>
 
             <p>> 这里是 cemcoe 连载 [化学小子的前端实验册] 的第 0 篇，欢迎关注。</p>
             <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
@@ -77,37 +111,37 @@
         </div>
         <ul>
             
-            <li style="order: '0;'"><a
+            <li style="order: 0;"><a
                     href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
             
-            <li style="order: '2;'"><a
+            <li style="order: 2;"><a
                     href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
             
-            <li style="order: '3;'"><a
+            <li style="order: 3;"><a
                     href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
             
-            <li style="order: '0;'"><a
+            <li style="order: 0;"><a
                     href="">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
             
-            <li style="order: '4;'"><a
+            <li style="order: 4;"><a
                     href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
             
-            <li style="order: '6;'"><a
+            <li style="order: 6;"><a
                     href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
             
-            <li style="order: '5;'"><a
+            <li style="order: 5;"><a
                     href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
             
-            <li style="order: '7;'"><a
+            <li style="order: 7;"><a
                     href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
             
-            <li style="order: '8;'"><a
+            <li style="order: 8;"><a
                     href="../vue_vue-component-communicate/index.html">8---Vue | 组件化 | 组件通信</a></li>
             
-            <li style="order: '1;'"><a
+            <li style="order: 1;"><a
                     href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
             
-            <li style="order: '9;'"><a
+            <li style="order: 9;"><a
                     href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
             
         </ul>
