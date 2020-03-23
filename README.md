@@ -1,6 +1,7 @@
 # [Chem Code](https://cemcoe.com)
 
 ## 项目目录结构
+- [化学小子的前端实验册](https://cemcoe.com/blog/chemer-fe-test/index.html)
 - [iss blog](https://github.com/cemcoe/cemcoe.github.io/issues)
 - [nav 自己写的导航页，沉迷于写导航页](https://cemcoe.com/nav/index.html) [源码](https://github.com/cemcoe/nav)
 - [blog 我的博客](https://cemcoe.com/blog/index.html)
@@ -21,6 +22,8 @@
 
 ## 分支管理
 - master 主分支
+- chemer-fe-md 化学小子的前端实验册 md 格式
+- picture-bed 图床
 
 
 
