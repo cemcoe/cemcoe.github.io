@@ -6,13 +6,13 @@
     <title>Vue | 组件化 | 组件通信 | 化学小子的前端实验册</title>
     <meta name="description" content="化学小子cemcoe的前端实验册笔记"">
     <meta name="author" content="cemcoe">
-    <link rel="shortcut icon" href="../../static/imgs/favicon.ico">
+    <link rel="shortcut icon" href="../static/imgs/favicon.ico">
 
     
-<link rel="stylesheet" href="../../static/css/post.css">
+<link rel="stylesheet" href="../static/css/post.css">
 
     
-<link rel="stylesheet" href="../../static/js/prism/prism.css">
+<link rel="stylesheet" href="../static/js/prism/prism.css">
 
     
 <meta name="generator" content="Hexo 4.2.0"></head>
@@ -35,7 +35,6 @@
             <div class="meta">
 
                 
-                    
                 <span class="tags">Vue</span>
                 
 
@@ -43,18 +42,19 @@
             </div>
         </div>
         <div class="note-content">
-            <p>在前后端分离时数据传输的流向：</p>
+            <p>通信问题就是如何沟通，如何唠嗑的问题。</p>
+<a id="more"></a>
+
+<p>在前后端分离时数据传输的流向是这样子的：</p>
 <ul>
 <li>父组件向服务器接口请求数据</li>
 <li>子组件向父组件请求本组件数据</li>
 <li>父组件监听子组件发生的事情并做响应的处理</li>
 </ul>
-<p>通信问题就是如何沟通，如何唠嗑的问题。</p>
 <p>不如来看以下细胞信号传输：细胞如何相互沟通。</p>
 <blockquote>
-<p>传送和接收这些信息所需的网络很复杂。这是由一支信使分子军队组成，跨细胞和在细胞之间传输信号（传讯分子）。它们寻找接收信号的目标（受体），最后，信使和受体相互作用，使细胞产生了最终的结果（细胞对原始信号做出回应）。</p>
+<p>传送和接收这些信息所需的网络很复杂。这是由一支信使分子军队组成，跨细胞和在细胞之间传输信号（传讯分子）。它们寻找接收信号的目标（受体），最后，信使和受体相互作用，使细胞产生了最终的结果（细胞对原始信号做出回应）。<br><a href="https://askthescientists.com/zh-hans/qa/what-is-cell-signaling/" target="_blank" rel="noopener">https://askthescientists.com/zh-hans/qa/what-is-cell-signaling/</a></p>
 </blockquote>
-<p><a href="https://askthescientists.com/zh-hans/qa/what-is-cell-signaling/" target="_blank" rel="noopener">https://askthescientists.com/zh-hans/qa/what-is-cell-signaling/</a></p>
 <p>也就是说，通信是需要两方共同参与，谁发出？传给谁？</p>
 <hr>
 <p>瞎掰结束，来看 Vue 中的组件通信。</p>
@@ -63,7 +63,7 @@
 <p>关键指令：</p>
 <ul>
 <li>父传子 <code>props</code></li>
-<li>子传父 自定义事件 <code>$emit</code> event</li>
+<li>子传父 自定义事件 <code>$emit</code></li>
 </ul>
 <p>来个 DNA 检测确认父子关系，传信息前肯定是要确定对方身份的，将信息传给敌方就尴尬了。</p>
 <blockquote>
@@ -116,31 +116,30 @@ const app = new Vue({
     })
 &lt;/script&gt;</code></pre>
 <p>通过 <code>&lt;cpn v-bind:cgoods=&quot;goods&quot;&gt;&lt;/cpn&gt;</code> 将父子组件连接，子组件通过 props 接收父组件传来的数据。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3750332-4ff34393e8bba989.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="爸，我要吃的"></p>
 <p>下面来理智分析（瞎掰）一波。</p>
 <p>过年回家，家里 准备了很多的过年的物资<code>data·</code>，儿子回到了老父亲的家里 <code>app</code> 过年，<br>临走时父亲从自己的背包 <code>goods</code> 中拿出很多儿子想吃的塞到了儿子的背包 <code>cgoods</code>里。</p>
 <p>父子分别，儿子到自己的家 <code>cpn</code> 后，从背包里拿出老父亲给自己塞的腊肉咸鸭蛋，开始准备今天的晚饭 <code></code>。</p>
 <p>这真是一个温情的故事。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3750332-3aa71673723a340d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="温情"></p>
 <p>父子传递信息大概就是这么个意思。</p>
 <p>至于如何处理数据（腊肉啥的）这里就不搞了。</p>
 <hr>
 <p>逻辑理通后来看一波零碎的知识。</p>
-<p>有点 TypeScript 的影子，类型限制和默认值，‘来波TypeScript 代码，TypeScript 搞起来。</p>
-<pre><code>props: {
+<p>这里有点 TypeScript 的影子，类型限制和默认值，来波 TypeScript 代码，TypeScript 搞起来。</p>
+<pre><code class="line-numbers language-js">props: {
     cgoods: {
         type: String,
         default: &quot;烤肠&quot;,
         required: true
         // 必须传值
     }
-}</code></pre><p>也就是说可以对 props 的接收数据可以进行类型限制，确定默认值等。</p>
+}</code></pre>
+<p>也就是说可以对 props 的接收数据可以进行类型限制，确定默认值等。</p>
 <hr>
-<p>反过来看一下子传父的过程。<br><img src="https://upload-images.jianshu.io/upload_images/3750332-4eb4b20b099335be.gif?imageMogr2/auto-orient/strip" alt="换个角度"></p>
+<p>反过来看一下子传父的过程。</p>
 <p>子组件发生事件，父组件要知道，比如人生大事结婚订婚等。</p>
 <p>家人是坚强后盾。</p>
 <p>先让自己知道自己发生了什么事情？？？</p>
-<pre><code>&lt;div id=&quot;app&quot;&gt;
+<pre><code class="line-numbers language-html">&lt;div id=&quot;app&quot;&gt;
     &lt;cpn&gt;&lt;/cpn&gt;
 &lt;/div&gt;
 
@@ -152,38 +151,38 @@ const app = new Vue({
     &lt;/div&gt;
 &lt;/template&gt;
 
-//---data---
+&lt;script&gt;
+  const cpn = {
+      template: &quot;#cpn&quot;,
+      data() {
+          return {
+              categories: [
+                  {id: 001, name: &quot;评论&quot;},
+                  {id: 002, name: &quot;简信&quot;},
+                  {id: 003, name: &quot;投稿请求&quot;},
+                  {id: 004, name: &quot;喜欢和赞&quot;}
+              ]
+          }
+      },
+      methods: {
+          btnClick(item) {
+              console.log(item)
+          }
+      }
+  }
+  const app = new Vue({
+      el: &quot;#app&quot;,
+      data: {
 
-const cpn = {
-    template: &quot;#cpn&quot;,
-    data() {
-        return {
-            categories: [
-                {id: 001, name: &quot;评论&quot;},
-                {id: 002, name: &quot;简信&quot;},
-                {id: 003, name: &quot;投稿请求&quot;},
-                {id: 004, name: &quot;喜欢和赞&quot;}
-            ]
-        }
-    },
-    methods: {
-        btnClick(item) {
-            console.log(item)
-        }
-    }
-}
-const app = new Vue({
-    el: &quot;#app&quot;,
-    data: {
-
-    },
-    components: {
-        cpn
-    }
-})</code></pre><p>首先儿子要先知道自己目前的状况，发生了什么事情。这里就要用到事件监听。要用到 <a href="https://www.jianshu.com/p/b2aa1eeb30c7" target="_blank" rel="noopener">@click &amp;&amp; method</a> 一对基友。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3750332-298202b5d1a0e2fa.gif?imageMogr2/auto-orient/strip" alt="时刻关注自身的状况"></p>
+      },
+      components: {
+          cpn
+      }
+  })
+&lt;/script&gt;</code></pre>
+<p>首先儿子要先知道自己目前的状况，发生了什么事情。这里就要用到事件监听。要用到 <a href="https://www.jianshu.com/p/b2aa1eeb30c7" target="_blank" rel="noopener">@click &amp;&amp; method</a> 一对基友。</p>
 <p>问题来了，如何将自己的近况及时告诉自己的父母，父母知道儿子的近况以后做出相应的回应，或放心，或担心，或嘱咐添加衣物按时吃饭，不要累着。</p>
-<pre><code>&lt;div id=&quot;app&quot;&gt;
+<pre><code class="line-numbers language-html">&lt;div id=&quot;app&quot;&gt;
     &lt;cpn v-on:item-click=&quot;cpnClick&quot;&gt;&lt;/cpn&gt;
     &lt;!-- 4. 得到孩子的近况 --&gt;
 &lt;/div&gt;
@@ -231,46 +230,26 @@ const app = new Vue({
             cpn
         }
     })
-&lt;/script&gt;</code></pre><p>将在子组件监听到的事件通过 <code>$emit</code> 传出去，通过 <code>&lt;cpn v-on:item-click=&quot;cpnClick&quot;&gt;&lt;/cpn&gt;</code> 将两者连接，父组件在自己的 <code>methods</code> 中实现对应的响应逻辑。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3750332-bf9f00d13eaca159.gif?imageMogr2/auto-orient/strip" alt="子父.gif"></p>
+&lt;/script&gt;</code></pre>
+<p>将在子组件监听到的事件通过 <code>$emit</code> 传出去，通过 <code>&lt;cpn v-on:item-click=&quot;cpnClick&quot;&gt;&lt;/cpn&gt;</code> 将两者连接，父组件在自己的 <code>methods</code> 中实现对应的响应逻辑。</p>
 <p>捋一捋大概是这样：</p>
 <ul>
-<li><ol>
 <li>时刻关注自己的状况</li>
-</ol>
-</li>
-<li><ol start="2">
 <li>我发生了什么事情</li>
-</ol>
-</li>
-<li><ol start="3">
 <li>告诉父母我发生了什么事情</li>
-</ol>
-</li>
-<li><ol start="4">
 <li>得到孩子的近况</li>
-</ol>
-</li>
-<li><ol start="5">
 <li>对孩子的近况做出相应</li>
-</ol>
-</li>
 </ul>
-<p>子传递父组件流程图：<br><img src="https://upload-images.jianshu.io/upload_images/3750332-2f0f7e4e1bfe4163.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="子传父流程图"></p>
 <p>来一波总结：</p>
 <ul>
 <li>父传子 <code>props</code></li>
 <li>子传父 自定义事件 <code>$emit</code></li>
 </ul>
-<blockquote>
-<p>每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
-</blockquote>
-<blockquote>
-<p>这里是 cemcoe 的连载 <a href="https://www.jianshu.com/nb/40206736" target="_blank" rel="noopener">化学小子的前端实验册</a> 的第 22 篇，欢迎关注。</p>
-</blockquote>
 
-            <p>> 这里是 cemcoe 连载 [化学小子的前端实验册] 的第 8 篇，欢迎关注。</p>
-            <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+            <div class="recommend">
+                <p>> 这里是 cemcoe 连载 [化学小子的前端实验册] 的第 8 篇，欢迎关注。</p>
+                <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+            </div> 
         </div>
     </article>
     <!-- 我是章节目录遮罩  -->
@@ -279,42 +258,86 @@ const app = new Vue({
     <div id="book-chapters">
         <div class="book-chapters-header">
             <span class="title">目录(共11篇)</span>
-            <button class="reset">切换顺序</button>
+            <!-- <button class="reset">切换顺序</button> -->
         </div>
         <ul>
             
-            <li style="order: 0;"><a
-                    href="../hexo_how-to-make-a-hexo-theme-index/index.html">0---如何搞一个专属的 Hexo 的主题 | 首页篇</a></li>
+            <li style="order: 0;">
+                <a href="hexo_how-to-make-a-hexo-theme-index.html">
+                    <span class="book-chapters-order">0</span>
+                    <span class="book-chapters-title">如何搞一个专属的 Hexo 的主题 | 首页篇</span>
+                </a>
+            </li>
             
-            <li style="order: 2;"><a
-                    href="../vue-insert-data-to-dom/index.html">2---Vue | 如何将数据插入到DOM中</a></li>
+            <li style="order: 0;">
+                <a href="hexo_how-to-make-a-hexo-theme-post.html">
+                    <span class="book-chapters-order">0</span>
+                    <span class="book-chapters-title">Hexo | 如何搞一个专属的 Hexo 主题 | 文章篇</span>
+                </a>
+            </li>
             
-            <li style="order: 3;"><a
-                    href="../vue-insert-data-to-attribute/index.html">3---Vue | 如何将数据插入到属性中</a></li>
+            <li style="order: 3;">
+                <a href="vue-insert-data-to-attribute.html">
+                    <span class="book-chapters-order">3</span>
+                    <span class="book-chapters-title">Vue | 如何将数据插入到属性中</span>
+                </a>
+            </li>
             
-            <li style="order: 0;"><a
-                    href="../hexo_how-to-make-a-hexo-theme-post/index.html">0---如何搞一个专属的 Hexo 主题 | 文章篇</a></li>
+            <li style="order: 2;">
+                <a href="vue-insert-data-to-dom.html">
+                    <span class="book-chapters-order">2</span>
+                    <span class="book-chapters-title">Vue | 如何将数据插入到DOM中</span>
+                </a>
+            </li>
             
-            <li style="order: 4;"><a
-                    href="../vue-two-cp-methods-and-computed-or-vif-and-vshow/index.html">4---Vue | 两对cp methods && computed || v-if && v-show</a></li>
+            <li style="order: 4;">
+                <a href="vue-two-cp-methods-and-computed-or-vif-and-vshow.html">
+                    <span class="book-chapters-order">4</span>
+                    <span class="book-chapters-title">Vue | 两对cp methods && computed || v-if && v-show</span>
+                </a>
+            </li>
             
-            <li style="order: 6;"><a
-                    href="../vue-vmodel-and-form/index.html">6---Vue | v-model && form</a></li>
+            <li style="order: 5;">
+                <a href="vue-two-boys.html">
+                    <span class="book-chapters-order">5</span>
+                    <span class="book-chapters-title">Vue | 事件监听的两个小伙伴</span>
+                </a>
+            </li>
             
-            <li style="order: 5;"><a
-                    href="../vue-two-boys/index.html">5---Vue | 事件监听的两个小伙伴</a></li>
+            <li style="order: 6;">
+                <a href="vue-vmodel-and-form.html">
+                    <span class="book-chapters-order">6</span>
+                    <span class="book-chapters-title">Vue | v-model && form</span>
+                </a>
+            </li>
             
-            <li style="order: 7;"><a
-                    href="../vue_vue-component-base-operation/index.html">7---Vue | 组件化 | 基本操作</a></li>
+            <li style="order: 9;">
+                <a href="vue_vue-component-personal.html">
+                    <span class="book-chapters-order">9</span>
+                    <span class="book-chapters-title">Vue | 组件化 | 组件个性化定制</span>
+                </a>
+            </li>
             
-            <li style="order: 8;"><a
-                    href="">8---Vue | 组件化 | 组件通信</a></li>
+            <li style="order: 7;">
+                <a href="vue_vue-component-base-operation.html">
+                    <span class="book-chapters-order">7</span>
+                    <span class="book-chapters-title">Vue | 组件化 | 基本操作</span>
+                </a>
+            </li>
             
-            <li style="order: 1;"><a
-                    href="../vue_start-learn-vue/index.html">1---Vue 入手</a></li>
+            <li style="order: 1;">
+                <a href="vue_start-learn-vue.html">
+                    <span class="book-chapters-order">1</span>
+                    <span class="book-chapters-title">Vue 入手</span>
+                </a>
+            </li>
             
-            <li style="order: 9;"><a
-                    href="../vue_vue-component-personal/index.html">9---Vue | 组件化 | 个性化组件slot</a></li>
+            <li style="order: 8;">
+                <a href="">
+                    <span class="book-chapters-order">8</span>
+                    <span class="book-chapters-title">Vue | 组件化 | 组件通信</span>
+                </a>
+            </li>
             
         </ul>
         <div class="book-chapters-drawer-footer">
@@ -325,10 +348,10 @@ const app = new Vue({
     </div>
     <!-- 111 -->
     
-<script src="../../static/js/index.js"></script>
+<script src="../static/js/index.js"></script>
 
     
-<script src="../../static/js/prism/prism.js"></script>
+<script src="../static/js/prism/prism.js"></script>
 
 
 </body>

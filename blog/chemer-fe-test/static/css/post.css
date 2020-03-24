@@ -1,20 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-a {
-    text-decoration: none;
-    color: rgb(247, 22, 191);
-}
-li {
-    list-style: none;
-}
-
-/* body{    
-    overflow-y: hidden;
-    overflow-x: hidden;
-} */
-
+@import url(reset.css);
+@import url(post-variable.css);
 
 button {
     user-select: none;
@@ -36,7 +21,6 @@ button {
     line-height: 46px;
     border-bottom: 1px solid #f0f0f0;
     background-color: #fff;
-
 }
 #book-nav .open-chapter {
     float: right;
@@ -44,8 +28,10 @@ button {
     height: 100%;
     padding-left: 4px;
     padding-right: 4px;
-
-    color: rgb(226, 12, 12);
+}
+.book-chapters-order {
+    color: rgb(175, 157, 157);
+    padding-right: 12px;
 }
 
 
@@ -64,7 +50,6 @@ button {
     padding: 10px;
 }
 .post-title {
-    font-size: 18px;
     padding-top: 4px;
     padding-bottom: 4px;
 }
@@ -78,15 +63,16 @@ button {
     color: #b1b1b1;
 }
 
-.post p,
-.post ul {
-    margin-bottom: 20px;
+.post p {
+    padding-top: 18px;
+    font-size: var(--fontSize-post-content);
 }
 .post ul {
     padding-left: 18px;
 }
 .post li {
     list-style-type: disc;
+    font-size: var(--fontSize-post-content);
 }
 
 
@@ -132,16 +118,15 @@ button {
     line-height: 46px;
     padding-left: 4px;
 }
-.book-chapters-header .reset {
+/* .book-chapters-header .reset {
     float: right;
     padding-right: 30px;
     line-height: 46px;
     color: rgb(80, 75, 75);
-}
+} */
 #book-chapters ul {
     display: flex;
     flex-direction: column;
-
 }
 #book-chapters li {
     padding: 18px 6px;
@@ -179,23 +164,12 @@ img {
 pre {
     overflow-x: auto;
 }
-
-/* figure {
-    background-color: #000;
-    color: #f40;
-    overflow-x: auto;
-}
-figure span {
-    color: #f40;
+blockquote {
+    background-color: rgb(245, 238, 238);
     padding: 4px;
 }
 
-pre {
-    background-color: #000;
+.recommend {
+    background-color: rgb(18, 2, 248);
+    color: rgb(255, 255, 255);
 }
-
-code {
-    
-    color: #f40;
-    padding: 4px;
-} */
