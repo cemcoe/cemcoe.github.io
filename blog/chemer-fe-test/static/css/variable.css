@@ -1,0 +1,8 @@
+:root {
+  --fontSize-title: 16px;
+  --fontSize-abstract: 12px;
+  --width-body: 600px;
+  --fontSize-post-content: 14px;
+  --fontColor: #ccc;
+  --width-max-body: 600px;
+}

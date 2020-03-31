@@ -1,5 +1,5 @@
 @import url(reset.css);
-@import url(index-variable.css);
+@import url(variable.css);
 
 /* reset */
 body {
@@ -17,8 +17,8 @@ hr {
     background-color: #fff;
 }
 #user-info .background {
-    height: 32vw;
-    overflow: hidden;
+    /* height: 32vw; */
+    
 }
 #user-info .background img {
     width: 100%;
@@ -31,7 +31,7 @@ hr {
 }
 #user-info .avatar {
     position: relative;
-    margin: -20px 15px 0 8px;
+    margin: -30px 15px 0 12px;
     float: left;
     border-radius: 50px;
     border: 3px solid #fff;

@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Vue | 入手Vue | 化学小子的前端实验册</title>
+    <meta name="description" content="化学小子cemcoe的前端实验册笔记"">
+    <meta name=" author" content="cemcoe">
+    <link rel="shortcut icon" href="../static/imgs/favicon.ico">
+
+    
+<link rel="stylesheet" href="../static/css/post.css">
+
+    
+<link rel="stylesheet" href="../static/js/prism/prism.css">
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <article class="post">
+        <div class="book-nav-wrapper">
+            <div id="book-nav">
+                <button class="open-chapter">
+                    目录
+                </button>
+                <a class="book-info" href="/">
+                    <span class="nameoneline">化学小子的前端实验册</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="post-title">
+            <h2 class="title">Vue | 入手Vue</h2>
+        </div>
+        <div class="article-info">
+            <div class="meta">
+
+                
+                <span class="tags">Vue</span>
+                
+
+                <span class="post-time">2020-03-31</span>
+                <span class="refs"><a href="https://www.jianshu.com/p/7ac9db17dba1" target="_blank" rel="noopener">refs</a></span>
+                
+            </div>
+        </div>
+        <div class="note-content">
+            <div class="recommend">
+                <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+            </div>
+            
+            <p>Vue 入手笔记</p>
+<a id="more"></a>
+
+<p>Vue 的介绍，优缺点等概念这里就不瞎掰了。若想了解请直达<a href="https://cn.vuejs.org/index.html" target="_blank" rel="noopener">官网</a>。</p>
+<p>在 <a href="https://www.jianshu.com/p/9817643f8a6b" target="_blank" rel="noopener">CSS 效果 | 轮播图</a> 和 <a href="https://www.jianshu.com/p/fdd58caea73f" target="_blank" rel="noopener">CSS 效果 | tab 选项卡</a> 中两个效果中可以提取出一个常见的问题，那就是如何进行元素的双向绑定，原文并没有实现，这是一个普遍的需求点。</p>
+<p>tab 变换时内容区域要跟着变，那么内容如果发生了切换而 tab 却还停留在原来的位置，肯定是不符合需求的。同样的轮播图和小白点也是要双向绑定的，那么这里其实就存在着重复的需求。Vue 其实是支持元素的双向绑定的。</p>
+<p>原生的 js 有点难搞，这时可以捋一捋 Vue 的知识点了。</p>
+<p>国际传统 Hello World 开始。</p>
+<p>在 Vue 中写一个Hello World 是要这样的：</p>
+<ul>
+<li>引入 Vue.js || 本质上就是引入一个外部的 js 文件</li>
+<li>html 中定义要挂载的元素 || 看一看哪个幸运儿可以被选中，独得皇上恩宠</li>
+<li>使用 new Vue() 创建实例 || 该实例接受一个对象作为参数</li>
+<li>填充字段，接收的字段包括：el，data</li>
+<li>使用双大括号语法 || 显示</li>
+</ul>
+<p>在 HTML 中引入 Vue</p>
+<pre><code class="line-numbers language-html">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>HTML 文档结构</p>
+<pre><code class="line-numbers language-html">&lt;div id=&quot;app&quot;&gt;
+    {{message}}
+&lt;/div&gt;</code></pre>
+<p>HTML 文档结构很简单，一个 id 名为 app 的 div 包着一个双大括号。<br>这里的双大括号是个什么鬼东西嘞？挖了一个坑，有空填。。</p>
+<p>下面是 js  示例，同时也是核心代码：</p>
+<pre><code class="line-numbers language-js">// function Vue() {
+
+// }
+// new Vue 做了什么？这个要看一下源码。
+// 接受一个对象参数
+const app = new Vue({
+    el: &#39;#app&#39;, // 用于挂载要管理的元素
+    data: {
+        // 定义数据
+        message: &quot;Hello cemcoe&quot;
+    }
+})</code></pre>
+<p>效果就是页面上会展示 “Hello cemcoe”。</p>
+<p>上面的编程范式是声明式编程，至于什么是声明式编程，简单说就是：点外卖，自己做饭可能要去买菜，接着洗菜，下一步切菜。。。点外卖就不需要考虑各个步骤了，直接点击要的下单，我要这个，还有这个，至于怎么做完全不用考虑。</p>
+<hr>
+<p>想一下，如果不使用框架要实现上面的 Hello World 是一个什么流程。</p>
+<p>与声明式编程相对，这里其实是命令式编程，一步一步怎么做，每一步都要精确。</p>
+<ol>
+<li>首先肯定要使用诸如 querySelector() 等方法选择节点</li>
+<li>而后创建文本节点，并为其赋值</li>
+<li>将创建的文本节点挂载到选择的节点</li>
+</ol>
+<hr>
+<p>下面来看一下如何展示一个列表。</p>
+<p>省略固定不变的代码，在 data 中定义一个书籍列表</p>
+<pre><code class="line-numbers language-js">books: [
+        &quot;数学&quot;,
+        &quot;物理&quot;,
+        &quot;生物&quot;,
+        &quot;化学&quot;
+]</code></pre>
+<p>下面是展示，有了 Hello World 的经验，对于列表比较容易想到的方法是：</p>
+<pre><code class="line-numbers language-html">&lt;ul&gt;
+    &lt;li&gt;books[0]&lt;/li&gt;
+    &lt;li&gt;books[1]&lt;/li&gt;
+    &lt;li&gt;books[2]&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p>上面的方法可以吗，当然可以，就是有点憨憨，就好像老师让算从1到100的整数和时，真就从1开始加到100。</p>
+<p>比较简洁的是下面的方式，Vue 已经帮我们搞好了，真贴心。</p>
+<hr>
+<pre><code class="line-numbers language-html">&lt;ul&gt;
+    &lt;li v-for=&quot;item in books&quot;&gt;{{item}}&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p>不出意外会展示一个列表 。</p>
+<p>技术点在于 <code>v-for=&quot;item in books&quot;</code>，可以大致猜一下，这是遍历了一下数组并将值赋给每个 item，并将 item 搞到页面中</p>
+<pre><code class="line-numbers language-js">// 仅供理解
+for(let i = 0; i &lt; books.length; i++) {
+    console.log(books[i])
+}</code></pre>
+<p>在 Vue 中类似于 <code>v-for</code> 这种命名规则的还有 <code>v-if</code> 等，他们的术语是指令。</p>
+<p>到此就是 Vue 的入手笔记了。</p>
+
+        </div>
+    </article>
+    <!-- 我是章节目录遮罩  -->
+    <div id="backdrop"></div>
+
+    <div id="book-chapters">
+        <div class="book-chapters-header">
+            <span class="title">目录(共1篇)</span>
+            <!-- <button class="reset">切换顺序</button> -->
+        </div>
+        <ul>
+            
+            <li style="order: 1;">
+                <a href="">
+                    <span class="book-chapters-order">1</span>
+                    <span class="book-chapters-title">Vue | 入手Vue</span>
+                </a>
+            </li>
+            
+        </ul>
+        <div class="book-chapters-drawer-footer">
+            <a href="../../index.html">前往作品主页</a>
+        </div>
+
+
+    </div>
+
+    <!-- 111 -->
+    
+<script src="../static/js/index.js"></script>
+
+    
+<script src="../static/js/prism/prism.js"></script>
+
+
+</body>
+
+</html>
