@@ -8,7 +8,7 @@
     <meta name="generator" content="VuePress 1.4.0">
     
     
-    <link rel="preload" href="/fe/assets/css/0.styles.4f59bd7b.css" as="style"><link rel="preload" href="/fe/assets/js/app.86aecf97.js" as="script"><link rel="preload" href="/fe/assets/js/2.3668bffb.js" as="script"><link rel="preload" href="/fe/assets/js/7.8abd9ee9.js" as="script"><link rel="prefetch" href="/fe/assets/js/10.b028645c.js"><link rel="prefetch" href="/fe/assets/js/11.9904ed2f.js"><link rel="prefetch" href="/fe/assets/js/12.570c0f61.js"><link rel="prefetch" href="/fe/assets/js/13.a139e478.js"><link rel="prefetch" href="/fe/assets/js/14.096dca44.js"><link rel="prefetch" href="/fe/assets/js/15.fd60b4b9.js"><link rel="prefetch" href="/fe/assets/js/16.0f08ae19.js"><link rel="prefetch" href="/fe/assets/js/3.ad91674e.js"><link rel="prefetch" href="/fe/assets/js/4.522d1982.js"><link rel="prefetch" href="/fe/assets/js/5.54dbd99b.js"><link rel="prefetch" href="/fe/assets/js/6.468d553b.js"><link rel="prefetch" href="/fe/assets/js/8.19176f10.js"><link rel="prefetch" href="/fe/assets/js/9.6c91fe29.js">
+    <link rel="preload" href="/fe/assets/css/0.styles.4f59bd7b.css" as="style"><link rel="preload" href="/fe/assets/js/app.f4ecdbdd.js" as="script"><link rel="preload" href="/fe/assets/js/2.1303c0f4.js" as="script"><link rel="preload" href="/fe/assets/js/7.b0d88fa4.js" as="script"><link rel="prefetch" href="/fe/assets/js/10.aad34484.js"><link rel="prefetch" href="/fe/assets/js/11.07730751.js"><link rel="prefetch" href="/fe/assets/js/12.1d375a29.js"><link rel="prefetch" href="/fe/assets/js/13.1ce88e99.js"><link rel="prefetch" href="/fe/assets/js/14.aa49a848.js"><link rel="prefetch" href="/fe/assets/js/15.c13f428a.js"><link rel="prefetch" href="/fe/assets/js/16.1d33a5cb.js"><link rel="prefetch" href="/fe/assets/js/17.f5a8e2d1.js"><link rel="prefetch" href="/fe/assets/js/18.41fd52b4.js"><link rel="prefetch" href="/fe/assets/js/3.c8a4f30c.js"><link rel="prefetch" href="/fe/assets/js/4.c3bb8f72.js"><link rel="prefetch" href="/fe/assets/js/5.7bd577fc.js"><link rel="prefetch" href="/fe/assets/js/6.1c60ee11.js"><link rel="prefetch" href="/fe/assets/js/8.21e909a9.js"><link rel="prefetch" href="/fe/assets/js/9.07bcea0b.js">
     <link rel="stylesheet" href="/fe/assets/css/0.styles.4f59bd7b.css">
   </head>
   <body>
@@ -30,6 +30,10 @@
   Vue | 入手笔记
 </a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
   Vue | 封装一个tabbar组件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
 </a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/front-end-data-collation-and-learning-records/" class="nav-link">
   前端资料整理及学习记录
 </a></li><li class="dropdown-item"><!----> <a href="/fe/front-end-adventure-roadmap/" class="nav-link">
@@ -48,6 +52,10 @@
   Vue | 入手笔记
 </a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
   Vue | 封装一个tabbar组件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
 </a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span></span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>tab 选项卡效果是页面中常见的网页效果，技术点在于，如何将控制区的元素和响应区的元素一一绑定或者说是建立羁绊。</p> <p>在 jianshu 网页版就有一个类似的左右结构的 tab 效果。
 <img src="/fe/assets/img/demo.421f00bf.gif" alt="tab 效果一例">
 在这个例子中左侧为控制区域，右侧为响应区域。至于为什么没有显示内容，是因为我故意点的有点快了。</p> <hr> <p>来试一试如何实现类似的效果，这里先假定 HTML 文档结构是这样的</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>哪吒<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
@@ -85,6 +93,6 @@
 </code></pre></div><p>这样，在不考虑UI美感，代码可读性，可维护性并兼顾效率的情况下，需求的逻辑已经大致完成了。</p> <p><img src="/fe/assets/img/done.7dca766a.gif" alt="买家秀"></p> <hr> <p>目前存在的问题</p> <ul><li>行为和样式未分离，下次要让内容边长，还有到 js 中去修该尺寸</li> <li>for in 有更好的方法</li> <li>不够抽象 可以改成一个函数，接受两个参数数组</li></ul> <p>那么如何搞嘞？
 有时间再填这个坑。</p> <p>看一下开源代码都时如何写的，
 学习学习。。。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/8/2020, 11:22:39 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/fe/assets/js/app.86aecf97.js" defer></script><script src="/fe/assets/js/2.3668bffb.js" defer></script><script src="/fe/assets/js/7.8abd9ee9.js" defer></script>
+    <script src="/fe/assets/js/app.f4ecdbdd.js" defer></script><script src="/fe/assets/js/2.1303c0f4.js" defer></script><script src="/fe/assets/js/7.b0d88fa4.js" defer></script>
   </body>
 </html>
