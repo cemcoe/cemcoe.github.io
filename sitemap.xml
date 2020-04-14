@@ -9,143 +9,238 @@
 
 <url>
   <loc>https://cemcoe.com/</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/qzone/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/nav/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://cemcoe.com/blog/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
+  <loc>https://cemcoe.com/fe/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/about/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/lab/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/chem/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://cemcoe.com/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
+  <loc>https://cemcoe.com/blog/index.html</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/index.html</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/front-end-data-collation-and-learning-records/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/front-end-adventure-roadmap/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/css-two-column-layout/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/css-three-column-layout/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/css-tab-bar/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/css-swiper-picture/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/a-few-simple-arithmetic-problems/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-start-note/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-insert-data-to-dom/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-insert-data-to-elm-attr/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-two-cp-computed-methods-v-if-show/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-v-on-and-methods/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-v-model-and-form/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-com-base-operation/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-com-communication/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-com-personal/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/vue-package-a-tabbar-component-from-zero/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/those-things-of-the-network-requests/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/network-mock-data/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/network-axios/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/node-koa-start-learn/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/fe/boom/</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/blog/chemer-fe-test/index.html</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/blog/2020/the-hard-way-to-code-from-chem-2/index.html</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/blog/2020/chemer-code-try-note-1-data-structure/index.html</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2019/init-Git-username-and-usermail/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2019/write-a-nav-by-yourself/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2019/some-sleep-think/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/template/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/flag.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cemcoe.com/blog/2019/enjoy/index.html</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2019/my-soft-list/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2019/the-hard-way-to-code-from-chem/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://cemcoe.com/blog/2019/create-a-library-with-calibre/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/blog/2018/%E6%BD%9C%E4%BC%8F%E5%9C%A8%E5%90%84%E5%A4%A7%E6%8A%80%E6%9C%AF%E7%BE%A4and%E8%AE%BA%E5%9D%9B%E5%90%8Eget/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://cemcoe.com/blog/2018/get-in-group-and-bbs/index.html</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2018/create-a-web-server-by-IIS/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2018/change_domains/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2018/packet-capture/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://cemcoe.com/blog/2016/be-as-calm-as-rain-or-wind/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://cemcoe.com/lab/bookStore/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/lab/build-a-random-quote-machine/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/lab/video_speed/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/lab/chemshop/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/lab/%E9%A1%B5%E9%9D%A2%E5%88%87%E6%8D%A2/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/lab/avcode/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://cemcoe.com/lab/blank/index.html</loc>
-  <lastmod>2020-01-10T12:55:34+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://cemcoe.com/blog/chemer-fe-test/2020/vue-%E5%85%A5%E6%89%8Bvue.html</loc>
+  <lastmod>2020-04-13T14:23:47+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 
 
