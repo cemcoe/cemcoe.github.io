@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>化学小子的前端实验册</title>
+    <meta name="description" content="化学小子的前端实验册，记录学习中遇到的各种坑">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/fe/assets/css/0.styles.4f59bd7b.css" as="style"><link rel="preload" href="/fe/assets/js/app.193909e9.js" as="script"><link rel="preload" href="/fe/assets/js/2.616c00fd.js" as="script"><link rel="preload" href="/fe/assets/js/10.6a39941e.js" as="script"><link rel="prefetch" href="/fe/assets/js/11.5728ae6d.js"><link rel="prefetch" href="/fe/assets/js/12.b3e9b5ba.js"><link rel="prefetch" href="/fe/assets/js/13.73b3bb15.js"><link rel="prefetch" href="/fe/assets/js/14.2b188dc2.js"><link rel="prefetch" href="/fe/assets/js/15.de23cb98.js"><link rel="prefetch" href="/fe/assets/js/16.219ca72e.js"><link rel="prefetch" href="/fe/assets/js/17.cf4da39f.js"><link rel="prefetch" href="/fe/assets/js/18.46bc4746.js"><link rel="prefetch" href="/fe/assets/js/19.98b1cfde.js"><link rel="prefetch" href="/fe/assets/js/20.99b10e66.js"><link rel="prefetch" href="/fe/assets/js/21.bef55238.js"><link rel="prefetch" href="/fe/assets/js/22.67d06800.js"><link rel="prefetch" href="/fe/assets/js/23.de08dcf7.js"><link rel="prefetch" href="/fe/assets/js/24.8113b594.js"><link rel="prefetch" href="/fe/assets/js/25.331fe385.js"><link rel="prefetch" href="/fe/assets/js/26.4579febb.js"><link rel="prefetch" href="/fe/assets/js/27.479a9279.js"><link rel="prefetch" href="/fe/assets/js/28.36c7ec44.js"><link rel="prefetch" href="/fe/assets/js/29.c01c1291.js"><link rel="prefetch" href="/fe/assets/js/3.3a013162.js"><link rel="prefetch" href="/fe/assets/js/4.bd7ee0e5.js"><link rel="prefetch" href="/fe/assets/js/5.095fd9eb.js"><link rel="prefetch" href="/fe/assets/js/6.4a041278.js"><link rel="prefetch" href="/fe/assets/js/7.0de6c252.js"><link rel="prefetch" href="/fe/assets/js/8.82d94c02.js"><link rel="prefetch" href="/fe/assets/js/9.b73cd59d.js">
+    <link rel="stylesheet" href="/fe/assets/css/0.styles.4f59bd7b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fe/" class="home-link router-link-active"><!----> <span class="site-name">化学小子的前端实验册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/front-end-data-collation-and-learning-records/" class="nav-link">
+  前端资料整理及学习记录
+</a></li><li class="dropdown-item"><!----> <a href="/fe/front-end-adventure-roadmap/" class="nav-link">
+  前端探险路线图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/css-two-column-layout/" class="nav-link">
+  CSS效果 | 两栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-three-column-layout/" class="nav-link">
+  CSS效果 | 三栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-tab-bar/" class="nav-link">
+  CSS效果 | Tab选项卡
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-swiper-picture/" class="nav-link">
+  CSS效果 | 轮播图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/a-few-simple-arithmetic-problems/" class="nav-link">
+  JS | 几道简单的数学题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/vue-start-note/" class="nav-link">
+  Vue | 入手笔记
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-dom/" class="nav-link">
+  Vue | 如何将数据插入到DOM中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-elm-attr/" class="nav-link">
+  Vue | 如何将数据插入到元素属性中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-two-cp-computed-methods-v-if-show/" class="nav-link">
+  Vue | computed和methods与v-if和v-show的故事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-on-and-methods/" class="nav-link">
+  Vue | v-on和methods的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-model-and-form/" class="nav-link">
+  Vue | v-model和form的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-base-operation/" class="nav-link router-link-exact-active router-link-active">
+  Vue | 组件化基本操作
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-communication/" class="nav-link">
+  Vue | 组件通信
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-personal/" class="nav-link">
+  Vue | 组件个性化
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
+  Vue | 封装一个tabbar组件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-mock-data/" class="nav-link">
+  如何模拟后端数据
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-koa-todolist-ssr-spa-api/" class="nav-link">
+  以todolist为例，看前后端渲染
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/node-koa-start-learn/" class="nav-link">
+  Koa初体验
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/front-end-data-collation-and-learning-records/" class="nav-link">
+  前端资料整理及学习记录
+</a></li><li class="dropdown-item"><!----> <a href="/fe/front-end-adventure-roadmap/" class="nav-link">
+  前端探险路线图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/css-two-column-layout/" class="nav-link">
+  CSS效果 | 两栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-three-column-layout/" class="nav-link">
+  CSS效果 | 三栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-tab-bar/" class="nav-link">
+  CSS效果 | Tab选项卡
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-swiper-picture/" class="nav-link">
+  CSS效果 | 轮播图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/a-few-simple-arithmetic-problems/" class="nav-link">
+  JS | 几道简单的数学题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/vue-start-note/" class="nav-link">
+  Vue | 入手笔记
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-dom/" class="nav-link">
+  Vue | 如何将数据插入到DOM中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-elm-attr/" class="nav-link">
+  Vue | 如何将数据插入到元素属性中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-two-cp-computed-methods-v-if-show/" class="nav-link">
+  Vue | computed和methods与v-if和v-show的故事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-on-and-methods/" class="nav-link">
+  Vue | v-on和methods的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-model-and-form/" class="nav-link">
+  Vue | v-model和form的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-base-operation/" class="nav-link router-link-exact-active router-link-active">
+  Vue | 组件化基本操作
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-communication/" class="nav-link">
+  Vue | 组件通信
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-personal/" class="nav-link">
+  Vue | 组件个性化
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
+  Vue | 封装一个tabbar组件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-mock-data/" class="nav-link">
+  如何模拟后端数据
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-koa-todolist-ssr-spa-api/" class="nav-link">
+  以todolist为例，看前后端渲染
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/node-koa-start-learn/" class="nav-link">
+  Koa初体验
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span></span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>来个目录：</p> <ul><li>瞎掰组件概念</li> <li>web components 是个什么东西</li> <li>用 web components 来写一个简单的组件 demo</li> <li>Vue 中的组件化是一个怎样的流程</li> <li>局部组件 &amp;&amp; 全局组件 || 父组件 &amp;&amp; 子组件</li></ul> <hr> <p>作为前端工程化的重要一环，组件化在原生的实现上看上去不是很好。</p> <p>那什么是组件化嘞？
+<img src="/fe/assets/img/project-process.b265a882.jpg" alt="工艺流程图部分"></p> <p>数据看不到，有点虚。不妨看一看上面的工艺流程图，组件就是上图的各种反应容器，本文主要实现各种罐的创建和使用，至于物料的运输，即各个组件间数据的传递，有空再填。</p> <p>其实使用 Vue 创建一个应用大概就是上图的步骤，先将各个组件完成，接着连通物流（组件之间数据传递），同时可能还会监控物流的理化性质（监控数据类型），监控各个罐的状态（Vuex）。。。我编不下去了。大概就那么个意思。做饮料啥的总不能都莽到一个反应釜里吧。</p> <hr> <p>组件化就是大事化小，将一个复杂的工程拆解成众多的小任务，再分配给众多小人物。</p> <p>这样如果某个组件发生了问题，不至于影响整个工程。</p> <p><img src="/fe/assets/img/cell.17c96d8d.jpg" alt="はたらく細胞"></p> <p>在看 Vue 的组件化之前不妨先看看原生的实现方案。</p> <p>这里就要提到 web components 了，至于它的概念，优缺点啥的不多介绍，若想了解直达 <a href="https://www.webcomponents.org/introduction" target="_blank" rel="noopener noreferrer">官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <p>这个东西支持使用原生的 js 来定义和使用组件。不用引入额外的文件。拎包开发。。。</p> <p>直接看怎么用，一些要点：</p> <ul><li>自定义组件 custom element 必须短线连接</li> <li>将定义的类和标签关联</li> <li>使用自定义的组件</li></ul> <p>一个简单的小栗子</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user-card</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>user-card</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user-card</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>user-card</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user-card</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>user-card</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>userCardTemplate<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>cemcoe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">class</span> <span class="token class-name">UserCard</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+        <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+            <span class="token keyword">const</span> templateElem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&quot;#userCardTemplate&quot;</span><span class="token punctuation">)</span>
+            <span class="token keyword">const</span> content <span class="token operator">=</span> templateElem<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    window<span class="token punctuation">.</span>customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">&quot;user-card&quot;</span><span class="token punctuation">,</span> UserCard<span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>有点小复杂，来个指向图如下：
+<img src="/fe/assets/img/luoji.d0f47b0d.jpg" alt="指向图"></p> <p>嗯，不出意外的话，网页上会显示三个字符串。</p> <p>使用 web components 来使用组件大概就是这样的一个流程。</p> <p>更多功能请自行探索。</p> <hr> <p>下面来看一下 Vue 的组件化思想。</p> <p>---具体代码如何写---
+直接进入注册组件的流程</p> <ul><li>创建组件构造器 Vue.extend()</li> <li>注册组件 Vue.component()</li> <li>使用组件</li></ul> <p>emm，是不是和 web components 很像？有点。具体的实现上可能有一些差异。</p> <p>来看代码：</p> <div class="language- extra-class"><pre class="language-text"><code>3. 使用组件
+&lt;div id=&quot;app&quot;&gt;
+    &lt;my-cpn&gt;&lt;/my-cpn&gt;
+&lt;/div&gt;
+//---js----
+// 1. 创建组件构造器对象
+const cpnContructor = Vue.extend({
+    template: `
+    &lt;div&gt;
+        &lt;h1&gt;我是cemcoe&lt;/h1&gt;
+        &lt;p&gt;我今年18岁&lt;/p&gt;
+        &lt;p&gt;嘤嘤嘤&lt;/p&gt;
+    &lt;/div&gt;
+    `
+})
+// 2.注册组件两个参数 标签名 构造器
+Vue.component('my-cpn', cpnContructor)
+</code></pre></div><p>然而，上面这种全局组件用的不多。</p> <hr> <p>全局和局部就是字面意思，可以配合全局作用域和局部作用域理解。</p> <p>开发中常用局部组件，将组件放到特定的实例下进行注册。</p> <p>使用 components 字段：</p> <div class="language-html extra-class"><pre class="language-html"><code>// 1. 构造器
+const cpnConstructor = Vue.extend({
+   template: `
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>cemcoe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+   `
+})
+const app = new Vue({
+   el: &quot;#app&quot;,
+   // 2. 注册局部组件，在特定实例中定义
+   components: {
+       cpn: cpnConstructor 
+   }
+}) 
+</code></pre></div><hr> <p>来看另一对概念父组件和子组件，emm，还是字面意思，不多解析。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cp2</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cp2</span><span class="token punctuation">&gt;</span></span>    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+// 创建组件
+const cpnC1 = Vue.extend({
+   template: `<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>cem<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>`
+})
+const cpnC2 = Vue.extend({
+   template: `<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>coe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cp1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cp1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>`,
+   components: {
+       cp1: cpnC1
+   }
+})
+const app = new Vue({
+   el: &quot;#app&quot;,
+   components: {
+       cp2: cpnC2
+   }
+})
+</code></pre></div><p>cp1 在 cp2 中注册，cp2 在 Vue 实例中注册，在 html 使用时只需添加 cp2 标签。cp2 是父组件，cp1 是子组件。</p> <hr> <p>我想偷懒，下面来看语法糖：
+---语法糖---</p> <div class="language-html extra-class"><pre class="language-html"><code>// 创建组件
+// const cpnC1 = Vue.extend()
+Vue.component('cp1', {
+   template: `<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>cem<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>`
+})
+</code></pre></div><p>将构造器放入注册操作中，实际还是调用 extend。</p> <p>嵌套太多，抽离。。。使用 template 标签定义模板。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>cpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>cemcoe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+// ---data---
+Vue.component('cp1', {
+   template: '#cpn'
+})
+</code></pre></div><p>大概就是这样了。</p> <hr> <p>这里的 web components 和 Vue 的关系，其实和 <a href="https://www.jianshu.com/p/7cf3f99698f2" target="_blank" rel="noopener noreferrer">CSS | CSS Variable | CSS变量<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 与那些 less sass 预处理器的关系一样一样的。</p> <p>如果搞得完善的话，肯定是原生的 web components 性能肯定是刚刚的，期待ing。</p> <p>最后来一个 web components &amp;&amp; Vue components 的对比图。
+<img src="/fe/assets/img/web-components-vue-components.f48c4dda.jpg" alt="web components &amp;&amp; Vue components"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/13/2020, 6:29:23 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/fe/assets/js/app.193909e9.js" defer></script><script src="/fe/assets/js/2.616c00fd.js" defer></script><script src="/fe/assets/js/10.6a39941e.js" defer></script>
+  </body>
+</html>

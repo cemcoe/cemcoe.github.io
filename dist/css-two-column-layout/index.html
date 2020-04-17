@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>化学小子的前端实验册</title>
+    <meta name="description" content="化学小子的前端实验册，记录学习中遇到的各种坑">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/fe/assets/css/0.styles.4f59bd7b.css" as="style"><link rel="preload" href="/fe/assets/js/app.193909e9.js" as="script"><link rel="preload" href="/fe/assets/js/2.616c00fd.js" as="script"><link rel="preload" href="/fe/assets/js/6.4a041278.js" as="script"><link rel="prefetch" href="/fe/assets/js/10.6a39941e.js"><link rel="prefetch" href="/fe/assets/js/11.5728ae6d.js"><link rel="prefetch" href="/fe/assets/js/12.b3e9b5ba.js"><link rel="prefetch" href="/fe/assets/js/13.73b3bb15.js"><link rel="prefetch" href="/fe/assets/js/14.2b188dc2.js"><link rel="prefetch" href="/fe/assets/js/15.de23cb98.js"><link rel="prefetch" href="/fe/assets/js/16.219ca72e.js"><link rel="prefetch" href="/fe/assets/js/17.cf4da39f.js"><link rel="prefetch" href="/fe/assets/js/18.46bc4746.js"><link rel="prefetch" href="/fe/assets/js/19.98b1cfde.js"><link rel="prefetch" href="/fe/assets/js/20.99b10e66.js"><link rel="prefetch" href="/fe/assets/js/21.bef55238.js"><link rel="prefetch" href="/fe/assets/js/22.67d06800.js"><link rel="prefetch" href="/fe/assets/js/23.de08dcf7.js"><link rel="prefetch" href="/fe/assets/js/24.8113b594.js"><link rel="prefetch" href="/fe/assets/js/25.331fe385.js"><link rel="prefetch" href="/fe/assets/js/26.4579febb.js"><link rel="prefetch" href="/fe/assets/js/27.479a9279.js"><link rel="prefetch" href="/fe/assets/js/28.36c7ec44.js"><link rel="prefetch" href="/fe/assets/js/29.c01c1291.js"><link rel="prefetch" href="/fe/assets/js/3.3a013162.js"><link rel="prefetch" href="/fe/assets/js/4.bd7ee0e5.js"><link rel="prefetch" href="/fe/assets/js/5.095fd9eb.js"><link rel="prefetch" href="/fe/assets/js/7.0de6c252.js"><link rel="prefetch" href="/fe/assets/js/8.82d94c02.js"><link rel="prefetch" href="/fe/assets/js/9.b73cd59d.js">
+    <link rel="stylesheet" href="/fe/assets/css/0.styles.4f59bd7b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fe/" class="home-link router-link-active"><!----> <span class="site-name">化学小子的前端实验册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/front-end-data-collation-and-learning-records/" class="nav-link">
+  前端资料整理及学习记录
+</a></li><li class="dropdown-item"><!----> <a href="/fe/front-end-adventure-roadmap/" class="nav-link">
+  前端探险路线图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/css-two-column-layout/" class="nav-link router-link-exact-active router-link-active">
+  CSS效果 | 两栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-three-column-layout/" class="nav-link">
+  CSS效果 | 三栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-tab-bar/" class="nav-link">
+  CSS效果 | Tab选项卡
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-swiper-picture/" class="nav-link">
+  CSS效果 | 轮播图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/a-few-simple-arithmetic-problems/" class="nav-link">
+  JS | 几道简单的数学题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/vue-start-note/" class="nav-link">
+  Vue | 入手笔记
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-dom/" class="nav-link">
+  Vue | 如何将数据插入到DOM中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-elm-attr/" class="nav-link">
+  Vue | 如何将数据插入到元素属性中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-two-cp-computed-methods-v-if-show/" class="nav-link">
+  Vue | computed和methods与v-if和v-show的故事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-on-and-methods/" class="nav-link">
+  Vue | v-on和methods的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-model-and-form/" class="nav-link">
+  Vue | v-model和form的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-base-operation/" class="nav-link">
+  Vue | 组件化基本操作
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-communication/" class="nav-link">
+  Vue | 组件通信
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-personal/" class="nav-link">
+  Vue | 组件个性化
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
+  Vue | 封装一个tabbar组件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-mock-data/" class="nav-link">
+  如何模拟后端数据
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-koa-todolist-ssr-spa-api/" class="nav-link">
+  以todolist为例，看前后端渲染
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/node-koa-start-learn/" class="nav-link">
+  Koa初体验
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/front-end-data-collation-and-learning-records/" class="nav-link">
+  前端资料整理及学习记录
+</a></li><li class="dropdown-item"><!----> <a href="/fe/front-end-adventure-roadmap/" class="nav-link">
+  前端探险路线图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/css-two-column-layout/" class="nav-link router-link-exact-active router-link-active">
+  CSS效果 | 两栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-three-column-layout/" class="nav-link">
+  CSS效果 | 三栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-tab-bar/" class="nav-link">
+  CSS效果 | Tab选项卡
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-swiper-picture/" class="nav-link">
+  CSS效果 | 轮播图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/a-few-simple-arithmetic-problems/" class="nav-link">
+  JS | 几道简单的数学题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/vue-start-note/" class="nav-link">
+  Vue | 入手笔记
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-dom/" class="nav-link">
+  Vue | 如何将数据插入到DOM中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-elm-attr/" class="nav-link">
+  Vue | 如何将数据插入到元素属性中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-two-cp-computed-methods-v-if-show/" class="nav-link">
+  Vue | computed和methods与v-if和v-show的故事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-on-and-methods/" class="nav-link">
+  Vue | v-on和methods的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-model-and-form/" class="nav-link">
+  Vue | v-model和form的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-base-operation/" class="nav-link">
+  Vue | 组件化基本操作
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-communication/" class="nav-link">
+  Vue | 组件通信
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-personal/" class="nav-link">
+  Vue | 组件个性化
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
+  Vue | 封装一个tabbar组件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-mock-data/" class="nav-link">
+  如何模拟后端数据
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-koa-todolist-ssr-spa-api/" class="nav-link">
+  以todolist为例，看前后端渲染
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/node-koa-start-learn/" class="nav-link">
+  Koa初体验
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span></span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p><img src="/fe/assets/img/demo.0ed5155d.gif" alt="两栏布局"></p> <p>瞎掰：
+上面的效果术语是两栏布局，常见于网页顶部的位置。你动我不动，我看着你动，做人就要能屈能伸，保持本心。</p> <p>需求分析：
+左右两栏，左边固定，右边配合左边自适应。</p> <p>分析布局：
+两个部分，左和右两部分是并列的关系。</p> <hr> <p>2020年了都，直接使用 flex 技术方案。
+网页结构如下：</p> <div class="language-html extra-class"><pre class="language-html"><code>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>wrapper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>left<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>我是左边的固定部分<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>right<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>我是右边的随便部分<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>不妨先给他们上个色，看一波。</p> <div class="language-css extra-class"><pre class="language-css"><code>  <span class="token selector">.left</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.right</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p><img src="/fe/assets/img/shangse.d9b17c3e.jpg" alt="上色儿"></p> <p>左右两部分都是 block 元素，一行只能允许一个 block 元素，右侧被挤到下一行。我们要实现两栏布局，先将两者搞到同一行。</p> <div class="language-css extra-class"><pre class="language-css"><code>  <span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>在给父盒子设置 flex 布局后，两个块级元素就被搞到一行了。
+<img src="data:image/jpeg;base64,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/wAfb/GtSij/AFT4e/6F9H/wXD/IPb1f5395l/8ACNab/wA+3/j7f40f8I1pv/Pt/wCPt/jWpRR/qnw9/wBC+j/4Lh/kHt6v87+8y/8AhGtN/wCfb/x9v8aP+Ea03/n2/wDH2/xrUoo/1T4e/wChfR/8Fw/yD29X+d/eZf8AwjWm/wDPt/4+3+NH/CNab/z7f+Pt/jWpRR/qnw9/0L6P/guH+Qe3q/zv7zL/AOEa03/n2/8AH2/xo/4RrTf+fb/x9v8AGtSij/VPh7/oX0f/AAXD/IPb1f5395l/8I1pv/Pt/wCPt/jViz0i00+UyQReW5G0ncTx+J9quUV0YfhvJMJVjXw+CpQnF3UlTimn3TSutxOtUkrOTt6hRRRX0ZiFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//2Q==" alt="右右你怎么上来了"></p> <p>下面就是分宽度了，根据需求，要给左边元素一个固定的宽度，不妨假设为 200px。</p> <div class="language-css extra-class"><pre class="language-css"><code> <span class="token selector">.left</span> <span class="token punctuation">{</span>
+      <span class="token property">flex</span><span class="token punctuation">:</span> 0 0 200px<span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+</code></pre></div><p><img src="/fe/assets/img/width200.cb94f5ca.jpg" alt="左侧固定200px"></p> <p>关于 flex 的说明</p> <blockquote><p>flex: flex-grow flex-shrink flex-basis;
+flex-grow: 定义项目放大比例，默认0，如果存在剩余空间也不放大
+flex-shrink: 定义项目缩小比例，默认为1，如果空间不足，项目缩小
+flex-basis: 设定项目的固定大小</p></blockquote> <p>完成了左侧固定值后，下面来看右侧自适应，即右侧要占据剩余的宽度这个需求要如何实现。</p> <div class="language-css extra-class"><pre class="language-css"><code>  <span class="token selector">.right</span> <span class="token punctuation">{</span>
+      <span class="token property">flex</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p><img src="/fe/assets/img/done.dbdc68e6.gif" alt="完美效果"></p> <p>下面总结一波：
+要实现两栏布局，首先想办法将块级元素搞到同一行，将左侧设置为固定宽度，最后想办法让右侧占据剩余的宽度。核心代码如下：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.left</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.right</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.left</span> <span class="token punctuation">{</span>
+    <span class="token property">flex</span><span class="token punctuation">:</span> 0 0 200px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.right</span> <span class="token punctuation">{</span>
+    <span class="token property">flex</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>wrapper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>left<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>我是左边的固定部分<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>right<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>我是右边的随便部分<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>还有一些常规手段，我就先不写了，flex 布局真香。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/8/2020, 11:22:39 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/fe/assets/js/app.193909e9.js" defer></script><script src="/fe/assets/js/2.616c00fd.js" defer></script><script src="/fe/assets/js/6.4a041278.js" defer></script>
+  </body>
+</html>
