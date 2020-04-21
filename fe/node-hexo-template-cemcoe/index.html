@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>化学小子的前端实验册</title>
+    <meta name="description" content="化学小子的前端实验册，记录学习中遇到的各种坑">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/fe/assets/css/0.styles.4f59bd7b.css" as="style"><link rel="preload" href="/fe/assets/js/app.81948440.js" as="script"><link rel="preload" href="/fe/assets/js/2.c3a2adb2.js" as="script"><link rel="preload" href="/fe/assets/js/18.e1edadf0.js" as="script"><link rel="prefetch" href="/fe/assets/js/10.be17732f.js"><link rel="prefetch" href="/fe/assets/js/11.f33dff7b.js"><link rel="prefetch" href="/fe/assets/js/12.5ae73087.js"><link rel="prefetch" href="/fe/assets/js/13.57892d88.js"><link rel="prefetch" href="/fe/assets/js/14.8c761639.js"><link rel="prefetch" href="/fe/assets/js/15.d1caf613.js"><link rel="prefetch" href="/fe/assets/js/16.b52fdd2c.js"><link rel="prefetch" href="/fe/assets/js/17.d5185c65.js"><link rel="prefetch" href="/fe/assets/js/19.4c480b21.js"><link rel="prefetch" href="/fe/assets/js/20.bc4bfca0.js"><link rel="prefetch" href="/fe/assets/js/21.bd1f585b.js"><link rel="prefetch" href="/fe/assets/js/22.1c13eeb0.js"><link rel="prefetch" href="/fe/assets/js/23.00108f01.js"><link rel="prefetch" href="/fe/assets/js/24.e45a2110.js"><link rel="prefetch" href="/fe/assets/js/25.d4b6c746.js"><link rel="prefetch" href="/fe/assets/js/26.a733ce3b.js"><link rel="prefetch" href="/fe/assets/js/27.8421bcbd.js"><link rel="prefetch" href="/fe/assets/js/28.7355ea5c.js"><link rel="prefetch" href="/fe/assets/js/29.ed7667fa.js"><link rel="prefetch" href="/fe/assets/js/3.a1f9c56a.js"><link rel="prefetch" href="/fe/assets/js/30.16bd39fb.js"><link rel="prefetch" href="/fe/assets/js/4.718a8ed1.js"><link rel="prefetch" href="/fe/assets/js/5.18ada5d3.js"><link rel="prefetch" href="/fe/assets/js/6.fefbd0b0.js"><link rel="prefetch" href="/fe/assets/js/7.d97bfc37.js"><link rel="prefetch" href="/fe/assets/js/8.3f426da6.js"><link rel="prefetch" href="/fe/assets/js/9.79cf4d2f.js">
+    <link rel="stylesheet" href="/fe/assets/css/0.styles.4f59bd7b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fe/" class="home-link router-link-active"><!----> <span class="site-name">化学小子的前端实验册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/front-end-data-collation-and-learning-records/" class="nav-link">
+  前端资料整理及学习记录
+</a></li><li class="dropdown-item"><!----> <a href="/fe/front-end-adventure-roadmap/" class="nav-link">
+  前端探险路线图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/css-two-column-layout/" class="nav-link">
+  CSS效果 | 两栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-three-column-layout/" class="nav-link">
+  CSS效果 | 三栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-tab-bar/" class="nav-link">
+  CSS效果 | Tab选项卡
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-swiper-picture/" class="nav-link">
+  CSS效果 | 轮播图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/a-few-simple-arithmetic-problems/" class="nav-link">
+  JS | 几道简单的数学题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/vue-start-note/" class="nav-link">
+  Vue | 入手笔记
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-dom/" class="nav-link">
+  Vue | 如何将数据插入到DOM中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-elm-attr/" class="nav-link">
+  Vue | 如何将数据插入到元素属性中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-two-cp-computed-methods-v-if-show/" class="nav-link">
+  Vue | computed和methods与v-if和v-show的故事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-on-and-methods/" class="nav-link">
+  Vue | v-on和methods的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-model-and-form/" class="nav-link">
+  Vue | v-model和form的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-base-operation/" class="nav-link">
+  Vue | 组件化基本操作
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-communication/" class="nav-link">
+  Vue | 组件通信
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-personal/" class="nav-link">
+  Vue | 组件个性化
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
+  Vue | 封装一个tabbar组件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-mock-data/" class="nav-link">
+  如何模拟后端数据
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-koa-todolist-ssr-spa-api/" class="nav-link">
+  以todolist为例，看前后端渲染
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/node-koa-start-learn/" class="nav-link">
+  Koa初体验
+</a></li><li class="dropdown-item"><!----> <a href="/fe/node-hexo-template-cemcoe/" class="nav-link router-link-exact-active router-link-active">
+  如何搞一个专属的 Hexo 的主题
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/front-end-data-collation-and-learning-records/" class="nav-link">
+  前端资料整理及学习记录
+</a></li><li class="dropdown-item"><!----> <a href="/fe/front-end-adventure-roadmap/" class="nav-link">
+  前端探险路线图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/css-two-column-layout/" class="nav-link">
+  CSS效果 | 两栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-three-column-layout/" class="nav-link">
+  CSS效果 | 三栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-tab-bar/" class="nav-link">
+  CSS效果 | Tab选项卡
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-swiper-picture/" class="nav-link">
+  CSS效果 | 轮播图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/a-few-simple-arithmetic-problems/" class="nav-link">
+  JS | 几道简单的数学题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/vue-start-note/" class="nav-link">
+  Vue | 入手笔记
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-dom/" class="nav-link">
+  Vue | 如何将数据插入到DOM中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-elm-attr/" class="nav-link">
+  Vue | 如何将数据插入到元素属性中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-two-cp-computed-methods-v-if-show/" class="nav-link">
+  Vue | computed和methods与v-if和v-show的故事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-on-and-methods/" class="nav-link">
+  Vue | v-on和methods的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-model-and-form/" class="nav-link">
+  Vue | v-model和form的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-base-operation/" class="nav-link">
+  Vue | 组件化基本操作
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-communication/" class="nav-link">
+  Vue | 组件通信
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-personal/" class="nav-link">
+  Vue | 组件个性化
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
+  Vue | 封装一个tabbar组件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-mock-data/" class="nav-link">
+  如何模拟后端数据
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-koa-todolist-ssr-spa-api/" class="nav-link">
+  以todolist为例，看前后端渲染
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/node-koa-start-learn/" class="nav-link">
+  Koa初体验
+</a></li><li class="dropdown-item"><!----> <a href="/fe/node-hexo-template-cemcoe/" class="nav-link router-link-exact-active router-link-active">
+  如何搞一个专属的 Hexo 的主题
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span></span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/fe/node-hexo-template-cemcoe/#了解-hexo" class="sidebar-link">了解 Hexo</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fe/node-hexo-template-cemcoe/#首页任务拆分" class="sidebar-link">首页任务拆分</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/fe/node-hexo-template-cemcoe/#用户信息区" class="sidebar-link">用户信息区</a></li><li class="sidebar-sub-header"><a href="/fe/node-hexo-template-cemcoe/#文章列表项" class="sidebar-link">文章列表项</a></li></ul></li><li><a href="/fe/node-hexo-template-cemcoe/#文章详情页" class="sidebar-link">文章详情页</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/fe/node-hexo-template-cemcoe/#文章元信息" class="sidebar-link">文章元信息</a></li><li class="sidebar-sub-header"><a href="/fe/node-hexo-template-cemcoe/#文章内容数据" class="sidebar-link">文章内容数据</a></li><li class="sidebar-sub-header"><a href="/fe/node-hexo-template-cemcoe/#右侧目录排序功能点" class="sidebar-link">右侧目录排序功能点</a></li><li class="sidebar-sub-header"><a href="/fe/node-hexo-template-cemcoe/#代码等特殊资源的处理" class="sidebar-link">代码等特殊资源的处理</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>如何使用 Hexo 搭建博客不是本文重点，本文主要是要搞一个专属的个人博客主题。</p> <h2 id="了解-hexo"><a href="#了解-hexo" class="header-anchor">#</a> 了解 Hexo</h2> <p>关于什么是 Hexo，推荐使用关键词 <code>hexo github</code> 进行了解。</p> <p>最近瞧上了 <a href="https://www.jianshu.com/nb/40206736" target="_blank" rel="noopener noreferrer">连载<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 的 UI，想着照着搞一个Hexo 博客主题玩一玩。</p> <p>时间有限，来看一下粗糙版本的预览图。
+<img src="/fe/assets/img/index.664c13f5.gif" alt="仿的有点粗糙"></p> <hr> <p>已完成的功能点：</p> <ul><li>首页文章列表展示</li> <li>文章详情页</li> <li>右侧目录正序排列</li></ul> <hr> <p>待完成的功能点</p> <ul><li>右侧目录逆序排列</li> <li>tag 系统</li> <li>代码高亮</li> <li>上一页 下一页</li> <li>底部的目录功能</li> <li>响应式设计</li> <li>白天夜晚模式切换</li> <li>字体大小切换</li> <li>字数统计</li></ul> <p>可以点击 <a href="https://cemcoe.com/blog/chemer-fe-test/index.html" target="_blank" rel="noopener noreferrer">在线预览<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，目前没有对电脑端进行适配，UI有点搓，字体比例有点不协调，抽空看一些设计的书籍。</p> <hr> <h2 id="首页任务拆分"><a href="#首页任务拆分" class="header-anchor">#</a> 首页任务拆分</h2> <p>接下来是一些记录，先对首页页面进行划分，往大了分可以分为上部用户信息和下部文章列表部分。</p> <p>先抛开 CSS 样式不谈，先来看一看内在美（主要目前不想调样式），来找一找我们要用到的数据和内在交互逻辑。</p> <p>下面依次来看。</p> <hr> <h3 id="用户信息区"><a href="#用户信息区" class="header-anchor">#</a> 用户信息区</h3> <p>在上部的用户信息区可以看到包含用户头像，用户名，用户介绍等部分。
+这些数据大都定义在 <code>_config.yml</code> 中，下面对着文档来找一找数据。</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token title important"><span class="token punctuation">#</span> Site</span>
+title: 化学小子的前端实验册
+subtitle: ''
+description: ''
+keywords:
+author: cemcoe
+author_intro: 略懂化学和代码
+language: zh
+timezone: ''
+</code></pre></div><p>知道了数据存放在哪里，那么问题来了如何拿到并使用这些数据？</p> <p>如果在 Vue 中是可以使用双大括号语法拿到 data 中我们需要的值。</p> <div class="language-md extra-class"><pre class="language-md"><code>{{ message }}
+</code></pre></div><p>可这里是 Hexo，入乡随俗，这里有什么法子搞到数据。</p> <p>这里要用到模板引擎，推荐 <code>ejs</code>，若想了解可以查看文档，这里是 <a href="https://ejs.bootcss.com/" target="_blank" rel="noopener noreferrer">文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <p>为了简化流程（懒）,我这里写了两个模板，分别是对应首页和文章详情页。</p> <p>本文主要是对首页的记录。</p> <hr> <p>目录结构是这样的：</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token list punctuation">-</span> layout
+  <span class="token list punctuation">-</span> index.ejs
+  <span class="token list punctuation">-</span> post.ejs
+<span class="token list punctuation">-</span> source
+  <span class="token list punctuation">-</span> css
+    <span class="token list punctuation">-</span> index.css
+    <span class="token list punctuation">-</span> post.css
+  <span class="token list punctuation">-</span> imgs
+  <span class="token list punctuation">-</span> js
+<span class="token list punctuation">-</span> README.md
+</code></pre></div><p>layout 文件夹中存放的就是模板文件了，先看 <code>index.ejs</code> 即首页模板。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>user-info<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>background<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>avatar<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>author-info<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&lt;%= config.author %&gt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>follow-meta<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>文章数: &lt;%= site.posts.length %&gt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>intro<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    &lt;%= config.author_intro %&gt;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>其实和 html 没多大的差别，仔细看一下，两者的不同可能在百分号上，随便拎出来一个：</p> <div class="language-md extra-class"><pre class="language-md"><code>&lt;%= config.author %&gt;
+</code></pre></div><p>嗯，是不是很容易想到 Vue 的双大括号语法。</p> <div class="language-md extra-class"><pre class="language-md"><code>// ejs：
+&lt;%= config.author %&gt;
+// Vue:
+{{ config.author }}
+</code></pre></div><p>翻看 <code>ejs</code> 的文档可以发现，尖括号和百分号是模板标签，这里主要用到四种：</p> <div class="language-md extra-class"><pre class="language-md"><code>&lt;% '脚本' 标签，用于流程控制，无输出。
+&lt;%= 输出数据到模板（输出是转义 HTML 标签）
+&lt;%- 输出非转义的数据到模板
+%&gt; 一般结束标签
+</code></pre></div><p>如前面看到的 <code>index.ejs</code> 的代码使用的就是 <code>&lt;%=</code>，看一下index.ejs 中用到的数据：</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token list punctuation">-</span> config.author 用户名
+<span class="token list punctuation">-</span> config.author_intro 用户简介
+<span class="token list punctuation">-</span> site.posts.length 文章数
+</code></pre></div><p>前两条数据都好理解，他们都存储在上文提到的 <code>_config.yml</code> 中，最后一条数据的 <code>site</code> 是哪里来的。</p> <p>不妨打印一下先，将 <code>&lt;% console.log(site) %&gt;</code> 添加到首页，并刷新首页可以看到类似结果。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  posts<span class="token operator">:</span> _Query <span class="token punctuation">{</span>
+    data<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    length<span class="token operator">:</span> <span class="token number">10</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  pages<span class="token operator">:</span> _Query <span class="token punctuation">{</span> data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> length<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  categories<span class="token operator">:</span> _Query <span class="token punctuation">{</span> data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> length<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  tags<span class="token operator">:</span> _Query <span class="token punctuation">{</span> data<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>_Document<span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">,</span> length<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>查 <a href="https://hexo.io/zh-cn/docs/variables#%E7%BD%91%E7%AB%99%E5%8F%98%E9%87%8F" target="_blank" rel="noopener noreferrer">Hexo 文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 可以发现，<code>site.posts</code> 存储着网站的所有文章，并且通过测试打印的数据可以发现 <code>site.posts</code> 本身是一个对象，其拥有的一个属性 <code>length</code> 存储着文章的数量，这些都是 Hexo 定义好的，用户信息项的分析到此就完了。</p> <h3 id="文章列表项"><a href="#文章列表项" class="header-anchor">#</a> 文章列表项</h3> <p>看完用户信息项，不妨再来看一看文章列表项。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>flow-list-container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  &lt;% page.posts.each(function (post) { %&gt;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>flow-list-ul<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>note-flow<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>content<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>&lt;%- url_for(post.path) %&gt;<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>summary<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>title<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&lt;%= post.title %&gt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h6</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>abstract<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            &lt;%- post.excerpt %&gt;
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>meta<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>&lt;%= post.order %&gt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+
+            &lt;% post.tags.data.forEach(function (tag) { %&gt;
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>&lt;%- tag.name %&gt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+            &lt;% }) %&gt;
+
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>time<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&lt;%- date(post.date, &quot;MM-DD&quot;) %&gt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+  &lt;% }) %&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>比用户信息项更简单了有没有？并没有。</p> <p>有了用户信息项的经验，这里我们可以找一找 <code>ejs</code> 模板标签。
+这里出现了三类模板标签：</p> <div class="language-md extra-class"><pre class="language-md"><code>&lt;%- url_for(post.path) %&gt;
+
+&lt;% page.posts.each(function (post) { %&gt;
+&lt;% }) %&gt;
+
+&lt;%= post.title %&gt;
+</code></pre></div><p>先看 <code>&lt;%- url_for(post.path) %&gt;</code>，是的，它出现了，这不就是 <code>v-for</code> 吗？
+准确地说是<code>v-bind</code> 和 <code>v-for</code> 的结合体，因为它是被插入到了元素属性 <code>href</code> 中。</p> <p>再来看第二个，就是一个遍历操作，<code>page.posts</code> 的数据结构和 <code>site.posts</code> 类似。</p> <p>来看一看用到的数据：</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token list punctuation">-</span> post.path 文件路径
+<span class="token list punctuation">-</span> post.excerpt 文章摘要
+<span class="token list punctuation">-</span> post.order 文章次序
+<span class="token list punctuation">-</span> post.tags.data 这里需要注意遍历post.tags是拿不到tag的
+<span class="token list punctuation">-</span> post.date 写文章时间
+</code></pre></div><p>同时用到了两个 Hexo 的<a href="https://hexo.io/zh-cn/docs/helpers" target="_blank" rel="noopener noreferrer">辅助函数<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token list punctuation">-</span> url_for()
+<span class="token list punctuation">-</span> date()
+</code></pre></div><p>首页就是这些东西了。</p> <h2 id="文章详情页"><a href="#文章详情页" class="header-anchor">#</a> 文章详情页</h2> <p>来看一看文章详情的模板如何写？</p> <p>先进行功能点拆分：</p> <ul><li>文章元信息如标题，时间，tags 等的展示问题</li> <li>如何拿到文章内容的主体数据</li> <li>如何处理文章里出现的代码，图片等特殊资源</li></ul> <hr> <h3 id="文章元信息"><a href="#文章元信息" class="header-anchor">#</a> 文章元信息</h3> <p>现在看一下使用 <code>forEach</code> 遍历 tags，来看一下 tag 的数据结构。</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token italic"><span class="token punctuation">_</span><span class="token content">Document {
+  name: 'Hexo',
+  </span><span class="token punctuation">_</span></span>id: 'ck82sbm4z000fkoie38def1hh',
+  slug: [Getter],
+  path: [Getter],
+  permalink: [Getter],
+  posts: [Getter],
+  length: [Getter]
+}
+</code></pre></div><p>嗯，我们需要的数据是 <code>tag.name</code>，开始遍历。</p> <div class="language-html extra-class"><pre class="language-html"><code>&lt;% page.tags.data.forEach(function (tag) { %&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tags<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&lt;%- tag.name %&gt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+&lt;% }) %&gt;
+</code></pre></div><h3 id="文章内容数据"><a href="#文章内容数据" class="header-anchor">#</a> 文章内容数据</h3> <p>拿到文章主体数据：</p> <div class="language-html extra-class"><pre class="language-html"><code>&lt;%- page.content %&gt;
+</code></pre></div><h3 id="右侧目录排序功能点"><a href="#右侧目录排序功能点" class="header-anchor">#</a> 右侧目录排序功能点</h3> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    &lt;% site.posts.data.forEach( function(post){ %&gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">order</span><span class="token punctuation">:</span> &lt;%- post.order %&gt;<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>&lt;%- url_for(post.path) %&gt;<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&lt;%- post.order %&gt;---&lt;%- post.title %&gt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    &lt;% }) %&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>在这里使用 flex 布局中的 order 进行正序排列。</p> <p>在这里有个坑，在 <code>site.posts.data</code> 中的数组是按照文件在系统中的排序，而不是创建时间，就很迷，看了好久不知道排序的依据是啥。</p> <h3 id="代码等特殊资源的处理"><a href="#代码等特殊资源的处理" class="header-anchor">#</a> 代码等特殊资源的处理</h3> <p>接下来看一看如何处理文章里出现的代码，图片等特殊资源。
+被 ` 包裹会被渲染成 code 标签，双大括号会报错。</p> <p>下面列举一些 md 搭配 html 标签的例子用于添加样式：</p> <div class="language-md extra-class"><pre class="language-md"><code>``     ===&gt; code
+<span class="token blockquote punctuation">&gt;</span>      ===&gt; blockquote
+<span class="token code keyword">`````</span>` ===&gt; figure.[hihlight plain]
+
+</code></pre></div> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">pre</span> <span class="token punctuation">{</span>
+  <span class="token property">overflow-x</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>防止代码撑开页面</p> <p>代码高亮 https://prismjs.com/download.html</p> <p>整体上这个 Hexo 主题大致就搞好了，还剩一些边边角角。</p> <p>已转投 VuePress，真香。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/21/2020, 10:42:33 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/fe/assets/js/app.81948440.js" defer></script><script src="/fe/assets/js/2.c3a2adb2.js" defer></script><script src="/fe/assets/js/18.e1edadf0.js" defer></script>
+  </body>
+</html>
