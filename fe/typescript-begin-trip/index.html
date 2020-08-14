@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TypeScript是个什么玩意 | 化学小子的前端实验册</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="manifest" href="/fe/manifest.json">
+    <meta name="description" content="化学小子的前端实验册，记录学习中遇到的各种坑">
+    <meta name="theme-color" content="#3eaf7c">
+    <link rel="preload" href="/fe/assets/css/0.styles.32128c35.css" as="style"><link rel="preload" href="/fe/assets/js/app.47d8c3c8.js" as="script"><link rel="preload" href="/fe/assets/js/2.7f5a763a.js" as="script"><link rel="preload" href="/fe/assets/js/24.65bf3dd4.js" as="script"><link rel="prefetch" href="/fe/assets/js/10.5e8557d9.js"><link rel="prefetch" href="/fe/assets/js/11.0c620cb3.js"><link rel="prefetch" href="/fe/assets/js/12.c5f6a8d4.js"><link rel="prefetch" href="/fe/assets/js/13.72b04357.js"><link rel="prefetch" href="/fe/assets/js/14.5be9779d.js"><link rel="prefetch" href="/fe/assets/js/15.19e25cc9.js"><link rel="prefetch" href="/fe/assets/js/16.422d8e67.js"><link rel="prefetch" href="/fe/assets/js/17.bd4f9143.js"><link rel="prefetch" href="/fe/assets/js/18.9e919300.js"><link rel="prefetch" href="/fe/assets/js/19.bb51b19a.js"><link rel="prefetch" href="/fe/assets/js/20.ba3dc991.js"><link rel="prefetch" href="/fe/assets/js/21.c0abb608.js"><link rel="prefetch" href="/fe/assets/js/22.85f28204.js"><link rel="prefetch" href="/fe/assets/js/23.e1f57895.js"><link rel="prefetch" href="/fe/assets/js/25.206d6c08.js"><link rel="prefetch" href="/fe/assets/js/26.11aabd80.js"><link rel="prefetch" href="/fe/assets/js/27.10bb881e.js"><link rel="prefetch" href="/fe/assets/js/28.f259e354.js"><link rel="prefetch" href="/fe/assets/js/29.f317619c.js"><link rel="prefetch" href="/fe/assets/js/3.768242a6.js"><link rel="prefetch" href="/fe/assets/js/30.34890ac1.js"><link rel="prefetch" href="/fe/assets/js/31.569e4a85.js"><link rel="prefetch" href="/fe/assets/js/32.8a45d985.js"><link rel="prefetch" href="/fe/assets/js/33.779c98e1.js"><link rel="prefetch" href="/fe/assets/js/34.107f6595.js"><link rel="prefetch" href="/fe/assets/js/35.bb61bf9a.js"><link rel="prefetch" href="/fe/assets/js/36.6226eff5.js"><link rel="prefetch" href="/fe/assets/js/4.8d1aee48.js"><link rel="prefetch" href="/fe/assets/js/5.713c286c.js"><link rel="prefetch" href="/fe/assets/js/6.c218c286.js"><link rel="prefetch" href="/fe/assets/js/7.9169af51.js"><link rel="prefetch" href="/fe/assets/js/8.4eadb84b.js"><link rel="prefetch" href="/fe/assets/js/9.0d9f0b37.js">
+    <link rel="stylesheet" href="/fe/assets/css/0.styles.32128c35.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fe/" class="home-link router-link-active"><!----> <span class="site-name">化学小子的前端实验册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/front-end-data-collation-and-learning-records/" class="nav-link">
+  前端资料整理及学习记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/the-note-of-professional-javascript-for-web-developers/" class="nav-link">
+  读JavaScript高级程序设计
+</a></li><li class="dropdown-item"><!----> <a href="/fe/a-few-simple-arithmetic-problems/" class="nav-link">
+  JS | 几道简单的数学题
+</a></li><li class="dropdown-item"><!----> <a href="/fe/typescript-begin-trip/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  TS是啥玩意
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/css-two-column-layout/" class="nav-link">
+  CSS效果 | 两栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-three-column-layout/" class="nav-link">
+  CSS效果 | 三栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-tab-bar/" class="nav-link">
+  CSS效果 | Tab选项卡
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-swiper-picture/" class="nav-link">
+  CSS效果 | 轮播图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/vue-start-note/" class="nav-link">
+  Vue | 入手笔记
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-dom/" class="nav-link">
+  Vue | 如何将数据插入到DOM中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-elm-attr/" class="nav-link">
+  Vue | 如何将数据插入到元素属性中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-two-cp-computed-methods-v-if-show/" class="nav-link">
+  Vue | computed和methods与v-if和v-show的故事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-on-and-methods/" class="nav-link">
+  Vue | v-on和methods的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-model-and-form/" class="nav-link">
+  Vue | v-model和form的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-base-operation/" class="nav-link">
+  Vue | 组件化基本操作
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-communication/" class="nav-link">
+  Vue | 组件通信
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-personal/" class="nav-link">
+  Vue | 组件个性化
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
+  Vue | 封装一个tabbar组件
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-toast-plugin/" class="nav-link">
+  Vue | 如何封装一个toast插件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-mock-data/" class="nav-link">
+  如何模拟后端数据
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-koa-todolist-ssr-spa-api/" class="nav-link">
+  以todolist为例，看前后端渲染
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-cors-break-origin-from-remove-blog/" class="nav-link">
+  从博客迁移看跨域那点事儿
+</a></li><li class="dropdown-item"><!----> <a href="/fe/front-end-login-and-user-management-based-on-hufu/" class="nav-link">
+  以虎符为引看前端登录与用户管理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/node-back-end-trip/" class="nav-link">
+  借用node来走一下简单的后端流程
+</a></li><li class="dropdown-item"><!----> <a href="/fe/node-koa-start-learn/" class="nav-link">
+  Koa初体验
+</a></li><li class="dropdown-item"><!----> <a href="/fe/node-hexo-template-cemcoe/" class="nav-link">
+  如何搞一个专属的 Hexo 的主题
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/front-end-data-collation-and-learning-records/" class="nav-link">
+  前端资料整理及学习记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/the-note-of-professional-javascript-for-web-developers/" class="nav-link">
+  读JavaScript高级程序设计
+</a></li><li class="dropdown-item"><!----> <a href="/fe/a-few-simple-arithmetic-problems/" class="nav-link">
+  JS | 几道简单的数学题
+</a></li><li class="dropdown-item"><!----> <a href="/fe/typescript-begin-trip/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  TS是啥玩意
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/css-two-column-layout/" class="nav-link">
+  CSS效果 | 两栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-three-column-layout/" class="nav-link">
+  CSS效果 | 三栏布局那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-tab-bar/" class="nav-link">
+  CSS效果 | Tab选项卡
+</a></li><li class="dropdown-item"><!----> <a href="/fe/css-swiper-picture/" class="nav-link">
+  CSS效果 | 轮播图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/vue-start-note/" class="nav-link">
+  Vue | 入手笔记
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-dom/" class="nav-link">
+  Vue | 如何将数据插入到DOM中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-insert-data-to-elm-attr/" class="nav-link">
+  Vue | 如何将数据插入到元素属性中
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-two-cp-computed-methods-v-if-show/" class="nav-link">
+  Vue | computed和methods与v-if和v-show的故事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-on-and-methods/" class="nav-link">
+  Vue | v-on和methods的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-v-model-and-form/" class="nav-link">
+  Vue | v-model和form的羁绊
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-base-operation/" class="nav-link">
+  Vue | 组件化基本操作
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-communication/" class="nav-link">
+  Vue | 组件通信
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-com-personal/" class="nav-link">
+  Vue | 组件个性化
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-package-a-tabbar-component-from-zero/" class="nav-link">
+  Vue | 封装一个tabbar组件
+</a></li><li class="dropdown-item"><!----> <a href="/fe/vue-toast-plugin/" class="nav-link">
+  Vue | 如何封装一个toast插件
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">网络</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/those-things-of-the-network-requests/" class="nav-link">
+  网络请求那些事情
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-mock-data/" class="nav-link">
+  如何模拟后端数据
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-axios/" class="nav-link">
+  axios那些事
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-koa-todolist-ssr-spa-api/" class="nav-link">
+  以todolist为例，看前后端渲染
+</a></li><li class="dropdown-item"><!----> <a href="/fe/network-cors-break-origin-from-remove-blog/" class="nav-link">
+  从博客迁移看跨域那点事儿
+</a></li><li class="dropdown-item"><!----> <a href="/fe/front-end-login-and-user-management-based-on-hufu/" class="nav-link">
+  以虎符为引看前端登录与用户管理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Node</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe/node-back-end-trip/" class="nav-link">
+  借用node来走一下简单的后端流程
+</a></li><li class="dropdown-item"><!----> <a href="/fe/node-koa-start-learn/" class="nav-link">
+  Koa初体验
+</a></li><li class="dropdown-item"><!----> <a href="/fe/node-hexo-template-cemcoe/" class="nav-link">
+  如何搞一个专属的 Hexo 的主题
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>TypeScript是个什么玩意</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/fe/typescript-begin-trip/#typescript是个什么玩意" class="sidebar-link">TypeScript是个什么玩意</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fe/typescript-begin-trip/#安装typescript" class="sidebar-link">安装typescript</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fe/typescript-begin-trip/#如何将写的ts代码转成js代码" class="sidebar-link">如何将写的ts代码转成js代码</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fe/typescript-begin-trip/#如何将转化过程自动化" class="sidebar-link">如何将转化过程自动化</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/fe/typescript-begin-trip/#数据类型" class="sidebar-link">数据类型</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="typescript是个什么玩意"><a href="#typescript是个什么玩意" class="header-anchor">#</a> TypeScript是个什么玩意</h2> <p><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">https://www.typescriptlang.org/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <blockquote><p>TypeScript extends JavaScript by adding types.
+By understanding JavaScript, TypeScript saves you time catching errors and providing fixes before you run code.
+Any browser, any OS, anywhere JavaScript runs. Entirely Open Source.</p></blockquote> <p>官网介绍的很明白了，这里可以简单地理解是给 JavaScript 增加了类型限制。最终还是要转换成 js 代码运行的。</p> <h2 id="安装typescript"><a href="#安装typescript" class="header-anchor">#</a> 安装typescript</h2> <div class="language-md extra-class"><pre class="language-md"><code>npm install -g typescript
+</code></pre></div><h2 id="如何将写的ts代码转成js代码"><a href="#如何将写的ts代码转成js代码" class="header-anchor">#</a> 如何将写的ts代码转成js代码</h2> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// index.ts</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span>
+</code></pre></div><p>安装完typescript后，我们就可以使用 <code>tsc</code> 命令将ts文件转为js文件。</p> <div class="language-md extra-class"><pre class="language-md"><code>tsc index.ts
+</code></pre></div><h2 id="如何将转化过程自动化"><a href="#如何将转化过程自动化" class="header-anchor">#</a> 如何将转化过程自动化</h2> <p>写一句代码使用tsc转化一次实在是没有效率，有没有什么方法让我们保存代码后就自动将ts代码转化成js代码嘞？</p> <p>其实很简单，加一个参数就好。</p> <div class="language- extra-class"><pre class="language-text"><code>tsc --watch index.ts
+</code></pre></div><p><img src="/fe/assets/img/demo.afe93b19.gif" alt="demo"></p> <h2 id="数据类型"><a href="#数据类型" class="header-anchor">#</a> 数据类型</h2> <p>typescript的核心是type，也就是类型的校验，定义的类型有
+布尔类型 boolean
+数字类型 number
+字符串 string
+数组 array
+元组 tuple
+枚举 enum
+任意 any
+null 和 undefined
+void
+never</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/14/2020, 4:52:42 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/fe/assets/js/app.47d8c3c8.js" defer></script><script src="/fe/assets/js/2.7f5a763a.js" defer></script><script src="/fe/assets/js/24.65bf3dd4.js" defer></script>
+  </body>
+</html>
